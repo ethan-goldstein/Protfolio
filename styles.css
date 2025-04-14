@@ -2,11 +2,12 @@ body {
     background: rgb(255, 255, 255);
     font-family: 'Times New Roman', Times, serif;
     margin: 40px;
-}
-h1 {
+ }
+ h1 {
     text-align: center;
     color: rgb(74, 128, 255);
-}
-.about {
+ }
+ .about {
     background: rgb(255, 255, 255);
-}
+ }
+ 

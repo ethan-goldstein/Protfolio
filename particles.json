@@ -1,10 +1,18 @@
-{
-  "background": {
-    "color": {
-      "value": "#000000"
-    }
-  },
-  "particles": {
+{"background": {
+  "color": {
+    "value": "#1a1a1a"
+  }
+},
+  "particles": {"color": {
+  "value": "#c1c5c9"
+},
+"line_linked": {
+  "enable": true,
+  "distance": 40,
+  "color": "#c1c5c9",
+  "opacity": 0.18,
+  "width": 1
+},
     "number": {
       "value": 155,
       "density": {

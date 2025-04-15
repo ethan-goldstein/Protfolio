@@ -1,10 +1,9 @@
 html, body {
-    height: 100%;
-    width: 100%;
+    background-color: #1a1a1a !important; /* dark background */
+    color: #c1c5c9 !important;           /* light gray text */
     margin: 0;
     padding: 0;
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
+    font-family: "DejaVu Sans Mono", monospace;
     overflow-x: hidden;
 }
 html
@@ -92,13 +91,22 @@ nav ul{
     padding-top: 150px;
 }
 .fa {
-    padding: 5px;
-    font-size: 30px;
-    width: 80px;
+    background: #7d7d7d;
+    color: white;
+    border-radius: 8%;
+    padding: 10px;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    margin: 0 5px;
     text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 10%;
+    line-height: 25px;
+    font-size: 20px;
+}
+.fa:hover {
+    background: #e0e0e0;
+    color: black;
+    transition: 0.3s ease;
 }
 .fa-x {
     color: white;

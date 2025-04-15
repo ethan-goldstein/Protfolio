@@ -1,33 +1,43 @@
-html{
+/* Base Styles */
+html {
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
-body{
+
+body {
     padding: 0;
     margin: 0;
-    background: #1a1a1a;
+    background: #1a1a1a; /* Dark background */
     overflow: hidden !important;
     max-width: 100% !important;
     max-height: 100% !important;
-    color: #c1c5c9;
+    color: #c1c5c9; /* Light gray text */
     font-family: "DejaVu Sans Mono", monospace;
 }
-#particles-js{
+
+/* Particles Background */
+#particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
+    top: 0;
+    left: 0;
 }
-#me{
+
+/* Main Content */
+#me {
     position: absolute;
     top: 33%;
 }
-#homeContainer{
+
+#homeContainer {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#profilepic{
+
+#profilepic {
     width: 10%;
     height: 10%;
     min-width: 150px;
@@ -37,50 +47,64 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-#greetingDiv{
+
+#greetingDiv {
     display: block;
     text-align: center;
 }
+
 #greeting {
     margin-top: 10px;
     color: #bdbbbb;
 }
+
+/* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-.typewrite{
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+.typewrite {
     font-family: 'Quicksand', monospace;
-    color: #696969 !important;
+    color: #e0e0e0 !important; /* Lighter gray for better contrast */
     font-size: 125%;
 }
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-.navbar{
+
+/* Navbar */
+.navbar {
     background-color: #000000;
     font-family: 'Poppins', sans-serif;
     color: #1a1a1a !important;
 }
-nav li{
+
+nav li {
     display: inline-block;
     font-size: 20px;
     font-weight: 200;
     color: white;
     margin-right: 10px;
 }
-nav ul{
+
+nav ul {
     font-family: 'Poppins', sans-serif;
     text-transform: lowercase;
 }
-#hello{
+
+#hello {
     font-weight: bold;
     font-size: 200%;
 }
-#socialsBox{
+
+/* Socials */
+#socialsBox {
     margin-left: auto;
     margin-right: auto;
 }
-#aboutMeBox{
+
+#aboutMeBox {
     margin-left: auto;
     margin-right: auto;
     padding-top: 150px;
 }
+
 .fa {
     padding: 5px;
     font-size: 30px;
@@ -90,65 +114,78 @@ nav ul{
     margin: 5px 2px;
     border-radius: 10%;
 }
+
 .fa-x {
     color: white;
     background: #808080;
 }
-.fa-x:hover{
+
+.fa-x:hover {
     color: black;
-    background: #1DA1F2 ;
+    background: #1DA1F2;
 }
+
 .fa-facebook {
     color: white;
     background: #808080;
 }
-.fa-facebook:hover{
+
+.fa-facebook:hover {
     color: black;
-    background: #3b5998 ;
+    background: #3b5998;
 }
+
 .fa-linkedin {
     color: white;
     background: #808080;
 }
-.fa-linkedin:hover{
+
+.fa-linkedin:hover {
     color: black;
-    background: #2867b2 ;
+    background: #2867b2;
 }
+
 .fa-instagram {
     background: #808080;
     color: white;
 }
-.fa-instagram:hover{
+
+.fa-instagram:hover {
     color: black;
-    background: #bc2a8d ;
+    background: #bc2a8d;
 }
+
 .fa-github {
     background: #808080;
     color: white;
 }
-.fa-github:hover{
+
+.fa-github:hover {
     color: black;
-    background: black ;
+    background: black;
 }
-#socials{
+
+#socials {
     list-style-type: none;
 }
-#socials li{
+
+#socials li {
     display: inline;
     float: left;
 }
-#socials li a{
+
+#socials li a {
     text-align: center;
     text-decoration: none;
 }
+
 #socials li a:hover {
     color: white;
     transition: all 0.5s ease;
-}
-#socials li a:hover {
     transform: translateY(-10px);
 }
-#newAboutMe{
+
+#newAboutMe {
     list-style-type: none;
     padding-top: 30px;
 }

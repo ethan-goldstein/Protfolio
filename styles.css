@@ -7,11 +7,11 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background: #1a1a1a; /* Dark background */
+    background: #0e0e0e; /* Dark background */
     overflow: hidden !important;
     max-width: 100% !important;
     max-height: 100% !important;
-    color: #c1c5c9; /* Light gray text */
+    color: #0e0e0e; /* Light gray text */
     font-family: "DejaVu Sans Mono", monospace;
 }
 
@@ -70,9 +70,9 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #000000;
+    background-color: #0e0e0e;
     font-family: 'Poppins', sans-serif;
-    color: #1a1a1a !important;
+    color: #0e0e0e !important;
 }
 
 nav li {

@@ -1,16 +1,15 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #000000; /* pure black */
-    color: #c1c5c9; /* light gray text */
-    font-family: "DejaVu Sans Mono", monospace;
+    margin: 1;
+    padding: 1;
+    background-color: #000000;
+    color: #c1c5c9;
+    font-family: 'Quicksand', monospace;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
   }
   
   @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
   
   .home-text {
     font-family: 'Quicksand', sans-serif;
@@ -27,14 +26,14 @@ html, body {
   
   .navbar {
     background-color: #000000;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', monospace;
     color: #c1c5c9;
   }
   
   .navbar-nav .nav-link {
     text-transform: capitalize;
   }
-  
+
   #homeContainer {
     display: flex;
     align-items: center;

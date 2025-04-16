@@ -1,7 +1,8 @@
-particlesJS.load('particles-js', 'particles.json', function () {
-    console.log('Particles.js loaded — callback');
-  });
-  
+// Load particles from JSON
+particlesJS.load('particles-js', 'particles.json', function() {});
+    console.log('particles.js loaded – callback');
+
+  // Typewriter effect
   let TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -45,7 +46,9 @@ particlesJS.load('particles-js', 'particles.json', function () {
     }, delta);
   };
   
+  // Initialize everything on window load
   window.onload = function () {
+    // Typewriter activation
     let elements = document.getElementsByClassName('typewrite');
     for (let i = 0; i < elements.length; i++) {
       let toRotate = elements[i].getAttribute('data-type');
@@ -55,9 +58,9 @@ particlesJS.load('particles-js', 'particles.json', function () {
       }
     }
   
-    // Inject cursor style
-    let css = document.createElement('style');
-    css.type = 'text/css';
-    css.innerHTML = '.typewrite > .wrap { border-right: 0.08em solid #f1f1f1 }';
+    // Inject CSS for cursor
+    let css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #1a1a1a }";
     document.body.appendChild(css);
   };

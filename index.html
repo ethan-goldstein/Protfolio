@@ -3,11 +3,12 @@
 <head>
   <title>CSCE 190: Ethan Goldstein</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <link rel="shortcut icon" href="images/logo.jpeg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
     .navbar-nav .nav-link {
       text-transform: capitalize;
@@ -15,6 +16,8 @@
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
     <a class="navbar-brand" href="#">
       <img src="images/logo.jpeg" width="30" height="30" alt="">
@@ -32,29 +35,35 @@
     </div>
   </nav>
 
-  <div id="particles-js"></div>
-
-  <div class="main-section d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
-    <img id="profilepic" src="images/ProfilePicture.jpeg">
-    <h2 id="hello" class="home-text">Hi, I'm Ethan</h2>
-    <p id="greeting">
-      <a class="home-text typewrite" data-period="2000" data-type='[ "I am driven", "I am strategic", "I am outgoing", "I am results-oriented"]'>
-        <span class="wrap">I am driven</span>
-      </a>
-    </p>
-
-    <ul id="socials" class="d-flex justify-content-center p-0 mt-3">
-      <li><a href="https://www.facebook.com/ethan.goldstein.547/" class="fa fa-facebook"></a></li>
-      <li><a href="https://www.instagram.com/ethangoldsteinn/" class="fa fa-instagram"></a></li>
-      <li><a href="https://github.com/ethan-goldstein" class="fa fa-github"></a></li>
-      <li><a href="https://www.linkedin.com/in/ethangoldstein-" class="fa fa-linkedin"></a></li>
-    </ul>
-
-    <p id="newAboutMe" class="home-text mt-4">
-      <i>data intern @ oxford government consulting</i><br>
-      <i>computer information systems</i><br>
-      <a href="https://github.com/ethan-goldstein/ethan-goldstein.github.io">website code</a>
-    </p>
+  <div class="title jumbotron jumbotron-fluid bg-transparent bgstyle text-light min-vh-100 d-flex justify-content-center align-items-center flex-column m-0">
+    <div class="container text-center" id="homeContainer">
+      <div id="me">
+        <img id="profilepic" src="images/ProfilePicture.jpeg">
+        <h2 id="hello" class="home-text">Hi, I'm Ethan</h2>
+        <div id="greetingDiv">
+          <p id="greeting">
+            <a class="home-text typewrite" data-period="2000" data-type='[ "I am driven","I am strategic","I am outgoing","I am results-oriented"]'>
+              <span class="wrap">I am driven</span>
+            </a>
+          </p>
+        </div>
+        <div id="socialsBox">
+          <ul id="socials">
+            <li><a href="https://www.facebook.com/ethan.goldstein.547/" class="fa fa-facebook"></a></li>
+            <li><a href="https://www.instagram.com/ethangoldsteinn/" class="fa fa-instagram"></a></li>
+            <li><a href="https://github.com/ethan-goldstein" class="fa fa-github"></a></li>
+            <li><a href="https://www.linkedin.com/in/ethangoldstein-" class="fa fa-linkedin"></a></li>
+          </ul>
+        </div>
+        <div id="aboutMeBox">
+          <p id="newAboutMe" class="home-text">
+            <i>data intern @ oxford government consulting</i><br>
+            <i>computer information systems</i><br>
+            <a href="https://github.com/ethan-goldstein/ethan-goldstein.github.io">website code</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/particles.js"></script>

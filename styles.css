@@ -1,4 +1,3 @@
-/* Base styles update */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,24 +9,15 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Update typewrite style to match desired color */
 .typewrite {
     font-family: 'Quicksand', monospace;
-    color: #f1f1f1;
+    color: #f1f1f1;  /* Updated to match text color */
     font-size: 125%;
 }
 
-/* Social media icons glow effect */
+/* Social media icons with glow */
 #socials li a {
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
     background-color: #333;
-    color: white;
-    border-radius: 50%;
-    font-size: 20px;
     transition: all 0.3s ease;
 }
 
@@ -49,56 +39,4 @@ html, body {
 .fa-github:hover {
     background: #333;
     box-shadow: 0 0 15px #333;
-}
-
-.projects {
-    margin-top: 30px;
-}
-
-.project {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-.project h3 {
-    color: #f1f1f1;
-}
-
-.project a {
-    color: #f1f1f1;
-    text-decoration: none;
-}
-
-.project a:hover {
-    color: #f1f1f1;
-    text-decoration: underline;
-}
-
-.project img {
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
-}
-
-.resume-link {
-    color: #f1f1f1;
-    text-decoration: underline;
-    transition: all 0.3s ease;
-}
-
-.resume-link:hover {
-    color: #696969;
-    text-shadow: 0 0 10px #f1f1f1;
-}
-
-.about {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.jumbotron {
-    background-color: transparent !important;
 }

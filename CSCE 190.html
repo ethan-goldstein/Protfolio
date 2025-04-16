@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>CSCE 190: Ethan Goldstein</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
-            <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="container">
+    <div class="container" style="padding-top: 100px;">
         <h1 class="home-text">CSCE 190</h1>
         <div class="projects">
             <h2 class="home-text">Highlighted Projects</h2>
@@ -27,13 +36,13 @@
 
             <section class="project">
                 <a href="files/Sketches_DOC.pdf"><h3 class="home-text">Sketches</h3></a>
-                <a href="files/Sketches_DOC.pdf"><img src="images/Sketches_IMG.png"></a>
+                <a href="files/Sketches_DOC.pdf"><img src="images/Sketches_IMG.png" alt="Sketches"></a>
                 <p class="home-text">Brief description about the sketches</p>
             </section>
 
             <section class="project">
                 <a href="files/Affinity_DOC.pdf"><h3 class="home-text">Affinity Diagram</h3></a>
-                <a href="files/Affinity_DOC.pdf"><img src="images/Affinity_IMG.png"></a>
+                <a href="files/Affinity_DOC.pdf"><img src="images/Affinity_IMG.png" alt="Affinity Diagram"></a>
                 <p class="home-text">Text describing the diagram</p>
             </section>
 
@@ -43,5 +52,9 @@
             </section>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

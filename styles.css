@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #000000 !important;
     color: #f1f1f1;
     font-family: 'Quicksand', monospace;
     width: 100%;
@@ -9,15 +9,92 @@ html, body {
     overflow-x: hidden;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.home-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #f1f1f1;
+}
+
 .typewrite {
     font-family: 'Quicksand', monospace;
-    color: #f1f1f1;  /* Updated to match text color */
+    color: #f1f1f1;
     font-size: 125%;
 }
 
-/* Social media icons with glow */
+.navbar {
+    background-color: #000000 !important;
+    padding: 1rem;
+}
+
+.navbar-nav .nav-link {
+    color: #f1f1f1 !important;
+    text-transform: capitalize;
+}
+
+#homeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    padding-top: 60px;
+}
+
+#profilepic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+#greetingDiv {
+    display: block;
+    text-align: center;
+}
+
+#greeting {
+    margin-top: 10px;
+    color: #f1f1f1;
+}
+
+#hello {
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+}
+
+#socialsBox {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#socials {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#socials li {
+    margin: 0 10px;
+}
+
 #socials li a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
     background-color: #333;
+    color: #f1f1f1;
+    border-radius: 50%;
+    font-size: 20px;
     transition: all 0.3s ease;
 }
 
@@ -39,4 +116,31 @@ html, body {
 .fa-github:hover {
     background: #333;
     box-shadow: 0 0 15px #333;
+}
+
+#newAboutMe {
+    margin-top: 30px;
+}
+
+.project {
+    background: rgba(51, 51, 51, 0.3);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #696969;
+    text-decoration: none;
 }

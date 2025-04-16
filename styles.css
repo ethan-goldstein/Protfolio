@@ -1,154 +1,107 @@
-html{
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-}
-body{
-    padding: 0;
-    margin: 0;
-    background: #1a1a1a;
-    overflow: hidden !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
+html, body {
+    background-color: #1a1a1a;
     color: #c1c5c9;
+    margin: 0;
+    padding: 0;
     font-family: "DejaVu Sans Mono", monospace;
-}
-#particles-js{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-#me{
-    position: absolute;
-    top: 33%;
-}
-#homeContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#profilepic{
-    width: 10%;
-    height: 10%;
-    min-width: 150px;
-    min-height: 150px;
-    border: transparent;
-    border-radius: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#greetingDiv{
-    display: block;
-    text-align: center;
-}
-#greeting {
-    margin-top: 10px;
-    color: #bdbbbb;
-}
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-.typewrite{
+    overflow-x: hidden;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+  
+  .home-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #f1f1f1 !important;
+  }
+  
+  .typewrite {
     font-family: 'Quicksand', monospace;
     color: #696969 !important;
     font-size: 125%;
-}
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-.navbar{
+  }
+  
+  .navbar {
     background-color: #000000;
     font-family: 'Poppins', sans-serif;
-    color: #1a1a1a !important;
-}
-nav li{
-    display: inline-block;
-    font-size: 20px;
-    font-weight: 200;
-    color: white;
-    margin-right: 10px;
-}
-nav ul{
-    font-family: 'Poppins', sans-serif;
-    text-transform: lowercase;
-}
-#hello{
+  }
+  
+  .navbar-nav .nav-link {
+    text-transform: capitalize;
+  }
+  
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #profilepic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  #greetingDiv {
+    display: block;
+    text-align: center;
+  }
+  
+  #greeting {
+    margin-top: 10px;
+    color: #bdbbbb;
+  }
+  
+  #hello {
     font-weight: bold;
     font-size: 200%;
-}
-#socialsBox{
-    margin-left: auto;
-    margin-right: auto;
-}
-#aboutMeBox{
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 150px;
-}
-.fa {
-    padding: 5px;
-    font-size: 30px;
-    width: 80px;
     text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 10%;
-}
-.fa-x {
-    color: white;
-    background: #808080;
-}
-.fa-x:hover{
-    color: black;
-    background: #1DA1F2 ;
-}
-.fa-facebook {
-    color: white;
-    background: #808080;
-}
-.fa-facebook:hover{
-    color: black;
-    background: #3b5998 ;
-}
-.fa-linkedin {
-    color: white;
-    background: #808080;
-}
-.fa-linkedin:hover{
-    color: black;
-    background: #2867b2 ;
-}
-.fa-instagram {
-    background: #808080;
-    color: white;
-}
-.fa-instagram:hover{
-    color: black;
-    background: #bc2a8d ;
-}
-.fa-github {
-    background: #808080;
-    color: white;
-}
-.fa-github:hover{
-    color: black;
-    background: black ;
-}
-#socials{
-    list-style-type: none;
-}
-#socials li{
-    display: inline;
-    float: left;
-}
-#socials li a{
+  }
+  
+  #socialsBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  #aboutMeBox {
     text-align: center;
-    text-decoration: none;
-}
-#socials li a:hover {
-    color: white;
-    transition: all 0.5s ease;
-}
-#socials li a:hover {
-    transform: translateY(-10px);
-}
-#newAboutMe{
+    margin-top: 30px;
+  }
+  
+  #socials {
     list-style-type: none;
-    padding-top: 30px;
-}
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  #socials li {
+    margin: 0 10px;
+  }
+  
+  #socials li a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #7d7d7d;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  #socials li a:hover {
+    background-color: #e0e0e0;
+    color: black;
+    transform: translateY(-5px);
+  }

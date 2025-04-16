@@ -124,6 +124,7 @@ html, body {
     font-family: 'Share Tech Mono', monospace !important;
     color: #f1f1f1;
     font-size: 125%;
+    font-style: normal;
 }
 
 .project {
@@ -152,5 +153,5 @@ a:hover {
 
 i {
     color: #f1f1f1;
-    font-family: 'Share Tech Mono', monospace !important;
+    font-style: normal;
 }

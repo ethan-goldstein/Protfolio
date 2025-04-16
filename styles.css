@@ -1,6 +1,6 @@
 html, body {
-    background-color: #1a1a1a;
-    color: #c1c5c9;
+    background-color: #1a1a1a !important;
+    color: #c1c5c9 !important;
     margin: 0;
     padding: 0;
     font-family: "DejaVu Sans Mono", monospace;
@@ -26,31 +26,41 @@ html, body {
   .navbar {
     background-color: #000000;
     font-family: 'Poppins', sans-serif;
+    color: #ffffff;
   }
   
-  .navbar-nav .nav-link {
+  nav li {
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  nav ul {
+    font-family: 'Poppins', sans-serif;
     text-transform: capitalize;
   }
   
   #particles-js {
     position: fixed;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: -1;
+  }
+  
+  .main-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
   
   #profilepic {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  #greetingDiv {
-    display: block;
-    text-align: center;
+    border-radius: 100%;
+    border: none;
+    margin: 0 auto;
   }
   
   #greeting {
@@ -60,48 +70,38 @@ html, body {
   
   #hello {
     font-weight: bold;
-    font-size: 200%;
-    text-align: center;
-  }
-  
-  #socialsBox {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  #aboutMeBox {
-    text-align: center;
-    margin-top: 30px;
+    font-size: 2rem;
   }
   
   #socials {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    gap: 15px;
     padding: 0;
-    margin: 20px 0;
-  }
-  
-  #socials li {
-    margin: 0 10px;
+    margin: 0;
   }
   
   #socials li a {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background-color: #7d7d7d;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
     border-radius: 50%;
-    font-size: 24px;
-    transition: all 0.3s ease;
+    background: #7d7d7d;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
   }
   
   #socials li a:hover {
-    background-color: #e0e0e0;
+    background: #e0e0e0;
     color: black;
     transform: translateY(-5px);
+  }
+  
+  #newAboutMe {
+    padding-top: 30px;
   }

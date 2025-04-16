@@ -1,14 +1,29 @@
-// Load particles from JSON
-particlesJS.load('particles-js', 'particles.json', function() {});
-    console.log('particles.js loaded – callback');
-
-  // Typewriter effect
+particlesJS.load("particles-js", "particles.json", function() {
+    console.log("Particles.js config loaded.");
+  });
+  
+  window.onload = function () {
+    let elements = document.getElementsByClassName("typewrite");
+    for (let i = 0; i < elements.length; i++) {
+      let toRotate = elements[i].getAttribute("data-type");
+      let period = elements[i].getAttribute("data-period");
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+  
+    let css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #c1c5c9}";
+    document.body.appendChild(css);
+  };
+  
   let TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
     this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
+    this.txt = "";
     this.tick();
     this.isDeleting = false;
   };
@@ -23,7 +38,7 @@ particlesJS.load('particles-js', 'particles.json', function() {});
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
   
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
   
     let that = this;
     let delta = 200 - Math.random() * 100;
@@ -35,7 +50,7 @@ particlesJS.load('particles-js', 'particles.json', function() {});
     if (!this.isDeleting && this.txt === fullTxt) {
       delta = this.period;
       this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
+    } else if (this.isDeleting && this.txt === "") {
       this.isDeleting = false;
       this.loopNum++;
       delta = 500;
@@ -46,21 +61,3 @@ particlesJS.load('particles-js', 'particles.json', function() {});
     }, delta);
   };
   
-  // Initialize everything on window load
-  window.onload = function () {
-    // Typewriter activation
-    let elements = document.getElementsByClassName('typewrite');
-    for (let i = 0; i < elements.length; i++) {
-      let toRotate = elements[i].getAttribute('data-type');
-      let period = elements[i].getAttribute('data-period');
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-  
-    // Inject CSS for cursor
-    let css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #1a1a1a }";
-    document.body.appendChild(css);
-  };

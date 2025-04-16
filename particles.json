@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 120,
+      "value": 100,
       "density": {
         "enable": true,
         "value_area": 800
@@ -15,51 +15,37 @@
       "stroke": {
         "width": 0,
         "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
       }
     },
     "opacity": {
       "value": 0.5,
       "random": true,
       "anim": {
-        "enable": true,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
+        "enable": false
       }
     },
     "size": {
       "value": 3,
       "random": true,
       "anim": {
-        "enable": false,
-        "speed": 4,
-        "size_min": 0.3,
-        "sync": false
+        "enable": false
       }
     },
     "line_linked": {
       "enable": true,
       "distance": 100,
       "color": "#c1c5c9",
-      "opacity": 0.4,
+      "opacity": 0.2,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 1.5,
       "direction": "none",
       "random": false,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+      "bounce": false
     }
   },
   "interactivity": {
@@ -67,37 +53,21 @@
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "grab"
+        "mode": "repulse"
       },
       "onclick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "resize": true
     },
     "modes": {
-      "grab": {
-        "distance": 150,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 200,
-        "size": 10,
-        "duration": 2,
-        "opacity": 0.8,
-        "speed": 3
-      },
       "repulse": {
-        "distance": 100,
+        "distance": 80,
         "duration": 0.4
       },
       "push": {
         "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
       }
     }
   },

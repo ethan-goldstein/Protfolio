@@ -88,4 +88,4 @@
       }
     };
     "retina_detect"; true
-  }
+  } 

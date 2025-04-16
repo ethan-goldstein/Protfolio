@@ -1,156 +1,104 @@
+/* Base styles update */
 html, body {
-    margin: 1;
-    padding: 1;
+    margin: 0;
+    padding: 0;
     background-color: #000000;
-    color: #c1c5c9;
+    color: #f1f1f1;
     font-family: 'Quicksand', monospace;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-  }
-  
-  @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-  
-  .home-text {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+}
+
+/* Update typewrite style to match desired color */
+.typewrite {
+    font-family: 'Quicksand', monospace;
     color: #f1f1f1;
-  }
-
-  i{
-color: #f1f1f1;
-  }
-  
-  .typewrite {
-    font-family: 'Quicksand', monospace;
-    color: #696969;
     font-size: 125%;
-  }
-  
-  .navbar {
-    background-color: #000000;
-    font-family: 'Quicksand', monospace;
-    color: #c1c5c9;
-  }
-  
-  .navbar-nav .nav-link {
-    text-transform: capitalize;
-  }
+}
 
-  #homeContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    text-align: center;
-  }
-  
-  #profilepic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  #greetingDiv {
-    display: block;
-    text-align: center;
-  }
-  
-  #greeting {
-    margin-top: 10px;
-    color: #bdbbbb;
-  }
-  
-  #hello {
-    font-weight: bold;
-    font-size: 200%;
-    text-align: center;
-  }
-  
-  #socialsBox {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  #aboutMeBox {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  #socials {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 20px 0;
-  }
-  
-  #socials li {
-    margin: 0 10px;
-  }
-  
-  #socials li a {
+/* Social media icons glow effect */
+#socials li a {
     display: inline-block;
     width: 45px;
     height: 45px;
     line-height: 45px;
     text-align: center;
-    background-color: #7d7d7d;
+    background-color: #333;
     color: white;
     border-radius: 50%;
     font-size: 20px;
     transition: all 0.3s ease;
-  }
-  body{
-    background-color: #010304;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  .btn{
-font-family: montserrat;
-font-size: 25px;
-text-transform: uppercase;
-font-weight: 500;
-letter-spacing: 3px;
-color: #fff;
-text-decoration: none;
-padding: 15px 40px;
-border: 2px solid #fff;
-border-radius: 10px;
-background-color: #010304;
-position: relative;
-overflow: hidden;
-margin: 0 30px;
-  }
-  btn:hover{
-    color: #2867b2;
-    border-color: #2867b2;
-    box-shadow: 0 0 20px #2867b2;
-    box-shadow:  0 30px #2867b2;
-    box-shadow:  0 40px #2867b2;
-    box-shadow:  0 70px #2867b2;
-  }
-  .fa-facebook:hover {
+}
+
+.fa-facebook:hover {
     background: #3b5998;
-  }
-  .fa-linkedin:hover {
+    box-shadow: 0 0 15px #3b5998;
+}
+
+.fa-linkedin:hover {
     background: #2867b2;
-  }
-  .fa-instagram:hover {
+    box-shadow: 0 0 15px #2867b2;
+}
+
+.fa-instagram:hover {
     background: #bc2a8d;
-  }
-  .fa-github:hover {
-    background: black;
-  }
-  
-  #newAboutMe {
-    list-style-type: none;
-    padding-top: 30px;
-  }  
+    box-shadow: 0 0 15px #bc2a8d;
+}
+
+.fa-github:hover {
+    background: #333;
+    box-shadow: 0 0 15px #333;
+}
+
+.projects {
+    margin-top: 30px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.project h3 {
+    color: #f1f1f1;
+}
+
+.project a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.project a:hover {
+    color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+.resume-link {
+    color: #f1f1f1;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+    color: #696969;
+    text-shadow: 0 0 10px #f1f1f1;
+}
+
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.jumbotron {
+    background-color: transparent !important;
+}

@@ -45,3 +45,10 @@ window.onload = function () {
   
     setTimeout(function () { that.tick(); }, delta);
   };
+  window.onload = function () {
+    // ... existing code ...
+    let css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #f1f1f1 }"; // Updated cursor color
+    document.body.appendChild(css);
+};

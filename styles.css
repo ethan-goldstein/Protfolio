@@ -97,11 +97,11 @@ html, body {
     border-radius: 50%;
     font-size: 20px;
     transition: all 0.3s ease;
-    font-family: FontAwesome !important;
 }
 
 .fa {
     font-family: FontAwesome !important;
+    display: inline-block;
 }
 
 .fa-facebook:hover {
@@ -148,7 +148,11 @@ html, body {
 a {
     color: #f1f1f1;
     text-decoration: none;
-    font-family: 'Share Tech Mono', monospace !important;
+}
+
+#newAboutMe a {
+    color: #f1f1f1;
+    text-decoration: underline;
 }
 
 a:hover {

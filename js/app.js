@@ -1,15 +1,10 @@
-particlesJS.load('particles-js', 'particles.json', function () {
+// Load particles.json from the root directory
+particlesJS.load('particles-js', 'particles.json', function() {
     console.log('Particles.js config loaded.');
   });
   
-  window.onscroll = function () {
-    const arrow = document.getElementById("arrow");
-    if (arrow) {
-      arrow.style.display = window.scrollY >= 420 ? "none" : "block";
-    }
-  };
-  
-  let TxtType = function (el, toRotate, period) {
+  // Typewriter effect
+  let TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -19,18 +14,22 @@ particlesJS.load('particles-js', 'particles.json', function () {
     this.isDeleting = false;
   };
   
-  TxtType.prototype.tick = function () {
-    const i = this.loopNum % this.toRotate.length;
-    const fullTxt = this.toRotate[i];
+  TxtType.prototype.tick = function() {
+    let i = this.loopNum % this.toRotate.length;
+    let fullTxt = this.toRotate[i];
   
-    this.txt = this.isDeleting
-      ? fullTxt.substring(0, this.txt.length - 1)
-      : fullTxt.substring(0, this.txt.length + 1);
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
   
     this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
   
+    let that = this;
     let delta = 200 - Math.random() * 100;
-    if (this.isDeleting) delta /= 2;
+  
+    if (this.isDeleting) { delta /= 2; }
   
     if (!this.isDeleting && this.txt === fullTxt) {
       delta = this.period;
@@ -41,10 +40,12 @@ particlesJS.load('particles-js', 'particles.json', function () {
       delta = 500;
     }
   
-    setTimeout(() => this.tick(), delta);
+    setTimeout(function() {
+      that.tick();
+    }, delta);
   };
   
-  window.onload = function () {
+  window.onload = function() {
     let elements = document.getElementsByClassName('typewrite');
     for (let i = 0; i < elements.length; i++) {
       let toRotate = elements[i].getAttribute('data-type');
@@ -54,8 +55,9 @@ particlesJS.load('particles-js', 'particles.json', function () {
       }
     }
   
+    // Typewriter CSS injection
     let css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #1a1a1a}";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #1a1a1a }";
     document.body.appendChild(css);
   };

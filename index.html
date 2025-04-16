@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CSCE 190: Ethan Goldstein</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-  <link rel="shortcut icon" href="images/logo.jpeg">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="images/logo.jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <style>
     .navbar-nav .nav-link {
       text-transform: capitalize;
@@ -16,13 +23,23 @@
   </style>
 </head>
 <body>
+  <!-- Particles Background -->
   <div id="particles-js"></div>
 
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
     <a class="navbar-brand" href="#">
-      <img src="images/logo.jpeg" width="30" height="30" alt="">
+      <img src="images/logo.jpeg" width="30" height="30" alt="Logo" />
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -35,15 +52,16 @@
     </div>
   </nav>
 
-  <div class="title jumbotron jumbotron-fluid bg-transparent bgstyle text-light min-vh-100 d-flex justify-content-center align-items-center flex-column m-0">
+  <!-- Homepage Content -->
+  <div class="title jumbotron jumbotron-fluid bg-transparent text-light min-vh-100 d-flex justify-content-center align-items-center flex-column m-0">
     <div class="container text-center" id="homeContainer">
       <div id="me">
-        <img id="profilepic" src="images/ProfilePicture.jpeg">
+        <img id="profilepic" src="images/ProfilePicture.jpeg" />
         <h2 id="hello" class="home-text">Hi, I'm Ethan</h2>
         <div id="greetingDiv">
           <p id="greeting">
-            <a class="home-text typewrite" data-period="2000" data-type='[ "I am driven","I am strategic","I am outgoing","I am results-oriented"]'>
-              <span class="wrap">I am driven</span>
+            <a class="home-text typewrite" data-period="2000" data-type='[ "I am driven","I am strategic","I am outgoing","I am results-oriented" ]'>
+              <span class="wrap"></span>
             </a>
           </p>
         </div>
@@ -57,8 +75,8 @@
         </div>
         <div id="aboutMeBox">
           <p id="newAboutMe" class="home-text">
-            <i>data intern @ oxford government consulting</i><br>
-            <i>computer information systems</i><br>
+            <i>data intern @ oxford government consulting</i><br />
+            <i>computer information systems</i><br />
             <a href="https://github.com/ethan-goldstein/ethan-goldstein.github.io">website code</a>
           </p>
         </div>
@@ -66,10 +84,23 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="js/particles.js"></script>
   <script src="js/app.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
 </body>
 </html>

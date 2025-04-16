@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #333333 !important;
+    background-color: #272727 !important;
     color: #f1f1f1;
     font-family: 'Share Tech Mono', monospace !important;
     width: 100%;
@@ -23,7 +23,7 @@ html, body {
 }
 
 .navbar {
-    background-color: #333333 !important;
+    background-color: #272727 !important;
     padding: 1rem;
 }
 
@@ -120,7 +120,7 @@ html, body {
 }
 
 .fa-github:hover {
-    background: #333;
+    background: #000000;
     box-shadow: 0 0 25px 5px #333;
 }
 
@@ -133,7 +133,7 @@ html, body {
 }
 
 .project {
-    background: #333333;
+    background: #272727;
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;

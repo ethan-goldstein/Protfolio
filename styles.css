@@ -1,25 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 html, body {
     margin: 0;
     padding: 0;
     background-color: #121212 !important;
     color: #f1f1f1;
-    font-family: 'Quicksand', monospace;
+    font-family: "DejaVu Sans Mono", monospace;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
 }
 
 .home-text {
-    font-family: 'Quicksand', monospace;
+    font-family: "DejaVu Sans Mono", monospace;
     font-size: 20px;
     font-weight: 400;
     color: #f1f1f1;
 }
 
 .typewrite {
-    font-family: 'Quicksand', monospace;
+    font-family: "DejaVu Sans Mono", monospace;
     color: #f1f1f1;
     font-size: 125%;
 }
@@ -120,7 +118,7 @@ html, body {
 
 #newAboutMe {
     margin-top: 30px;
-    font-family: 'Quicksand', monospace;
+    font-family: "DejaVu Sans Mono", monospace;
     color: #f1f1f1;
     font-size: 125%;
 }

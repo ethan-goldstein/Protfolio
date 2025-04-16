@@ -105,13 +105,38 @@ color: #f1f1f1;
     font-size: 20px;
     transition: all 0.3s ease;
   }
-  
-  #socials li a:hover {
-    background-color: #e0e0e0;
-    color: black;
-    transform: translateY(-5px);
+  body{
+    background-color: #010304;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
   }
-  
+  .btn{
+font-family: montserrat;
+font-size: 25px;
+text-transform: uppercase;
+font-weight: 500;
+letter-spacing: 3px;
+color: #fff;
+text-decoration: none;
+padding: 15px 40px;
+border: 2px solid #fff;
+border-radius: 10px;
+background-color: #010304;
+position: relative;
+overflow: hidden;
+margin: 0 30px;
+  }
+  btn:hover{
+    color: #2867b2;
+    border-color: #2867b2;
+    box-shadow: 0 0 20px #2867b2;
+    box-shadow:  0 30px #2867b2;
+    box-shadow:  0 40px #2867b2;
+    box-shadow:  0 70px #2867b2;
+  }
   .fa-facebook:hover {
     background: #3b5998;
   }

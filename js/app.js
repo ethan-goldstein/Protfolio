@@ -1,8 +1,4 @@
-particlesJS.load('particles-js', 'particles.json', function () {
-    console.log('particles.js config loaded.');
-  });
-  
-  window.onload = function () {
+window.onload = function () {
     let elements = document.getElementsByClassName('typewrite');
     for (let i = 0; i < elements.length; i++) {
       let toRotate = elements[i].getAttribute('data-type');

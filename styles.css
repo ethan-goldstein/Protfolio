@@ -12,7 +12,7 @@ html, body {
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 .home-text {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', monospace;  /* Changed to match typewriter */
     font-size: 20px;
     font-weight: 400;
     color: #f1f1f1;

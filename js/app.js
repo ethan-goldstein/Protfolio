@@ -45,3 +45,11 @@ TxtType.prototype.tick = function() {
 
     setTimeout(function() { that.tick(); }, delta);
 };
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize skill bars
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        const percent = bar.getAttribute('data-percent');
+        bar.style.width = percent + '%';
+    });
+});

@@ -9,14 +9,29 @@ html, body {
     overflow-x: hidden;
 }
 
-.parallax > use {
-    animation: move-forever 12s linear infinite;
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.pixel-title {
-    display: none;
+.navbar {
+    background-color: #121212 !important;
+    padding: 1rem;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 
+#homeContainer {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+/* Rest of your existing CSS remains the same */
 .home-text {
     font-family: 'Share Tech Mono', monospace !important;
     font-size: 20px;
@@ -28,11 +43,6 @@ html, body {
     font-family: 'Share Tech Mono', monospace !important;
     color: #f1f1f1;
     font-size: 125%;
-}
-
-.navbar {
-    background-color: #121212 !important;
-    padding: 1rem;
 }
 
 .navbar-nav .nav-link {

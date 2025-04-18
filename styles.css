@@ -174,11 +174,11 @@ a {
 }
 
 #spline-container {
-    background: rgba(51, 51, 51, 0.3);
+    background: transparent;
     border-radius: 8px;
     padding: 10px;
     margin-top: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
 }
 
 a:hover {

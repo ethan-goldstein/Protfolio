@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="interactive-spider.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
 </head>
 <body>
     <canvas id="canvas"></canvas>
@@ -63,20 +64,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
     <script src="interactive-spider.js"></script>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
     <div id="spline-container" style="height: 400px; width: 100%;">
         <spline-viewer url="https://my.spline.design/untitled-k06Sda2PNlT6m84ITu30KHCT/" style="height: 100%; width: 100%;"></spline-viewer>
     </div>
     <script>
         // Ensure Spline viewer is properly loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if the spline-viewer component exists
-            setTimeout(function() {
-                const viewer = document.querySelector('spline-viewer');
-                if (viewer) {
-                    console.log('Spline viewer loaded successfully');
-                }
-            }, 1000);
+            // Force reload of the Spline viewer component
+            const container = document.getElementById('spline-container');
+            const viewer = document.querySelector('spline-viewer');
+            if (viewer) {
+                // Try to force a refresh of the viewer
+                const url = viewer.getAttribute('url');
+                viewer.setAttribute('url', '');
+                setTimeout(() => {
+                    viewer.setAttribute('url', url);
+                    console.log('Spline viewer reloaded');
+                }, 100);
+            }
         });
     </script>
 </body>

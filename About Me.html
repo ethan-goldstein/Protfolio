@@ -28,6 +28,7 @@
         </div>
     </nav>
 
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
     <div class="container" style="padding-top: 100px;">
         <h1 class="home-text">About Me</h1>
         <div class="row">
@@ -49,9 +50,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div id="spline-container" style="height: 400px; width: 100%;">
-                    <!-- Replace YOUR-SPLINE-ID-HERE with your actual Spline model URL -->
-                    <spline-viewer url="https://my.spline.design/untitled-k06Sda2PNlT6m84ITu30KHCT/" style="height: 100%; width: 100%;"></spline-viewer>
+                <div id="spline-container" style="height: 400px; width: 100%; position: relative; overflow: hidden;">
+                    <spline-viewer url="https://my.spline.design/untitled-k06Sda2PNlT6m84ITu30KHCT/" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0;"></spline-viewer>
                 </div>
             </div>
         </div>
@@ -60,17 +60,21 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
     <script>
         // Ensure Spline viewer is properly loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if the spline-viewer component exists
-            setTimeout(function() {
-                const viewer = document.querySelector('spline-viewer');
-                if (viewer) {
-                    console.log('Spline viewer loaded successfully');
-                }
-            }, 1000);
+            // Force reload of the Spline viewer component
+            const container = document.getElementById('spline-container');
+            const viewer = document.querySelector('spline-viewer');
+            if (viewer) {
+                // Try to force a refresh of the viewer
+                const url = viewer.getAttribute('url');
+                viewer.setAttribute('url', '');
+                setTimeout(() => {
+                    viewer.setAttribute('url', url);
+                    console.log('Spline viewer reloaded');
+                }, 100);
+            }
         });
     </script>
 </body>

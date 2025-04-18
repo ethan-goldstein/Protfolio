@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-6">
                 <div id="spline-container" style="height: 800px; width: 120%; position: relative; margin-left: -10%;">
-                    <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 1;" loading="lazy"></spline-viewer>
+                    <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 1;" loading="lazy" enable-pan="false" enable-zoom="false"></spline-viewer>
                 </div>
             </div>
         </div>
@@ -81,6 +81,22 @@
                     // Ensure the container doesn't restrict interaction
                     container.style.overflow = 'visible';
                     container.style.zIndex = '1';
+                    
+                    // Add event listener to track cursor movement across the entire page
+                    document.addEventListener('mousemove', function(e) {
+                        // Create a custom event to pass to the Spline viewer
+                        const customEvent = new MouseEvent('mousemove', {
+                            clientX: e.clientX,
+                            clientY: e.clientY,
+                            bubbles: true
+                        });
+                        // Dispatch the event to the viewer
+                        viewer.dispatchEvent(customEvent);
+                    });
+                    
+                    // Disable movement and zoom programmatically
+                    viewer.setAttribute('enable-pan', 'false');
+                    viewer.setAttribute('enable-zoom', 'false');
                 }, 500);
             }
         });

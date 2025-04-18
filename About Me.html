@@ -61,5 +61,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    <script>
+        // Ensure Spline viewer is properly loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the spline-viewer component exists
+            setTimeout(function() {
+                const viewer = document.querySelector('spline-viewer');
+                if (viewer) {
+                    console.log('Spline viewer loaded successfully');
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

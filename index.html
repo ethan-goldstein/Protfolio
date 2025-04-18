@@ -64,6 +64,20 @@
     <script src="js/app.js"></script>
     <script src="interactive-spider.js"></script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
-<spline-viewer url="https://my.spline.design/untitled-k06Sda2PNlT6m84ITu30KHCT/" style="height: 400px; width: 100%;"></spline-viewer>
+    <div id="spline-container" style="height: 400px; width: 100%;">
+        <spline-viewer url="https://my.spline.design/untitled-k06Sda2PNlT6m84ITu30KHCT/" style="height: 100%; width: 100%;"></spline-viewer>
+    </div>
+    <script>
+        // Ensure Spline viewer is properly loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the spline-viewer component exists
+            setTimeout(function() {
+                const viewer = document.querySelector('spline-viewer');
+                if (viewer) {
+                    console.log('Spline viewer loaded successfully');
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

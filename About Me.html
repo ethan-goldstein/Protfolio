@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div id="spline-container" style="height: 800px; width: 120%; position: relative; margin-left: -10%;">
-                    <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 1;" loading="lazy" enable-pan="false" enable-zoom="false"></spline-viewer>
+                <div id="spline-container" style="height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1;">
+                    <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0;" loading="lazy" enable-pan="false" enable-zoom="false"></spline-viewer>
                 </div>
             </div>
         </div>
@@ -61,43 +61,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        // Ensure Spline viewer is properly loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Force reload of the Spline viewer component
-            const container = document.getElementById('spline-container');
             const viewer = document.querySelector('spline-viewer');
             if (viewer) {
-                console.log('Spline viewer found, attempting to initialize');
-                // Try to force a refresh of the viewer
-                const url = viewer.getAttribute('url');
-                viewer.setAttribute('url', '');
-                setTimeout(() => {
-                    viewer.setAttribute('url', url);
-                    console.log('Spline viewer reloaded with URL:', url);
-                    
-                    // Make the viewer responsive to cursor across the entire screen
-                    viewer.style.pointerEvents = 'auto';
-                    
-                    // Ensure the container doesn't restrict interaction
-                    container.style.overflow = 'visible';
-                    container.style.zIndex = '1';
-                    
-                    // Add event listener to track cursor movement across the entire page
-                    document.addEventListener('mousemove', function(e) {
-                        // Create a custom event to pass to the Spline viewer
-                        const customEvent = new MouseEvent('mousemove', {
-                            clientX: e.clientX,
-                            clientY: e.clientY,
-                            bubbles: true
-                        });
-                        // Dispatch the event to the viewer
-                        viewer.dispatchEvent(customEvent);
+                // Add event listener to track cursor movement across the entire page
+                document.addEventListener('mousemove', function(e) {
+                    const customEvent = new MouseEvent('mousemove', {
+                        clientX: e.clientX,
+                        clientY: e.clientY,
+                        bubbles: true
                     });
-                    
-                    // Disable movement and zoom programmatically
-                    viewer.setAttribute('enable-pan', 'false');
-                    viewer.setAttribute('enable-zoom', 'false');
-                }, 500);
+                    viewer.dispatchEvent(customEvent);
+                });
+                
+                // Disable movement and zoom
+                viewer.setAttribute('enable-pan', 'false');
+                viewer.setAttribute('enable-zoom', 'false');
             }
         });
     </script>

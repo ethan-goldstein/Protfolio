@@ -120,7 +120,7 @@ canvas {
     justify-content: center;
     width: 60px;
     height: 60px;
-    background-color: #333;
+    background-color: #ffffff55;
     border-radius: 50%;
     font-size: 24px;
     transition: all 0.3s ease;
@@ -135,25 +135,25 @@ canvas {
 .fa-facebook:hover {
     transform: translateY(-5px);
     color: #4267B2;
-    box-shadow: 0 0 15px #4267B2;
+    box-shadow: 0 0 25px 5px #4267B2;
 }
 
 .fa-linkedin:hover {
     transform: translateY(-5px);
     color: #0077B5;
-    box-shadow: 0 0 15px #0077B5;
+    box-shadow: 0 0 25px 5px #0077B5;
 }
 
 .fa-instagram:hover {
     transform: translateY(-5px);
     color: #E1306C;
-    box-shadow: 0 0 15px #E1306C;
+    box-shadow: 0 0 25px 5px #E1306C;
 }
 
 .fa-github:hover {
     transform: translateY(-5px);
     color: #f1f1f1;
-    box-shadow: 0 0 15px #666;
+    box-shadow: 0 0 25px 5px #666;
 }
 
 #newAboutMe {

@@ -226,7 +226,7 @@ canvas {
 			content: "";
 			position: absolute;
 			inset: 0.15em;
-			background-image: radial-gradient(circle at center, #000 50%, #fff 1px);
+			background-image: radial-gradient(circle at center, #000 50%, #ffffff00 1px);
 			background-size: var(--p2x) var(--p2x);
 			border-radius: var(--brad);
 			mix-blend-mode: color-burn;

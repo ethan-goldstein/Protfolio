@@ -187,32 +187,31 @@ canvas {
 
 .card {
     position: relative;
-    width: 100%;
-    padding: 1rem 2rem;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
     border-radius: var(--brad);
-    background: rgba(142, 36, 170, 0.1);
+    background: rgba(142, 36, 170, 0.05);
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
     z-index: 2;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card__backdrop {
-    --grad: rgba(142, 36, 170, 0.5);
+    --grad: rgba(142, 36, 170, 0.3);
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-            150% var(--gh) at 25% 100%,
-            var(--grad),
-            transparent
-        ),
-        radial-gradient(
-            150% calc(300% - var(--gh) + 25%) at 75% 100%,
+            120% var(--gh) at 50% 50%,
             var(--grad),
             transparent
         );
-    animation: wobble 3s infinite alternate;
+    animation: wobble 5s infinite alternate;
     transition: --gh 1s ease;
     z-index: 0;
+    opacity: 0.8;
 }
 
 .card__backdrop::before {

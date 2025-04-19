@@ -187,10 +187,11 @@ canvas {
 
 .card {
 	position: relative;
-	width: 200px;
+	width: 90%;
+    max-width: 500px;
 	padding: 1rem 2rem;
 	border-radius: var(--brad);
-	background: color-mix(var(--bg), #fff);
+	background: color-mix(var(--bg), #ffffff00);
 	overflow: hidden;
 
 	.card__backdrop {

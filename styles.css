@@ -210,20 +210,20 @@ canvas {
     z-index: 3;
 }
 
-.cyber-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid rgba(0, 255, 255, 0.4);
-    border-radius: 15px;
-    padding: 40px;
-    margin: 80px auto 40px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    min-height: auto;
-    max-width: 1000px;
-    width: 90%;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-}
+    .cyber-card {
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(0, 255, 255, 0.4);
+        border-radius: 15px;
+        padding: 40px;
+        margin: 20px auto 40px; /* ⬅ Reduced top margin from 80px to 20px */
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        min-height: auto;
+        max-width: 1000px;
+        width: 90%;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
 
 .interests-grid {
     display: grid;

@@ -373,15 +373,36 @@ canvas {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tech-tag {
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 255, 255, 0.05);
     color: #00ffff;
-    padding: 5px 10px;
-    border-radius: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
     font-size: 0.9em;
-    border: 1px solid rgba(0, 255, 255, 0.3);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
 }
 
 .project-links {
@@ -405,30 +426,31 @@ canvas {
 }
 
 .card__backdrop {
-    --grad: hsl(140, 100%, 50%);
+    --grad: hsl(195, 100%, 50%);
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(
-            150% var(--gh) at 25% 100%, 
-            var(--grad), 
-            transparent
-        ),
-        radial-gradient(
-            150% calc(300% - var(--gh) + 25%) at 75% 100%, 
-            var(--grad), 
-            transparent
-        );
-    animation: wobble 3s infinite alternate;
-    transition: --gy 1s ease;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 0, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.2);
+    animation: neonGlow 3s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes neonGlow {
+    0% { box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.2); }
+    50% { box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.2) inset; }
+    100% { box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.2); }
 }
 
 .card__backdrop::before {
     content: "";
     position: absolute;
     inset: 0.1rem;
-    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 0, 255, 0.1));
     border-radius: var(--brad);
-    backdrop-filter: blur(100px) contrast(10);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card__backdrop::after {
@@ -448,12 +470,17 @@ canvas {
     text-wrap: balance;
 }
 
-@keyframes wobble {
-    from {
-        --gh: 25%;
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.37);
     }
-
-    to {
+    50% {
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 255, 0.37);
+    }
+    100% {
+        box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.37);
+    }
+}
         --gh: 300%;
     }
 }

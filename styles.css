@@ -179,9 +179,11 @@ canvas {
     margin-bottom: 30px;
     padding: 0 20px;
     position: absolute;
-    top: 100px;
-    right: 20px;
+    top: 200px;
+    right: 50px;
     z-index: 10;
+    flex-wrap: wrap;
+    width: 500px;
 }
 
 .glow-on-hover {

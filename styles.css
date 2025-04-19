@@ -103,9 +103,28 @@ canvas {
 .social-btn:hover {
     color: #f1f1f1;
     text-decoration: none;
-    box-shadow: 0 0 15px rgba(241, 241, 241, 0.5);
     transform: translateY(-3px);
     border-color: #f1f1f1;
+}
+
+.social-btn .fa-facebook:hover {
+    color: #4267B2;
+    box-shadow: 0 0 10px rgba(66, 103, 178, 0.6);
+}
+
+.social-btn .fa-linkedin:hover {
+    color: #0077B5;
+    box-shadow: 0 0 10px rgba(0, 119, 181, 0.6);
+}
+
+.social-btn .fa-instagram:hover {
+    color: #E1306C;
+    box-shadow: 0 0 10px rgba(225, 48, 108, 0.6);
+}
+
+.social-btn .fa-github:hover {
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(241, 241, 241, 0.4);
 }
 
 #hello {

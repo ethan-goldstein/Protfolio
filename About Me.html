@@ -31,42 +31,45 @@
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js" crossorigin="anonymous"></script>
     <div class="container-fluid" style="padding-top: 100px;">
-        <div class="glow-button-container">
-            <a href="resume.html"><button class="glow-on-hover" type="button">RESUME</button></a>
-            <a href="interests.html"><button class="glow-on-hover" type="button">INTERESTS</button></a>
-            <a href="background.html"><button class="glow-on-hover" type="button">BACKGROUND</button></a>
-            <a href="projects.html"><button class="glow-on-hover" type="button">PROJECTS</button></a>
-        </div>
         <div class="row">
-            <div class="col-md-6" style="z-index: 2;">
-                <h1 class="home-text mb-4">About Me</h1>
-                <div class="card" style="--bg: #8e24aa; background: rgba(255, 255, 255, 0.9);">
-                    <div class="card__backdrop"></div>
-                    <div class="card__content">
-                        <p class="home-text" style="color: #000000;">
-                            Hello! Welcome to my personal portfolio. My name is Ethan Goldstein, a current student
-                            studying Computer Information Systems at the University of South Carolina. I am based in Washington, DC
-                            and currently a Cyber Intern with Oxford Government Consulting. I have extreme passion for 
-                            cybersecurity and a strong foundation in communication, leadership, and problem-solving. 
-                            I aim to build a career in the cyber industry where I can combine my technical skills with 
-                            strategic thinking to protect and innovate in digital spaces.
-                        </p>
-                        <div class="social-buttons mt-4">
-                            <a href="https://github.com/ethan-goldstein" class="social-btn"><i class="fa fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/ethangoldstein-" class="social-btn"><i class="fa fa-linkedin"></i></a>
-                            <a href="https://www.instagram.com/ethangoldsteinn/" class="social-btn"><i class="fa fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/ethan.goldstein.547/" class="social-btn"><i class="fa fa-facebook"></i></a>
-                        </div>
-                    </div>
+          <!-- Left Side: Text Content -->
+          <div class="col-lg-6 d-flex flex-column justify-content-center" style="z-index: 2;">
+            <h1 class="home-text mb-4">About Me</h1>
+            <div class="card" style="--bg: #121212; background: #1a1a1a; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+              <div class="card__backdrop"></div>
+              <div class="card__content">
+                <p class="home-text" style="color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+                  Hello! Welcome to my personal portfolio. My name is Ethan Goldstein, a current student
+                  studying Computer Information Systems at the University of South Carolina. I am based in Washington, DC
+                  and currently a Cyber Intern with Oxford Government Consulting. I have extreme passion for 
+                  cybersecurity and a strong foundation in communication, leadership, and problem-solving. 
+                  I aim to build a career in the cyber industry where I can combine my technical skills with 
+                  strategic thinking to protect and innovate in digital spaces.
+                </p>
+                <div class="social-buttons mt-4">
+                  <a href="https://github.com/ethan-goldstein" class="social-btn"><i class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/ethangoldstein-" class="social-btn"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://www.instagram.com/ethangoldsteinn/" class="social-btn"><i class="fa fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/ethan.goldstein.547/" class="social-btn"><i class="fa fa-facebook"></i></a>
                 </div>
+              </div>
             </div>
-            <div class="col-md-6" style="position: relative;">
-                <div id="spline-container" style="position: fixed; top: 0; right: 0; width: 50%; height: 100vh; pointer-events: auto;">
-                    <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="width: 100%; height: 100%;" loading="lazy"></spline-viewer>
-                </div>
+          </div>
+      
+          <!-- Right Side: Buttons + Spline -->
+          <div class="col-lg-6" style="position: relative;">
+            <div class="glow-button-container" style="position: static; margin-bottom: 30px;">
+              <a href="resume.html"><button class="glow-on-hover" type="button">RESUME</button></a>
+              <a href="interests.html"><button class="glow-on-hover" type="button">INTERESTS</button></a>
+              <a href="background.html"><button class="glow-on-hover" type="button">BACKGROUND</button></a>
+              <a href="projects.html"><button class="glow-on-hover" type="button">PROJECTS</button></a>
             </div>
+            <div id="spline-container" style="position: relative; width: 100%; height: 60vh;">
+              <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="width: 100%; height: 100%;" loading="lazy"></spline-viewer>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

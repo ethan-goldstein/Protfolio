@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: 2rem;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(147, 51, 234, 0.4);
+    border: 2px solid rgba(147, 51, 234, 0.2);
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: rgba(30, 27, 44, 0.8);
+    color: #9333ea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    padding-right: 20px;
+}
+
+.description p {
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 5px;
+    font-size: 0.9em;
+}
+
+.description h4 {
+    text-transform: uppercase;
+    color: #9333ea;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('images/winter.jpg');
+}
+.card[for="c2"] {
+    background-image: url('images/tech.jpg');
+}
+.card[for="c3"] {
+    background-image: url('images/global.jpg');
+}
+.card[for="c4"] {
+    background-image: url('images/space.jpg');
+}

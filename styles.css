@@ -186,67 +186,67 @@ canvas {
 }
 
 .card {
-	position: relative;
-	width: 90%;
+    position: relative;
+    width: 90%;
     max-width: 500px;
-	padding: 1rem 2rem;
-	border-radius: var(--brad);
-	background: color-mix(var(--bg), #ffffff00);
-	overflow: hidden;
+    padding: 1rem 2rem;
+    border-radius: var(--brad);
+    background: rgba(0, 0, 0, 0); /* Transparent background */
+    overflow: hidden;
+}
 
-	.card__backdrop {
-		--grad: hsl(from var(--bg) h 20 50);
-		position: absolute;
-		inset: 0;
-		background-image: radial-gradient(
-				150% var(--gh) at 25% 100%,
-				var(--grad),
-				transparent
-			),
-			radial-gradient(
-				150% calc(300% - var(--gh) + 25%) at 75% 100%,
-				var(--grad),
-				transparent
-			);
-		animation: wobble 3s infinite alternate;
-		transition: --gy 1s ease;
+.card__backdrop {
+    --grad: hsl(140, 100%, 50%); /* Futuristic green color */
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        150% var(--gh) at 25% 100%, 
+        var(--grad), 
+        transparent
+    ),
+    radial-gradient(
+        150% calc(300% - var(--gh) + 25%) at 75% 100%, 
+        var(--grad), 
+        transparent
+    );
+    animation: wobble 3s infinite alternate;
+    transition: --gy 1s ease;
+}
 
-		&::before {
-			content: "";
-			position: absolute;
-			inset: 0.1rem;
-			background: rgba(0 0 0 / 0.2);
-			border-radius: var(--brad);
-			backdrop-filter: blur(100px) contrast(10);
-		}
+.card__backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0.1rem;
+    background: rgba(0 0 0 / 0.2); /* Dark transparent background */
+    border-radius: var(--brad);
+    backdrop-filter: blur(100px) contrast(10);
+}
 
-		&::after {
-			--p: 0.12rem;
-			--p2x: calc(var(--p) * 2);
-			content: "";
-			position: absolute;
-			inset: 0.15em;
-			background-image: radial-gradient(circle at center, #000 50%, #ffffff00 1px);
-			background-size: var(--p2x) var(--p2x);
-			border-radius: var(--brad);
-			mix-blend-mode: color-burn;
-		}
-	}
+.card__backdrop::after {
+    --p: 0.12rem;
+    --p2x: calc(var(--p) * 2);
+    content: "";
+    position: absolute;
+    inset: 0.15em;
+    background-image: radial-gradient(circle at center, #000 50%, #ffffff00 1px);
+    background-size: var(--p2x) var(--p2x);
+    border-radius: var(--brad);
+    mix-blend-mode: color-burn;
+}
 
-	.card__content {
-		position: relative;
-		text-wrap: balance;
-	}
+.card__content {
+    position: relative;
+    text-wrap: balance;
 }
 
 @keyframes wobble {
-	from {
-		--gh: 25%;
-	}
+    from {
+        --gh: 25%;
+    }
 
-	to {
-		--gh: 300%;
-	}
+    to {
+        --gh: 300%;
+    }
 }
 
 .glow-button-container {
@@ -401,4 +401,77 @@ a:hover {
 i {
     color: #f1f1f1;
     font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+    #homeContainer {
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    #profilepic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .home-text {
+        font-size: 16px;
+    }
+
+    .typewrite {
+        font-size: 100%;
+    }
+
+    #hello {
+        font-size: 150%;
+    }
+
+    .social-buttons {
+        gap: 15px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #profilepic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .home-text {
+        font-size: 14px;
+    }
+
+    #hello {
+        font-size: 125%;
+    }
+
+    .social-buttons {
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
 }

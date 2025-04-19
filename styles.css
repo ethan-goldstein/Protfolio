@@ -89,34 +89,56 @@ canvas {
     font-family: 'Share Tech Mono', monospace !important;
 }
 
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.cyber-social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-.social-btn {
+.cyber-social-btn {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #1a1a1a;
-    color: #f1f1f1;
-    font-size: 24px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid #2a2a2a;
     position: relative;
-    z-index: 3;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.social-btn:hover {
-    color: #f1f1f1;
-    text-decoration: none;
-    transform: translateY(-3px);
-    border-color: #f1f1f1;
+.cyber-social-btn:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-social-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.cyber-social-btn:hover:before {
+    opacity: 1;
+}
+
+.cyber-social-btn i {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .social-btn .fa-facebook:hover {
@@ -185,16 +207,35 @@ canvas {
     z-index: 3;
 }
 
-.card {
+.cyber-card {
     position: relative;
-    width: 90%;
-    max-width: 500px;
-    padding: 1rem 2rem;
-    border-radius: var(--brad);
-    background: transparent;
+    padding: 2rem;
+    width: 100%;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 15px;
     backdrop-filter: blur(10px);
-    overflow: hidden;
-    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.cyber-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-text {
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    line-height: 1.6;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    margin-bottom: 2rem;
 }
 
 .card__backdrop {

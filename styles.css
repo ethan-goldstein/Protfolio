@@ -254,10 +254,14 @@ canvas {
 
 .glow-button-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 3;
 }
 
@@ -690,8 +694,4 @@ a:hover {
 i {
     color: #f1f1f1;
     font-style: normal;
-}
-.card .home-text {
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }

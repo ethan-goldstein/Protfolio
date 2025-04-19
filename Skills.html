@@ -28,20 +28,68 @@
         </div>
     </nav>
 
-    <div class="container" style="padding-top: 100px;">
-        <h1 class="home-text">Skills</h1>
-        <br><br>
-        <div class="skills">
-            <p class="home-text">
-                Coding Proficiencies: Java, HTML, CSS, Git
-                <br><br>
-                Computer Skills: Microsoft Applications (Word, Excel, Powerpoint) | 
-                Python Amateur | Visual Effects (VFX) | Adobe Lightroom | Graphic Design 
-                | Advanced Masking Expertise | MacOS
-                </a>
-            </p>
+    <div class="skills-container">
+        <h1 class="skills-title">Technical Arsenal</h1>
+        <div class="skills-grid">
+            <div class="skill-card" data-skill="90">
+                <div class="skill-icon"><i class="fa fa-code"></i></div>
+                <h3>Java</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="85">
+                <div class="skill-icon"><i class="fa fa-html5"></i></div>
+                <h3>HTML</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="80">
+                <div class="skill-icon"><i class="fa fa-css3"></i></div>
+                <h3>CSS</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="85">
+                <div class="skill-icon"><i class="fa fa-git"></i></div>
+                <h3>Git</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="70">
+                <div class="skill-icon"><i class="fa fa-python"></i></div>
+                <h3>Python</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="95">
+                <div class="skill-icon"><i class="fa fa-desktop"></i></div>
+                <h3>Microsoft Office</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="85">
+                <div class="skill-icon"><i class="fa fa-film"></i></div>
+                <h3>VFX</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="80">
+                <div class="skill-icon"><i class="fa fa-camera"></i></div>
+                <h3>Adobe Lightroom</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="90">
+                <div class="skill-icon"><i class="fa fa-paint-brush"></i></div>
+                <h3>Graphic Design</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                const progress = card.querySelector('.skill-progress');
+                const skillLevel = card.dataset.skill;
+                setTimeout(() => {
+                    progress.style.width = skillLevel + '%';
+                }, 300);
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

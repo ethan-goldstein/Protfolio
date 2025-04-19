@@ -43,9 +43,11 @@ canvas {
 
 .home-text {
     font-family: 'Share Tech Mono', monospace !important;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     color: #f1f1f1;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .typewrite {
@@ -208,16 +210,15 @@ canvas {
 }
 
 .cyber-card {
-    position: relative;
-    padding: 2rem;
-    width: 100%;
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 255, 255, 0.3);
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    padding: 30px;
     margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease;
+    min-height: 400px;
 }
 
 .cyber-card:hover {
@@ -295,14 +296,14 @@ canvas {
 .glow-button-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 20px auto 30px;
-    padding: 0 20px;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto 40px;
+    padding: 20px;
     position: relative;
     z-index: 10;
-    flex-wrap: wrap;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .glow-on-hover {

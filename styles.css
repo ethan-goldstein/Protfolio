@@ -110,20 +110,21 @@ canvas {
 }
 
 #socialsBox {
-    margin-top: 20px;
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
     text-align: center;
-    position: relative;
     z-index: 2;
-    margin-bottom: 30px;
 }
 
 #socials {
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     padding: 0;
-    margin: 20px 0;
-    gap: 20px;
+    margin: 0;
+    gap: 25px;
 }
 
 #socials li {
@@ -131,17 +132,18 @@ canvas {
 }
 
 #socials li a {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
     color: #f1f1f1;
     border-radius: 50%;
-    font-size: 22px;
-    transition: all 0.3s ease;
+    font-size: 24px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .fa {
@@ -179,22 +181,22 @@ canvas {
 }
 
 .fa-facebook:hover {
-    transform: translateY(-3px);
+    transform: translateX(-8px);
     box-shadow: 0 0 30px rgba(66, 103, 178, 0.8);
 }
 
 .fa-linkedin:hover {
-    transform: translateY(-3px);
+    transform: translateX(-8px);
     box-shadow: 0 0 30px rgba(0, 119, 181, 0.8);
 }
 
 .fa-instagram:hover {
-    transform: translateY(-3px);
+    transform: translateX(-8px);
     box-shadow: 0 0 30px rgba(131, 58, 180, 0.8);
 }
 
 .fa-github:hover {
-    transform: translateY(-3px);
+    transform: translateX(-8px);
     box-shadow: 0 0 30px rgba(36, 41, 46, 0.8);
 }
 

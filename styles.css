@@ -129,7 +129,7 @@ canvas {
 }
 
 .fa {
-    font-family: FontAwesome !important;
+    font-family: "FontAwesome" !important;
     display: inline-block;
     position: relative;
     z-index: 2;

@@ -257,17 +257,13 @@ canvas {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 20px auto 30px;
+    margin: 0 auto;
     padding: 0 20px;
     position: relative;
     z-index: 10;
     flex-wrap: wrap;
     width: 100%;
     max-width: 800px;
-    position: fixed;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .glow-on-hover {
@@ -650,6 +646,7 @@ canvas {
     padding: 10px;
     margin-top: 20px;
     box-shadow: none;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {

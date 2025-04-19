@@ -214,11 +214,36 @@ canvas {
     border: 2px solid rgba(0, 255, 255, 0.3);
     border-radius: 15px;
     padding: 30px;
-    margin-bottom: 30px;
+    margin: 120px auto 30px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    min-height: 400px;
+    min-height: auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.interests-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.interests-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.interests-card img:hover {
+    transform: scale(1.05);
+}
+
+#spline-container.about-me {
+    min-height: 600px;
 }
 
 .cyber-card:hover {

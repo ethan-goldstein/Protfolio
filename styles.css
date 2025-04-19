@@ -11,12 +11,15 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #121212 !important;
-    color: #f1f1f1;
+    background-color: #0a0e17 !important;
+    color: #e4f1ff;
     font-family: 'Share Tech Mono', monospace !important;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(91, 0, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 208, 0.1) 0%, transparent 40%);
 }
 
 canvas {
@@ -211,18 +214,20 @@ canvas {
 }
 
     .cyber-card {
-        background: rgba(0, 0, 0, 0.8);
-        border: 2px solid rgba(0, 255, 255, 0.4);
-        border-radius: 15px;
+        background: rgba(13, 17, 23, 0.8);
+        border: 2px solid rgba(147, 51, 234, 0.4);
+        border-radius: 20px;
         padding: 40px;
-        margin: 20px auto 40px; /* ⬅ Reduced top margin from 80px to 20px */
+        margin: 20px auto 40px;
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
         min-height: auto;
         max-width: 1000px;
         width: 90%;
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(147, 51, 234, 0.2);
+        backdrop-filter: blur(10px);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
     }
 
 .interests-grid {
@@ -713,7 +718,9 @@ canvas {
 .skills-container {
     padding: 120px 20px 40px;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .skills-title {
@@ -734,15 +741,16 @@ canvas {
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(30, 58, 138, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 25px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(147, 51, 234, 0.2);
     position: relative;
     overflow: hidden;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
 }
 
 .skill-card::before {
@@ -882,12 +890,16 @@ canvas {
 }
 
 .timeline-content {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s;
+    background: rgba(17, 24, 39, 0.8);
+    padding: 25px;
+    border-radius: 4px;
+    position: relative;
+    border: 2px solid rgba(139, 92, 246, 0.4);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+    transform: perspective(1000px) rotateX(0deg);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 5% 100%, 0 85%)
 }
 
 .timeline-content:hover {

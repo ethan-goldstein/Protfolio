@@ -191,14 +191,15 @@ canvas {
     max-width: 500px;
     padding: 2rem;
     border-radius: var(--brad);
-    background: rgba(142, 36, 170, 0.15);
+    background: rgba(142, 36, 170, 0.05);
+    backdrop-filter: blur(10px);
     overflow: hidden;
     margin: 2rem auto;
     z-index: 2;
 }
 
 .card__backdrop {
-    --grad: hsl(from var(--bg) h 20 50);
+    --grad: rgba(142, 36, 170, 0.3);
     position: absolute;
     inset: 0;
     background-image: radial-gradient(

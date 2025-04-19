@@ -191,12 +191,12 @@ canvas {
     max-width: 500px;
     padding: 1rem 2rem;
     border-radius: var(--brad);
-    background: rgba(0, 0, 0, 0); /* Transparent background */
+    background: transparent;
     overflow: hidden;
 }
 
 .card__backdrop {
-    --grad: hsl(140, 100%, 50%); /* Futuristic green color */
+    --grad: hsl(140, 100%, 50%);
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
@@ -217,7 +217,7 @@ canvas {
     content: "";
     position: absolute;
     inset: 0.1rem;
-    background: rgba(0 0 0 / 0.2); /* Dark transparent background */
+    background: rgba(0, 0, 0, 0.2); /* Slight dark transparency for backdrop effect */
     border-radius: var(--brad);
     backdrop-filter: blur(100px) contrast(10);
 }
@@ -401,77 +401,4 @@ a:hover {
 i {
     color: #f1f1f1;
     font-style: normal;
-}
-
-@media screen and (max-width: 768px) {
-    #homeContainer {
-        padding: 20px;
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .navbar {
-        padding: 0.5rem;
-    }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    #profilepic {
-        width: 120px;
-        height: 120px;
-    }
-
-    .home-text {
-        font-size: 16px;
-    }
-
-    .typewrite {
-        font-size: 100%;
-    }
-
-    #hello {
-        font-size: 150%;
-    }
-
-    .social-buttons {
-        gap: 15px;
-    }
-
-    .social-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .card {
-        width: 95%;
-        padding: 0.8rem 1.5rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #profilepic {
-        width: 100px;
-        height: 100px;
-    }
-
-    .home-text {
-        font-size: 14px;
-    }
-
-    #hello {
-        font-size: 125%;
-    }
-
-    .social-buttons {
-        gap: 10px;
-    }
-
-    .social-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
 }

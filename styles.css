@@ -175,11 +175,12 @@ canvas {
     justify-content: center;
     width: 60px;
     height: 60px;
-    background-color: #ffffff55;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     font-size: 24px;
     transition: all 0.3s ease;
     position: relative;
+    z-index: 1;
 }
 
 .card {
@@ -187,13 +188,14 @@ canvas {
     width: 100%;
     padding: 1rem 2rem;
     border-radius: var(--brad);
-    background: color-mix(var(--bg), #fff);
+    background: rgba(142, 36, 170, 0.1);
     overflow: hidden;
     margin-bottom: 2rem;
+    z-index: 2;
 }
 
 .card__backdrop {
-    --grad: hsl(from var(--bg) h 20 50);
+    --grad: rgba(142, 36, 170, 0.5);
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
@@ -207,7 +209,8 @@ canvas {
             transparent
         );
     animation: wobble 3s infinite alternate;
-    transition: --gy 1s ease;
+    transition: --gh 1s ease;
+    z-index: 1;
 }
 
 .card__backdrop::before {

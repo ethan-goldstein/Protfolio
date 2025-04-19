@@ -164,25 +164,25 @@ canvas {
 .fa-facebook:hover {
     transform: translateY(-5px);
     color: #4267B2;
-    box-shadow: 0 0 25px 5px #4267B2;
+    box-shadow: 0 0 15px rgba(66, 103, 178, 0.8);
 }
 
 .fa-linkedin:hover {
     transform: translateY(-5px);
     color: #0077B5;
-    box-shadow: 0 0 25px 5px #0077B5;
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.8);
 }
 
 .fa-instagram:hover {
     transform: translateY(-5px);
     color: #E1306C;
-    box-shadow: 0 0 25px 5px #E1306C;
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.8);
 }
 
 .fa-github:hover {
     transform: translateY(-5px);
     color: #f1f1f1;
-    box-shadow: 0 0 25px 5px #666;
+    box-shadow: 0 0 15px rgba(241, 241, 241, 0.5);
 }
 
 #newAboutMe {

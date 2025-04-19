@@ -191,7 +191,7 @@ canvas {
     max-width: 500px;
     padding: 1rem 2rem;
     border-radius: var(--brad);
-    background: transparent;
+    background: color-mix(var(--bg), rgba(255, 255, 255, 0)); /* Transparent white background */
     overflow: hidden;
 }
 
@@ -200,15 +200,15 @@ canvas {
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-        150% var(--gh) at 25% 100%, 
-        var(--grad), 
-        transparent
-    ),
-    radial-gradient(
-        150% calc(300% - var(--gh) + 25%) at 75% 100%, 
-        var(--grad), 
-        transparent
-    );
+            150% var(--gh) at 25% 100%, 
+            var(--grad), 
+            transparent
+        ),
+        radial-gradient(
+            150% calc(300% - var(--gh) + 25%) at 75% 100%, 
+            var(--grad), 
+            transparent
+        );
     animation: wobble 3s infinite alternate;
     transition: --gy 1s ease;
 }
@@ -217,7 +217,7 @@ canvas {
     content: "";
     position: absolute;
     inset: 0.1rem;
-    background: rgba(0, 0, 0, 0.2); /* Slight dark transparency for backdrop effect */
+    background: rgba(0, 0, 0, 0.2);
     border-radius: var(--brad);
     backdrop-filter: blur(100px) contrast(10);
 }
@@ -228,7 +228,7 @@ canvas {
     content: "";
     position: absolute;
     inset: 0.15em;
-    background-image: radial-gradient(circle at center, #000 50%, #ffffff00 1px);
+    background-image: radial-gradient(circle at center, #000 50%, rgba(255, 255, 255, 0) 1px); /* Use transparent white for the "glow" */
     background-size: var(--p2x) var(--p2x);
     border-radius: var(--brad);
     mix-blend-mode: color-burn;

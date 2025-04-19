@@ -80,32 +80,7 @@ canvas {
     font-family: 'Share Tech Mono', monospace !important;
 }
 
-.info-buttons {
-    margin-top: 2rem;
-}
 
-.info-link {
-    color: #f1f1f1;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-.info-link:hover {
-    color: #4CAF50;
-    transform: translateY(-5px);
-    text-decoration: none;
-}
-
-.about-icon:hover i {
-    color: #4CAF50;
-    text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
-}
-
-.info-link p {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-}
 
 #hello {
     font-weight: bold;

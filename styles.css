@@ -254,14 +254,10 @@ canvas {
 
 .glow-button-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 3;
 }
 

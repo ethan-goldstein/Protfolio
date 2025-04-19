@@ -1,11 +1,11 @@
 @property --gh {
-    syntax: "<percentage>";
-    initial-value: 0%;
-    inherits: false;
+	syntax: "<percentage>";
+	initial-value: 0%;
+	inherits: false;
 }
 
 :root {
-    --brad: 0.4rem;
+	--brad: 0.4rem;
 }
 
 html, body {
@@ -19,7 +19,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* --- Canvas --- */
 canvas {
     position: fixed;
     top: 0;
@@ -28,7 +27,6 @@ canvas {
     pointer-events: none;
 }
 
-/* --- Navbar --- */
 .navbar {
     background-color: #121212 !important;
     padding: 1rem;
@@ -37,11 +35,33 @@ canvas {
     width: 100%;
 }
 
-/* --- Home Container --- */
 #homeContainer {
     position: relative;
     z-index: 1;
     background: transparent;
+}
+
+.home-text {
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #000000;
+    text-align: left;
+}
+
+.typewrite {
+    font-family: 'Share Tech Mono', monospace !important;
+    color: #f1f1f1;
+    font-size: 125%;
+}
+
+.navbar-nav .nav-link {
+    color: #f1f1f1 !important;
+    text-transform: capitalize;
+    font-family: 'Share Tech Mono', monospace !important;
+}
+
+#homeContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +71,6 @@ canvas {
     padding-top: 60px;
 }
 
-/* --- Profile Pic --- */
 #profilepic {
     width: 150px;
     height: 150px;
@@ -60,60 +79,202 @@ canvas {
     margin-bottom: 20px;
 }
 
-/* --- Greeting Section --- */
 #greetingDiv {
     display: block;
     text-align: center;
 }
+
 #greeting {
     margin-top: 10px;
     color: #f1f1f1;
     font-family: 'Share Tech Mono', monospace !important;
 }
 
-/* --- Home Text --- */
-.home-text {
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: #000;
-    text-align: left;
-}
-
-/* --- Typewriter Text --- */
-.typewrite {
-    font-size: 125%;
-    color: #f1f1f1;
-}
-
-/* --- Navigation Links --- */
-.navbar-nav .nav-link {
-    color: #f1f1f1 !important;
-    text-transform: capitalize;
-    font-family: 'Share Tech Mono', monospace !important;
-}
-
-/* --- Buttons Container --- */
-.glow-button-container {
+.social-buttons {
     display: flex;
-    justify-content: flex-end; /* ⬅️ This moves your buttons like "Resume" to the right */
+    justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    position: absolute;
-    top: 120px;
-    right: 5vw; /* ⬅️ Adjust for precise position */
-    transform: translateX(0%);
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: #f1f1f1;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #2a2a2a;
+    position: relative;
     z-index: 3;
 }
 
-/* --- Glow Buttons --- */
+.social-btn:hover {
+    color: #f1f1f1;
+    text-decoration: none;
+    transform: translateY(-3px);
+    border-color: #f1f1f1;
+}
+
+.social-btn .fa-facebook:hover {
+    color: #4267B2;
+    box-shadow: 0 0 10px rgba(66, 103, 178, 0.6);
+}
+
+.social-btn .fa-linkedin:hover {
+    color: #0077B5;
+    box-shadow: 0 0 10px rgba(0, 119, 181, 0.6);
+}
+
+.social-btn .fa-instagram:hover {
+    color: #E1306C;
+    box-shadow: 0 0 10px rgba(225, 48, 108, 0.6);
+}
+
+.social-btn .fa-github:hover {
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(241, 241, 241, 0.4);
+}
+
+#hello {
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace !important;
+}
+
+#socialsBox {
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#socials {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    gap: 25px;
+    justify-content: center;
+}
+
+#socials li {
+    margin: 0;
+}
+
+#socials li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.card {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    padding: 1rem 2rem;
+    border-radius: var(--brad);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.card__backdrop {
+    --grad: hsl(140, 100%, 50%);
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+            150% var(--gh) at 25% 100%, 
+            var(--grad), 
+            transparent
+        ),
+        radial-gradient(
+            150% calc(300% - var(--gh) + 25%) at 75% 100%, 
+            var(--grad), 
+            transparent
+        );
+    animation: wobble 3s infinite alternate;
+    transition: --gy 1s ease;
+}
+
+.card__backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0.1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--brad);
+    backdrop-filter: blur(100px) contrast(10);
+}
+
+.card__backdrop::after {
+    --p: 0.12rem;
+    --p2x: calc(var(--p) * 2);
+    content: "";
+    position: absolute;
+    inset: 0.15em;
+    background-image: radial-gradient(circle at center, #000 50%, rgba(255, 255, 255, 0) 1px); /* Use transparent white for the "glow" */
+    background-size: var(--p2x) var(--p2x);
+    border-radius: var(--brad);
+    mix-blend-mode: color-burn;
+}
+
+.card__content {
+    position: relative;
+    text-wrap: balance;
+}
+
+@keyframes wobble {
+    from {
+        --gh: 25%;
+    }
+
+    to {
+        --gh: 300%;
+    }
+}
+
+.glow-button-container {
+    display: flex;
+   justify-content: flex-start;
+   justify-content: flex-end; /* Aligns to the right */
+    gap: 20px;
+    flex-wrap: wrap;
+   position: absolute;
+   top: 120px;
+   left: 50%;
+   transform: translateX(-50%);
+   position: relative; /* Optional: remove absolute positioning */
+   margin-top: 20px;
+   margin-right: 0;
+    z-index: 3;
+}
+
 .glow-on-hover {
     width: 220px;
     height: 50px;
     border: none;
     outline: none;
     color: #fff;
-    background: #1a1a1a;
+    background: #7171715f;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -121,12 +282,13 @@ canvas {
     font-family: 'Share Tech Mono', monospace;
     font-size: 16px;
 }
+
 .glow-on-hover:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
-    left: -2px;
+    left:-2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(8px);
@@ -137,56 +299,402 @@ canvas {
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
 }
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
 .glow-on-hover:hover:before {
     opacity: 1;
 }
+
 .glow-on-hover:after {
+    z-index: -1;
     content: '';
-    background: #111;
     position: absolute;
     width: 100%;
     height: 100%;
+    background: #111;
     left: 0;
     top: 0;
-    z-index: -1;
     border-radius: 10px;
 }
 
-/* --- About Me Section --- */
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.fa {
+    font-family: FontAwesome !important;
+    color: #f1f1f1;
+}
+
+.fa-facebook:hover {
+    transform: translateY(-5px);
+    color: #4267B2;
+    box-shadow: 0 0 15px rgba(66, 103, 178, 0.8);
+}
+
+.fa-linkedin:hover {
+    transform: translateY(-5px);
+    color: #0077B5;
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.8);
+}
+
+.fa-instagram:hover {
+    transform: translateY(-5px);
+    color: #E1306C;
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.8);
+}
+
+.fa-github:hover {
+    transform: translateY(-5px);
+    color: #f1f1f1;
+    box-shadow: 0 0 15px rgba(241, 241, 241, 0.5);
+}
+
 #newAboutMe {
-    margin: 30px auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 500px; /* ⬅️ Control width */
+    margin-top: 30px;
     font-family: 'Share Tech Mono', monospace !important;
     color: #f1f1f1;
-    font-size: 110%; /* ⬅️ Smaller text size */
+    font-size: 125%;
+    font-style: normal;
+}
+
+.project {
+    background: rgba(51, 51, 51, 0.3);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.skills-container {
+    padding: 120px 20px 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.skills-title {
+    text-align: center;
+    color: #00ff88;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #00ff88;
+}
+
+.skill-card h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.skill-bar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff88, #00ffea);
+    width: 0;
+    transition: width 1s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .skill-card {
+        padding: 20px;
+    }
+    
+    .skills-title {
+        font-size: 2rem;
+    }
+}
+
+.timeline-container {
+    padding: 120px 20px 40px;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.timeline-title {
+    text-align: center;
+    color: #00eaff;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #00eaff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #00eaff;
+    border-radius: 50%;
+    top: 15px;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::after {
+    right: -10px;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 234, 255, 0.2);
+}
+
+.timeline-date {
+    color: #00eaff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.timeline-card {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.timeline-link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.timeline-link:hover {
+    color: #fff;
+}
+
+.timeline-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.timeline-card img:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content p {
+    color: #ccc;
+    font-size: 0.9rem;
     line-height: 1.6;
-    background: rgba(255, 255, 255, 0.05); /* subtle background */
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
 }
 
-/* Optional: on hover, make text box slightly brighter */
-#newAboutMe:hover {
-    background: rgba(255, 255, 255, 0.08);
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .right {
+        left: 0;
+    }
+    
+    .left::after, .right::after {
+        left: 21px;
+    }
+    
+    .timeline-title {
+        font-size: 2rem;
+    }
 }
 
-/* --- Responsive Button Tweak --- */
+.project img a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+#newAboutMe a {
+    color: #f1f1f1;
+    text-decoration: underline;
+}
+
+#spline-container {
+    background: transparent;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: none;
+    z-index: 1;
+}
+
 @media (max-width: 768px) {
     .glow-button-container {
-        justify-content: center;
         gap: 10px;
     }
-
+    
     .glow-on-hover {
         width: 160px;
         font-size: 14px;
     }
-
-    #newAboutMe {
-        width: 90%;
-        font-size: 100%;
+    
+    .card {
+        width: 95%;
+        padding: 1rem;
+        margin-bottom: 20px;
     }
+    
+    .home-text {
+        font-size: 16px;
+    }
+    
+    #spline-container {
+        position: relative !important;
+        width: 100% !important;
+        height: 50vh !important;
+        margin-top: 20px;
+    }
+    
+    .social-buttons {
+        gap: 15px;
+    }
+    
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+a:hover {
+    color: #696969;
+    text-decoration: none;
+}
+
+i {
+    color: #f1f1f1;
+    font-style: normal;
 }

@@ -45,9 +45,8 @@ canvas {
     font-family: 'Share Tech Mono', monospace !important;
     font-size: 2.5rem;
     font-weight: 400;
-    color: #00eaff;
-    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
-    text-align: center;
+    color: #000000;
+    text-align: left;
 }
 
 .typewrite {
@@ -255,15 +254,15 @@ canvas {
 
 .glow-button-container {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
+    justify-content: flex-start;
+    gap: 20px;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 800px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
 }
 
 .glow-on-hover {

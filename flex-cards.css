@@ -96,8 +96,8 @@ input {
 }
 
 input:checked + label {
-    width: min(600px, 90vw);
-    height: min(600px, 90vh);
+    width: min(800px, 90vw);
+    height: min(400px, 90vh);
 }
 
 input:checked + label .description {

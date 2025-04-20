@@ -55,12 +55,14 @@ body {
     background: #223;
     color: white;
     border-radius: 50%;
-    width: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px;
-    margin-top: 300px;
+    margin-top: 340px;
+    font-size: 18px;
 }
 
 .card > .row > .description {
@@ -68,14 +70,16 @@ body {
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    margin-top: 300px;
+    margin-top: 340px;
     height: auto;
     width: min(520px, calc(90vw - 80px));
     opacity: 0;
     transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
-    padding: 15px;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .description p {

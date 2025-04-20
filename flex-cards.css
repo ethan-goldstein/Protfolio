@@ -62,7 +62,7 @@
 
 .card > .row > .description {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     overflow: hidden;
     height: auto;
@@ -84,6 +84,8 @@
     font-size: 1em;
     line-height: 1.5;
     margin-bottom: 10px;
+    align-self: flex-end;
+    text-align: right;
 }
 
 .description h4 {
@@ -93,6 +95,7 @@
     font-size: 1.2em;
     margin-bottom: 5px;
     letter-spacing: 1px;
+    align-self: flex-start;
 }
 
 input {

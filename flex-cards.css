@@ -53,6 +53,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 15px;
+    margin-top: 200px;
 }
 
 .card > .row > .description {
@@ -60,6 +61,7 @@ body {
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
+    margin-top: 200px;
     height: 80px;
     width: 520px;
     opacity: 0;

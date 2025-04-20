@@ -795,19 +795,52 @@ canvas {
     box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        padding: 10px;
+@media only screen and (max-width: 600px) {
+    .wrapper-main {
+        width: 95%;
+        padding: 40px 20px;
     }
-    
-    .skill-card {
-        padding: 20px;
+
+    h1 {
+        font-size: 4.8rem;
     }
-    
-    .skills-title {
-        font-size: 2rem;
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    a {
+        font-size: 1.8rem;
+        padding: 8px 16px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+    .wrapper-main {
+        width: 90%;
+        padding: 60px 30px;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    .wrapper-main {
+        width: 85%;
+        padding: 80px 40px;
+    }
+
+    h1 {
+        font-size: 7.5rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .wrapper-main {
+        width: 1000px;
+        padding: 100px 0;
     }
 }
 

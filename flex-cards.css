@@ -30,7 +30,10 @@ body {
 .card {
     width: 80px;
     border-radius: .75rem;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
     cursor: pointer;
     overflow: hidden;
     border-radius: 2rem;
@@ -39,6 +42,7 @@ body {
     align-items: flex-end;
     transition: .6s cubic-bezier(.28,-0.03,0,.99);
     box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    min-height: 400px;
 }
 
 .card > .row {
@@ -89,6 +93,7 @@ input {
 
 input:checked + label {
     width: min(600px, 90vw);
+    height: min(600px, 90vh);
 }
 
 input:checked + label .description {

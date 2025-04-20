@@ -61,8 +61,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 15px;
-    margin-top: 370px;
-    margin-right: 50px;
+    margin-top: 400px;
+    margin-right: 30px;
     font-size: 18px;
 }
 
@@ -71,7 +71,7 @@ body {
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    margin-top: 340px;
+    margin-top: 400px;
     margin-right: 50px;
     height: auto;
     width: min(520px, calc(90vw - 80px));

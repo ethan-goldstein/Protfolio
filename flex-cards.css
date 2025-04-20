@@ -104,7 +104,7 @@ input:checked + label .description {
     background-image: url('images/me_vfx.png');
 }
 .card[for="c2"] {
-    background-image: url('images/gymphoto.webp');
+    background-image: url('images/gymphoto.jpg');
 }
 .card[for="c3"] {
     background-image: url('images/movies.git.jpg');

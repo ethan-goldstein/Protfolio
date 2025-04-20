@@ -11,29 +11,31 @@ body {
 
 .interests-header {
     text-align: center;
-    color: #223;
+    color: #f1f1f1;
     font-size: 2rem;
-    margin: 2rem 0;
+    margin: 4rem 0 2rem;
+    padding-top: 60px;
     text-transform: lowercase;
     font-family: 'Share Tech Mono', monospace;
 }
 
 .wrapper {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 0;
 }
 
 .container {
-    height: 400px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     max-width: 100%;
+    padding-top: 20px;
 }
 
 .card {

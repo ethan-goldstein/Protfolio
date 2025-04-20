@@ -99,13 +99,13 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-    background-image: url('images/winter.jpg');
+    background-image: url('me_vfx.jpg');
 }
 .card[for="c2"] {
-    background-image: url('images/tech.jpg');
+    background-image: url('images/gymphoto.avif');
 }
 .card[for="c3"] {
-    background-image: url('images/global.jpg');
+    background-image: url('images/movies.git.jpg');
 }
 .card[for="c4"] {
     background-image: url('images/space.jpg');

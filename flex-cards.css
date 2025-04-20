@@ -49,6 +49,10 @@ body {
     color: white;
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 .card > .row > .icon {
@@ -60,26 +64,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px;
-    margin-top: 420px;
-    margin-right: 35px;
+    margin: 0;
+    margin-right: 15px;
     font-size: 18px;
 }
 
 .card > .row > .description {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     overflow: hidden;
-    margin-top: 400px;
-    margin-right: 50px;
+    margin: 0;
     height: auto;
     width: min(520px, calc(90vw - 80px));
     opacity: 0;
     transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
-    padding: 15px 20px;
+    padding: 0;
     font-size: 16px;
     line-height: 1.4;
 }

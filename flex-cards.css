@@ -30,7 +30,7 @@ body {
 .card {
     width: 80px;
     border-radius: .75rem;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #000;
@@ -116,4 +116,15 @@ input:checked + label .description {
 }
 .card[for="c4"] {
     background-image: url('images/winter.jpg');
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        min-height: 300px;
+    }
+    
+    input:checked + label {
+        width: 90vw;
+        height: 90vh;
+    }
 }

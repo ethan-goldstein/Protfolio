@@ -122,7 +122,7 @@ input:checked + label .description {
     background-image: url('images/movies.git.jpg');
 }
 .card[for="c4"] {
-    background-image: url('images/fenway.jpeg');
+    background-image: url('images/BCITY.jpg');
 }
 
 @media screen and (max-width: 768px) {

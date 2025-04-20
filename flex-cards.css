@@ -9,6 +9,15 @@ body {
     background-color: #eeeeea;
 }
 
+.interests-header {
+    text-align: center;
+    color: #223;
+    font-size: 2rem;
+    margin: 2rem 0;
+    text-transform: lowercase;
+    font-family: 'Share Tech Mono', monospace;
+}
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
@@ -67,9 +76,10 @@ body {
     margin: 0;
     margin-right: 15px;
     font-size: 18px;
-    line-height: 40px;
+    line-height: 1;
     text-align: center;
     padding: 0;
+    flex-shrink: 0;
 }
 
 .card > .row > .description {

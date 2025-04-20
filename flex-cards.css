@@ -15,20 +15,17 @@
 }
 
 .container {
-    min-height: 400px;
+    height: 400px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 20px;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .card {
-    width: calc(33.33% - 20px);
-    min-width: 280px;
+    width: 100px;
     border-radius: 2rem;
     background-size: cover;
     background-position: center;
@@ -94,8 +91,7 @@ input {
 }
 
 input:checked + label {
-    width: 100%;
-    max-width: 500px;
+    width: 500px;
     background-color: rgba(30, 27, 44, 0.8);
 }
 

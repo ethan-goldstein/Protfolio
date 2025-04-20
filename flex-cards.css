@@ -99,7 +99,7 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-    background-image: url('me_vfx.jpg');
+    background-image: url('images/me_vfx.png');
 }
 .card[for="c2"] {
     background-image: url('images/gymphoto.avif');
@@ -108,5 +108,5 @@ input:checked + label .description {
     background-image: url('images/movies.git.jpg');
 }
 .card[for="c4"] {
-    background-image: url('images/space.jpg');
+    background-image: url('images/winter.jpg');
 }

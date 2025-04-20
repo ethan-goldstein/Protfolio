@@ -25,7 +25,7 @@
 }
 
 .card {
-    width: 80px;
+    width: 100px;
     border-radius: 2rem;
     background-size: cover;
     background-position: center;
@@ -34,9 +34,10 @@
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    transition: all 0.6s cubic-bezier(.28,-0.03,0,.99);
     box-shadow: 0px 10px 30px -5px rgba(147, 51, 234, 0.4);
     border: 2px solid rgba(147, 51, 234, 0.2);
+    background-color: rgba(30, 27, 44, 0.4);
 }
 
 .card > .row {
@@ -90,7 +91,8 @@ input {
 }
 
 input:checked + label {
-    width: 600px;
+    width: 500px;
+    background-color: rgba(30, 27, 44, 0.8);
 }
 
 input:checked + label .description {

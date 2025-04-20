@@ -2,42 +2,40 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #eeeeea;
 }
 
 .wrapper {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
 }
 
 .container {
     height: 400px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    padding: 0 20px;
+    justify-content: start;
 }
 
 .card {
-    width: 140px;
-    border-radius: 2rem;
+    width: 80px;
+    border-radius: .75rem;
     background-size: cover;
-    background-position: center;
     cursor: pointer;
     overflow: hidden;
+    border-radius: 2rem;
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
-    transition: all 0.6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(147, 51, 234, 0.4);
-    border: 2px solid rgba(147, 51, 234, 0.2);
-    background-color: rgba(30, 27, 44, 0.4);
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
 }
 
 .card > .row {
@@ -47,57 +45,36 @@
 }
 
 .card > .row > .icon {
-    background: rgba(30, 27, 44, 0.8);
-    color: #9333ea;
+    background: #223;
+    color: white;
     border-radius: 50%;
     width: 50px;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px;
-    font-size: 1.5em;
-    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
 }
 
 .card > .row > .description {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    height: auto;
-    min-height: 100px;
+    height: 80px;
     width: 520px;
     opacity: 0;
     transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
-    padding: 15px 20px;
-    background: rgba(30, 27, 44, 0);
-    border-radius: 12px;
-    margin: 10px;
 }
 
 .description p {
-    color: rgba(255, 255, 255, 0.95);
-    padding-top: 8px;
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    align-self: flex-start;
-    text-align: left;
+    color: #b0b0ba;
+    padding-top: 5px;
 }
 
 .description h4 {
     text-transform: uppercase;
-    color: #9333ea;
-    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
-    font-size: 1.2em;
-    margin-bottom: 260px;
-    margin-left: 10px;
-    letter-spacing: 1px;
-    align-self: flex-start;
 }
 
 input {
@@ -105,8 +82,7 @@ input {
 }
 
 input:checked + label {
-    width: 500px;
-    background-color: rgba(30, 27, 44, 0);
+    width: 600px;
 }
 
 input:checked + label .description {

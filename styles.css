@@ -317,17 +317,18 @@ canvas {
 }
 
 .timeline-container {
-    padding: 40px;
+    padding: 20px;
     background: linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
+    margin-top: -100px;
 }
 
 .timeline {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .timeline-card {
@@ -337,7 +338,7 @@ canvas {
     padding: 2.5rem;
     position: relative;
     overflow: hidden;
-    transition: all 0.20 ease;
+    transition: all 0.2s ease;
 }
 
 .timeline-card::before {

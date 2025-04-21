@@ -13,15 +13,15 @@ body {
     text-align: center;
     color: #f1f1f1;
     font-size: 2rem;
-    margin: 4rem 0 2rem;
-    padding-top: 60px;
+    margin: 2rem 0 1rem;
+    padding-top: 45px;
     text-transform: lowercase;
     font-family: 'Share Tech Mono', monospace;
 }
 
 .wrapper {
     width: 100%;
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@ body {
     justify-content: center;
     gap: 20px;
     max-width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .card {

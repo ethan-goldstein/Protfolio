@@ -319,7 +319,7 @@ canvas {
 .timeline-container {
     padding: 20px;
     background: linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
-    margin-top: -100px;
+    margin-top: 100px;
 }
 
 .timeline {
@@ -338,7 +338,6 @@ canvas {
     padding: 2.5rem;
     position: relative;
     overflow: hidden;
-    transition: all 0.2s ease;
 }
 
 .timeline-card::before {

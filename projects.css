@@ -14,10 +14,10 @@
 
 .projects-title {
   font-size: 3.5rem;
-  color: var(--neon-magenta);
+  color: #ffffff;
   text-align: center;
   margin-bottom: 3rem;
-  text-shadow: 0 0 15px var(--neon-magenta);
+  text-decoration: none;
   position: relative;
 }
 

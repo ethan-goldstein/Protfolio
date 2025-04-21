@@ -56,10 +56,35 @@ canvas {
     font-size: 125%;
 }
 
+.navbar-nav {
+    margin-left: auto;
+}
+
 .navbar-nav .nav-link {
     color: #f1f1f1 !important;
     text-transform: capitalize;
     font-family: 'Share Tech Mono', monospace !important;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00ff88;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 #homeContainer {

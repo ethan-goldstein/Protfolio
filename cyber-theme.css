@@ -13,6 +13,7 @@ body {
   font-family: 'Share Tech Mono', monospace;
   position: relative;
   overflow-x: hidden;
+  margin: 0;
 }
 
 /* Hexagonal Grid Background */
@@ -37,16 +38,19 @@ body {
 
 /* Glassmorphism Card */
 .cyber-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 2rem;
   margin: 1rem;
-  margin-top: 100px;
   transition: all 0.3s ease;
-  position: relative;
   overflow: hidden;
+  z-index: 10;
 }
 
 .cyber-card::before {

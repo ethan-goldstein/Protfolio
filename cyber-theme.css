@@ -1,0 +1,144 @@
+/* Futuristic Cyberpunk Theme */
+:root {
+  --neon-primary: #00ffff;
+  --neon-secondary: #ff00ff;
+  --neon-accent: #9333ea;
+  --dark-bg: #0a0a0a;
+  --grid-size: 30px;
+}
+
+body {
+  background: var(--dark-bg);
+  color: #fff;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Hexagonal Grid Background */
+.hex-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:
+    linear-gradient(to right, var(--dark-bg) 1px, transparent 1px) 0 0 / var(--grid-size) var(--grid-size),
+    linear-gradient(to bottom, var(--dark-bg) 1px, transparent 1px) 0 0 / var(--grid-size) var(--grid-size);
+  opacity: 0.2;
+  animation: gridPulse 4s infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.3; }
+}
+
+/* Glassmorphism Card */
+.cyber-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--neon-primary) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-card:hover::before {
+  opacity: 0.1;
+}
+
+/* Neon Text Effects */
+.neon-text {
+  color: var(--neon-primary);
+  text-shadow: 0 0 5px var(--neon-primary),
+              0 0 10px var(--neon-primary),
+              0 0 20px var(--neon-primary);
+  animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 5px var(--neon-primary); }
+  to { text-shadow: 0 0 10px var(--neon-primary), 0 0 20px var(--neon-primary); }
+}
+
+/* Animated Border */
+.border-glow {
+  position: relative;
+}
+
+.border-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary), var(--neon-accent));
+  z-index: -1;
+  animation: borderRotate 4s linear infinite;
+  border-radius: inherit;
+}
+
+@keyframes borderRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Content Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax Layers */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Interactive Hover Effects */
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* Navigation Styling */
+.navbar {
+  background: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+  color: var(--neon-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  text-shadow: 0 0 10px var(--neon-primary);
+  transform: translateY(-2px);
+}

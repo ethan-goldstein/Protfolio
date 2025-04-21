@@ -102,9 +102,9 @@ canvas {
 .cyber-social-btn {
     width: 50px;
     height: 50px;
-    border: 2px solid rgba(147, 51, 234, 0.4);
+    border: 2px solid rgba(255, 0, 255, 0.4);
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +122,7 @@ canvas {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    background: linear-gradient(45deg, #000000, #ff00ff);
     z-index: -1;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -130,8 +130,8 @@ canvas {
 
 .cyber-social-btn:hover {
     transform: translateY(-5px) scale(1.05);
-    border-color: rgba(147, 51, 234, 0.8);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+    border-color: rgba(255, 0, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
 }
 
 .cyber-social-btn:hover:before {
@@ -141,7 +141,7 @@ canvas {
 .cyber-social-btn i {
     font-size: 24px;
     color: #fff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
 .social-btn .fa-facebook:hover {
@@ -275,7 +275,7 @@ canvas {
 }
 
 .glowing-text {
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
     animation: glow 2s ease-in-out infinite alternate;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
@@ -540,7 +540,7 @@ canvas {
 }
 
 .card__backdrop {
-    --grad: hsl(140, 100%, 50%);
+    --grad: hsl(300, 100%, 50%);
     position: absolute;
     inset: 0;
     background-image: radial-gradient(

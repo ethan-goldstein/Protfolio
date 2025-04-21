@@ -1,8 +1,8 @@
 /* Futuristic Cyberpunk Theme */
 :root {
-  --neon-primary: #00ffff;
-  --neon-secondary: #ff00ff;
-  --neon-accent: #9333ea;
+  --neon-primary: #ff00ff;
+  --neon-secondary: #000000;
+  --neon-accent: #ff00ff;
   --dark-bg: #0a0a0a;
   --grid-size: 30px;
 }

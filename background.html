@@ -2,109 +2,197 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Background - Ethan Goldstein</title>
     <link rel="shortcut icon" href="images/logo.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cyber-theme.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff00ff;
+        }
+
+        .timeline-container {
+            padding-top: 80px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .timeline::-webkit-scrollbar {
+            display: none;
+        }
+
+        .timeline-card {
+            min-width: 300px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.3), transparent);
+            z-index: -1;
+            animation: borderGlow 2s linear infinite;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+        }
+
+        .date {
+            color: #ff00ff;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .details {
+            list-style: none;
+        }
+
+        .details li {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .details li::before {
+            content: '→';
+            color: #ff00ff;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .timeline-card {
+                min-width: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="hex-grid"></div>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand hover-effect" href="#">
-            <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
-                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
-                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
-                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-            </ul>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="About Me.html">About Me</a>
+            <a href="Skills.html">Skills</a>
+            <a href="CSCE 190.html">CSCE 190</a>
+            <a href="resume.html">Resume</a>
+            <a href="interests.html">Interests</a>
+            <a href="background.html">Background</a>
+            <a href="projects.html">Projects</a>
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center mb-4">
-                <h1 class="neon-text reveal">My Background</h1>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="timeline-card">
+                <div class="date">2020 - Present</div>
+                <h2 class="title">Education</h2>
+                <h3 class="subtitle">University of South Carolina</h3>
+                <p>Computer Information Systems & Management</p>
+                <ul class="details">
+                    <li>Dean's List</li>
+                    <li>Advanced Programming & Web Development</li>
+                    <li>Database Systems & Cybersecurity</li>
+                </ul>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 mb-5">
-                <h2 class="neon-text reveal">Education</h2>
-                <div class="cyber-card border-glow reveal parallax-layer">
-                    <div class="card-body">
-                        <h5 class="card-title neon-text">2020 - Present</h5>
-                        <h6 class="card-subtitle mb-2">University of South Carolina</h6>
-                        <p class="card-text">Computer Information Systems & Management</p>
-                        <ul class="hover-effect">
-                            <li>Dean's List</li>
-                            <li>Advanced Programming & Web Development</li>
-                            <li>Database Systems & Cybersecurity</li>
-                        </ul>
-                    </div>
-                </div>
+
+            <div class="timeline-card">
+                <div class="date">2023 - Present</div>
+                <h2 class="title">Professional Experience</h2>
+                <h3 class="subtitle">Oxford Government Consulting</h3>
+                <p>Cyber Security Intern</p>
+                <ul class="details">
+                    <li>Implementing security protocols and best practices</li>
+                    <li>Conducting vulnerability assessments</li>
+                    <li>Contributing to cybersecurity initiatives</li>
+                </ul>
             </div>
-            
-            <div class="col-12">
-                <h2 class="neon-text reveal">Professional Experience</h2>
-                <div class="cyber-card border-glow reveal parallax-layer">
-                    <div class="card-body">
-                        <h5 class="card-title neon-text">2023 - Present</h5>
-                        <h6 class="card-subtitle mb-2">Oxford Government Consulting</h6>
-                        <p class="card-text">Cyber Security Intern</p>
-                        <ul class="hover-effect">
-                            <li>Implementing security protocols and best practices</li>
-                            <li>Conducting vulnerability assessments</li>
-                            <li>Contributing to cybersecurity initiatives</li>
-                        </ul>
-                    </div>
-                </div>
+
+            <div class="timeline-card">
+                <div class="date">Future</div>
+                <h2 class="title">Goals</h2>
+                <h3 class="subtitle">Career Aspirations</h3>
+                <ul class="details">
+                    <li>Advance in Cybersecurity field</li>
+                    <li>Contribute to innovative security solutions</li>
+                    <li>Lead technology initiatives</li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <script>
-        // Reveal animations on scroll
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                var windowHeight = window.innerHeight;
-                var elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        // Parallax effect
-        function parallax(e) {
-            document.querySelectorAll('.parallax-layer').forEach(layer => {
-                const speed = 5;
-                const x = (window.innerWidth - e.pageX * speed) / 100;
-                const y = (window.innerHeight - e.pageY * speed) / 100;
-                layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
-            });
-        }
-
-        window.addEventListener('scroll', reveal);
-        document.addEventListener('mousemove', parallax);
-        reveal(); // Initial check
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

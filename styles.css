@@ -317,37 +317,41 @@ canvas {
 }
 
 .timeline-container {
-    padding: 80px 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 120px 40px;
+    background: linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
 }
 
 .timeline {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .timeline-card {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    margin: 1rem;
-    margin-top: 200px;
-    background: rgba(20, 20, 20, 0.9);
+    background: rgba(20, 20, 20, 0.95);
     border: 1px solid rgba(255, 0, 255, 0.4);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 2.5rem;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s ease;
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.3), transparent);
+    z-index: -1;
+    animation: borderGlow 2s linear infinite;
+}
+
+.timeline-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255, 0, 255, 0.2);
 }
 
 .timeline-section {

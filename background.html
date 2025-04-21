@@ -49,32 +49,29 @@
         }
 
         .timeline-container {
-            padding-top: 80px;
-            height: 100vh;
+            padding-top: 120px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .timeline {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             padding: 2rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-        }
-
-        .timeline::-webkit-scrollbar {
-            display: none;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .timeline-card {
-            min-width: 300px;
+            width: 100%;
             background: rgba(20, 20, 20, 0.8);
             border: 1px solid rgba(255, 0, 255, 0.3);
             border-radius: 15px;
             padding: 2rem;
-            scroll-snap-align: start;
             position: relative;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -175,7 +172,8 @@
                 <h3 class="subtitle">Thomas S. Wootton HS</h3>
                 <p>High School Diploma</p>
                 <ul class="details">
-                    <li>Academic Excellence, National Honors Society</li>
+                    <li>National Honors Society</li>
+                    <li>Academic Excellence</li>
                     <li>Varsity Baseball Captain</li>
                     <li>Various Clubs</li>
                 </ul>
@@ -214,9 +212,9 @@
                 <h2 class="title">Goals</h2>
                 <h3 class="subtitle">Career Aspirations</h3>
                 <ul class="details">
-                    <li>Advance in Cybersecurity field</li>
-                    <li>Contribute to innovative security solutions</li>
-                    <li>Lead technology initiatives, Shoot For The Stars</li>
+                    <li>Advance in Cybersecurity Field</li>
+                    <li>Contribute to Innovative Security Solutions</li>
+                    <li>Lead Technology Initiatives, Shoot For The Stars</li>
                 </ul>
             </div>
         </div>

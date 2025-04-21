@@ -1018,26 +1018,27 @@ canvas {
 }
 
 @media (max-width: 768px) {
-    .timeline::after {
-        left: 31px;
+    .navbar {
+        padding: 0.5rem 1rem;
     }
-    
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+
+    .navbar-brand img {
+        width: 25px;
+        height: 25px;
     }
-    
-    .right {
-        left: 0;
+
+    .navbar-toggler {
+        padding: 0.25rem;
+        margin-right: 0.5rem;
     }
-    
-    .left::after, .right::after {
-        left: 21px;
+
+    .navbar-nav {
+        text-align: center;
+        padding: 1rem 0;
     }
-    
-    .timeline-title {
-        font-size: 2rem;
+
+    .nav-item {
+        margin: 0.5rem 0;
     }
 }
 

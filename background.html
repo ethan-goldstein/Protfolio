@@ -14,131 +14,104 @@
             background-color: #000;
             color: #fff;
             font-family: 'Share Tech Mono', monospace;
-            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .container {
-            padding-top: 100px;
+            padding-top: 80px;
+            flex: 1;
         }
 
-        .timeline-wrapper {
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: calc(100vh - 150px);
+            padding: 20px;
+        }
+
+        .grid-item {
+            background: linear-gradient(135deg, #1a1a1a, #2d1f4d);
+            border: 1px solid #8a2be2;
+            border-radius: 10px;
+            padding: 20px;
             position: relative;
-            padding: 50px 0;
-        }
-
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, #8a2be2, #8a2be2, transparent);
-            top: 0;
-        }
-
-        .timeline-item {
-            width: 100%;
-            margin-bottom: 70px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
-            margin-right: 70px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 70px;
-            margin-right: auto;
-        }
-
-        .timeline-content {
-            width: calc(50% - 50px);
-            background: rgba(20, 20, 20, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 0 25px rgba(138, 43, 226, 0.2);
-            border: 1px solid rgba(138, 43, 226, 0.3);
+            overflow: hidden;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .timeline-content:hover {
+        .grid-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 35px rgba(138, 43, 226, 0.4);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            border-color: #9b4dff;
         }
 
-        .timeline-dot {
-            width: 20px;
-            height: 20px;
-            background: #8a2be2;
-            border-radius: 50%;
+        .grid-item::before {
+            content: '';
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 15px #8a2be2;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8a2be2, transparent);
         }
 
-        .timeline-date {
+        .date {
             color: #8a2be2;
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
 
-        .timeline-title {
+        .title {
             color: #fff;
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.2em;
+            margin-bottom: 5px;
             text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
         }
 
-        .timeline-subtitle {
+        .subtitle {
             color: #b8b8b8;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
 
-        .timeline-details {
+        .details {
             list-style: none;
             padding: 0;
             margin: 0;
+            font-size: 0.85em;
         }
 
-        .timeline-details li {
+        .details li {
             color: #ddd;
-            margin-bottom: 8px;
-            padding-left: 20px;
+            margin-bottom: 5px;
+            padding-left: 15px;
             position: relative;
         }
 
-        .timeline-details li:before {
-            content: '⟶';
+        .details li:before {
+            content: '→';
             color: #8a2be2;
             position: absolute;
             left: 0;
         }
 
+        .page-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+
         @media (max-width: 768px) {
-            .timeline-line {
-                left: 30px;
-            }
-
-            .timeline-item {
-                flex-direction: column;
-                align-items: flex-start;
-                padding-left: 60px;
-            }
-
-            .timeline-content {
-                width: 100%;
-                margin: 0 !important;
-            }
-
-            .timeline-dot {
-                left: 30px;
+            .grid-container {
+                grid-template-columns: 1fr;
+                height: auto;
             }
         }
     </style>
@@ -162,68 +135,54 @@
     </nav>
 
     <div class="container">
-        <h1 class="text-center mb-5">My Journey</h1>
+        <h1 class="page-title">Background</h1>
         
-        <div class="timeline-wrapper">
-            <div class="timeline-line"></div>
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2019 - 2023</div>
-                    <div class="timeline-title">Thomas S. Wootton HS</div>
-                    <div class="timeline-subtitle">High School Diploma</div>
-                    <ul class="timeline-details">
-                        <li>National Honors Society</li>
-                        <li>Academic Excellence</li>
-                        <li>Varsity Baseball Captain</li>
-                        <li>Various Clubs</li>
-                    </ul>
-                </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="date">2019 - 2023</div>
+                <div class="title">Thomas S. Wootton HS</div>
+                <div class="subtitle">High School Diploma</div>
+                <ul class="details">
+                    <li>National Honors Society</li>
+                    <li>Academic Excellence</li>
+                    <li>Varsity Baseball Captain</li>
+                    <li>Various Clubs</li>
+                </ul>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2023 - Present</div>
-                    <div class="timeline-title">University of South Carolina</div>
-                    <div class="timeline-subtitle">CIS & Info Management</div>
-                    <ul class="timeline-details">
-                        <li>Algorithmic Design II</li>
-                        <li>Business Calculus</li>
-                        <li>Introduction to Computer Security</li>
-                        <li>Introduction to Economics</li>
-                        <li>Principles of Marketing</li>
-                        <li>Computer Information Systems in Business</li>
-                    </ul>
-                </div>
+            <div class="grid-item">
+                <div class="date">2023 - Present</div>
+                <div class="title">University of South Carolina</div>
+                <div class="subtitle">CIS & Info Management</div>
+                <ul class="details">
+                    <li>Algorithmic Design II</li>
+                    <li>Business Calculus</li>
+                    <li>Introduction to Computer Security</li>
+                    <li>Introduction to Economics</li>
+                    <li>Principles of Marketing</li>
+                    <li>Computer Information Systems in Business</li>
+                </ul>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2023 - Present</div>
-                    <div class="timeline-title">Oxford Government Consulting</div>
-                    <div class="timeline-subtitle">Cyber Intern</div>
-                    <ul class="timeline-details">
-                        <li>Network Infrastructure, NIST SP 800-53 and FISMA</li>
-                        <li>Vulnerability Assessments, Potential System Threats</li>
-                        <li>Implementation And Enforcement of Security Protocols</li>
-                    </ul>
-                </div>
+            <div class="grid-item">
+                <div class="date">2023 - Present</div>
+                <div class="title">Oxford Government Consulting</div>
+                <div class="subtitle">Cyber Intern</div>
+                <ul class="details">
+                    <li>Network Infrastructure, NIST SP 800-53 and FISMA</li>
+                    <li>Vulnerability Assessments, Potential System Threats</li>
+                    <li>Implementation And Enforcement of Security Protocols</li>
+                </ul>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Future</div>
-                    <div class="timeline-title">Career Aspirations</div>
-                    <ul class="timeline-details">
-                        <li>Advance in Cybersecurity Field</li>
-                        <li>Contribute to Innovative Security Solutions</li>
-                        <li>Lead Technology Initiatives, Shoot For The Stars</li>
-                    </ul>
-                </div>
+            <div class="grid-item">
+                <div class="date">Future</div>
+                <div class="title">Career Aspirations</div>
+                <ul class="details">
+                    <li>Advance in Cybersecurity Field</li>
+                    <li>Contribute to Innovative Security Solutions</li>
+                    <li>Lead Technology Initiatives, Shoot For The Stars</li>
+                </ul>
             </div>
         </div>
     </div>

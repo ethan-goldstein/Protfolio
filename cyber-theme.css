@@ -133,41 +133,14 @@ body {
 
 /* Navigation Styling */
 .navbar {
-  background: rgba(10, 10, 10, 0.95) !important;
+  background: rgba(10, 10, 10, 0.8) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--neon-primary);
-  box-shadow: 0 2px 15px rgba(0, 255, 255, 0.2);
-  padding: 1rem 2rem;
-  z-index: 1000;
-}
-
-.navbar-nav {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-link {
   color: var(--neon-primary) !important;
-  font-size: 1rem;
-  padding: 0.5rem 1rem !important;
   transition: all 0.3s ease;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 992px) {
-  .navbar-nav {
-    gap: 0.5rem;
-    padding-top: 1rem;
-  }
-  
-  .nav-link {
-    padding: 0.5rem !important;
-    font-size: 0.9rem;
-  }
 }
 
 .nav-link:hover {

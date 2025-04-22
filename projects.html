@@ -9,9 +9,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-card {
+            background: rgba(33, 37, 41, 0.03);
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .tech-stack {
+            margin: 15px 0;
+        }
+
+        .tech-badge {
+            background: #343a40;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .project-links a {
+            text-decoration: none;
+            margin-right: 15px;
+            color: #343a40;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: #007bff;
+        }
+
+        .project-description {
+            color: #6c757d;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: #343a40;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
         </a>
@@ -24,67 +94,71 @@
                 <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
-                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
-                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container" style="margin-top: 100px;">
         <div class="row justify-content-center">
-            <div class="col-12 text-center mb-4">
-                <h1>My Projects</h1>
+            <div class="col-12 text-center">
+                <h1 class="section-title">My Projects</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card">
+        
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200" alt="Personal Website" class="project-image">
                     <div class="card-body">
-                        <h3>Project 1</h3>
-                        <div class="mb-2">
-                            <span class="badge badge-primary mr-1">React</span>
-                            <span class="badge badge-primary">Node.js</span>
+                        <h3>Personal Portfolio Website</h3>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">JavaScript</span>
                         </div>
-                        <p>Description of your first project</p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-dark mr-2"><i class="fa fa-github"></i> Code</a>
-                            <a href="#" class="btn btn-outline-dark"><i class="fa fa-external-link"></i> Demo</a>
+                        <p class="project-description">A responsive personal portfolio website showcasing my skills, projects, and journey in tech. Features modern design, smooth animations, and interactive elements.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/ethan-goldstein/ethan-goldstein.github.io" target="_blank"><i class="fa fa-github fa-lg"></i> View Code</a>
+                            <a href="https://ethan-goldstein.github.io" target="_blank"><i class="fa fa-external-link fa-lg"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200" alt="CSCE 190 Project" class="project-image">
                     <div class="card-body">
-                        <h3>Project 2</h3>
-                        <div class="mb-2">
-                            <span class="badge badge-primary mr-1">Python</span>
-                            <span class="badge badge-primary">Flask</span>
+                        <h3>CSCE 190 Project</h3>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Data Analysis</span>
+                            <span class="tech-badge">UI/UX</span>
                         </div>
-                        <p>Description of your second project</p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-dark mr-2"><i class="fa fa-github"></i> Code</a>
-                            <a href="#" class="btn btn-outline-dark"><i class="fa fa-external-link"></i> Demo</a>
+                        <p class="project-description">A comprehensive project developed for CSCE 190, focusing on solving real-world problems through innovative software solutions.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fa fa-github fa-lg"></i> View Code</a>
+                            <a href="CSCE 190.html"><i class="fa fa-external-link fa-lg"></i> Project Details</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200" alt="Cybersecurity Tool" class="project-image">
                     <div class="card-body">
-                        <h3>Project 3</h3>
-                        <div class="mb-2">
-                            <span class="badge badge-primary mr-1">JavaScript</span>
-                            <span class="badge badge-primary">Three.js</span>
+                        <h3>Cybersecurity Analysis Tool</h3>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Security</span>
+                            <span class="tech-badge">Data Visualization</span>
                         </div>
-                        <p>Description of your third project</p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-dark mr-2"><i class="fa fa-github"></i> Code</a>
-                            <a href="#" class="btn btn-outline-dark"><i class="fa fa-external-link"></i> Demo</a>
+                        <p class="project-description">A tool developed during my cyber internship at Oxford Government Consulting, focusing on security analysis and threat detection.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fa fa-github fa-lg"></i> View Code</a>
+                            <a href="#" target="_blank"><i class="fa fa-external-link fa-lg"></i> Documentation</a>
                         </div>
                     </div>
                 </div>

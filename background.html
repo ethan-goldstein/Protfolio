@@ -6,147 +6,103 @@
     <title>Background - Ethan Goldstein</title>
     <link rel="shortcut icon" href="images/logo.jpeg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            background-color: #000;
+            color: #fff;
             font-family: 'Share Tech Mono', monospace;
         }
 
-        body {
-            background: #0a0a0a;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ff00ff;
-        }
-
-        .timeline-container {
-            padding-top: 0px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            padding: 2rem;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .timeline-card {
-            width: 100%;
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(255, 0, 255, 0.3);
+        .background-card {
+            background: linear-gradient(45deg, #2b1b4b, #4b2b8b);
+            border: 2px solid #8a2be2;
             border-radius: 15px;
-            padding: 2rem;
-            position: relative;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
         }
 
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.3), transparent);
-            z-index: -1;
-            animation: borderGlow 2s linear infinite;
+        .background-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #8a2be2;
+            filter: brightness(0.8) contrast(1.2);
+            transition: all 0.3s ease;
         }
 
-        .timeline-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+        .background-card:hover .background-image {
+            filter: brightness(1) contrast(1.1);
+            transform: scale(1.05);
         }
 
-        .date {
-            color: #ff00ff;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+        .background-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+            border-color: #9b4dff;
         }
 
-        .title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .card-body {
+            padding: 25px;
         }
 
-        .subtitle {
-            color: #888;
-            margin-bottom: 1rem;
+        h1, h2, h3 {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
         }
 
         .details {
             list-style: none;
+            padding: 0;
+            color: #b8b8b8;
+            margin: 15px 0;
         }
 
         .details li {
-            margin-bottom: 0.5rem;
-            color: #ccc;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
         }
 
-        .details li::before {
+        .details li:before {
             content: '→';
-            color: #ff00ff;
-            margin-right: 0.5rem;
+            position: absolute;
+            left: 0;
+            color: #9b4dff;
         }
 
-        @keyframes borderGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        .date {
+            color: #9b4dff;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
-        @media (max-width: 1200px) {
-            .timeline {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem;
-            }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8a2be2, transparent);
+        }
 
-            .timeline {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-card {
-                min-width: 250px;
-            }
+        .container {
+            padding-top: 100px;
         }
     </style>
 </head>
@@ -164,66 +120,83 @@
                 <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
-                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
-                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
             </ul>
         </div>
     </nav>
-    <h1 class="page-header">background</h1>
-    <div class="timeline-container">
-        <div class="timeline">
-            <div class="timeline-card">
-                <div class="date">2019 - 2023</div>
-                <h2 class="title">Education</h2>
-                <h3 class="subtitle">Thomas S. Wootton HS</h3>
-                <p>High School Diploma</p>
-                <ul class="details">
-                    <li>National Honors Society</li>
-                    <li>Academic Excellence</li>
-                    <li>Varsity Baseball Captain</li>
-                    <li>Various Clubs</li>
-                </ul>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h1 class="section-title">My Background</h1>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="background-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="High School" class="background-image">
+                    <div class="card-body">
+                        <div class="date">2019 - 2023</div>
+                        <h3>Thomas S. Wootton HS</h3>
+                        <p>High School Diploma</p>
+                        <ul class="details">
+                            <li>National Honors Society</li>
+                            <li>Academic Excellence</li>
+                            <li>Varsity Baseball Captain</li>
+                            <li>Various Clubs</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">2023 - Present</div>
-                <h2 class="title">Education</h2>
-                <h3 class="subtitle">University of South Carolina</h3>
-                <p>CIS & Info Management</p>
-                <p>Fall 2025 Courses</p>
-                <ul class="details">
-                    <li>Algorithmic Design II</li>
-                    <li>Business Calculus</li>
-                    <li>Introduction to Computer Security</li>
-                    <li>Introduction to Economics</li>
-                    <li>Principles of Marketing</li>
-                    <li>Computer Information Systems in Business</li>
-                </ul>
+            <div class="col-lg-6 mb-4">
+                <div class="background-card">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3" alt="University" class="background-image">
+                    <div class="card-body">
+                        <div class="date">2023 - Present</div>
+                        <h3>University of South Carolina</h3>
+                        <p>CIS & Info Management</p>
+                        <ul class="details">
+                            <li>Algorithmic Design II</li>
+                            <li>Business Calculus</li>
+                            <li>Introduction to Computer Security</li>
+                            <li>Introduction to Economics</li>
+                            <li>Principles of Marketing</li>
+                            <li>Computer Information Systems in Business</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">2023 - Present</div>
-                <h2 class="title">Professional Experience</h2>
-                <h3 class="subtitle">Oxford Government Consulting</h3>
-                <p>Cyber Intern</p>
-                <ul class="details">
-                    <li>Network Infrastructure, NIST SP 800-53 and FISMA</li>
-                    <li>Vulnerability Assessments, Potential System Threats.</li>
-                    <li>Implementation And Enforcement of Security Protocols</li>
-                </ul>
+            <div class="col-lg-6 mb-4">
+                <div class="background-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3" alt="Cyber Internship" class="background-image">
+                    <div class="card-body">
+                        <div class="date">2023 - Present</div>
+                        <h3>Oxford Government Consulting</h3>
+                        <p>Cyber Intern</p>
+                        <ul class="details">
+                            <li>Network Infrastructure, NIST SP 800-53 and FISMA</li>
+                            <li>Vulnerability Assessments, Potential System Threats</li>
+                            <li>Implementation And Enforcement of Security Protocols</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">Future</div>
-                <h2 class="title">Goals</h2>
-                <h3 class="subtitle">Career Aspirations</h3>
-                <ul class="details">
-                    <li>Advance in Cybersecurity Field</li>
-                    <li>Contribute to Innovative Security Solutions</li>
-                    <li>Lead Technology Initiatives, Shoot For The Stars</li>
-                </ul>
+            <div class="col-lg-6 mb-4">
+                <div class="background-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3" alt="Future Goals" class="background-image">
+                    <div class="card-body">
+                        <div class="date">Future</div>
+                        <h3>Career Aspirations</h3>
+                        <ul class="details">
+                            <li>Advance in Cybersecurity Field</li>
+                            <li>Contribute to Innovative Security Solutions</li>
+                            <li>Lead Technology Initiatives, Shoot For The Stars</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -6,208 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Ethan Goldstein</title>
     <link rel="shortcut icon" href="images/logo.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cyberpunk.css">
     <style>
-        :root {
-            --primary: #0a0a0a;
-            --secondary: #00eaff;
-            --accent: #ff00ff;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(17, 24, 39, 0.8);
-            --text: #f1f1f1;
-            --neon-blue: #00eaff;
-            --neon-pink: #ff00ff;
-            --neon-purple: #9333ea;
-        }
-        
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            color: var(--text);
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: 'Share Tech Mono', monospace;
         }
         
-        .page-header {
-            text-align: center;
-            padding: 120px 20px 40px;
+        .navbar {
+            background-color: rgba(10, 10, 18, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--neon-blue);
+        }
+        
+        .projects-header {
             position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
         }
         
-        .page-title {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .page-title::after {
+        .projects-header::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
         }
         
         .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 5rem;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--neon-blue);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-            backdrop-filter: blur(10px);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: calc(var(--i) * 0.1s);
-            clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
-        }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 234, 255, 0.2);
-            border-color: var(--neon-pink);
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(0, 234, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-            z-index: 1;
-        }
-        
-        @keyframes shine {
-            0% { transform: rotate(45deg) translateX(-100%); }
-            100% { transform: rotate(45deg) translateX(100%); }
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid rgba(0, 234, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover .project-image {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-        
-        .project-content {
-            padding: 20px;
             position: relative;
             z-index: 2;
-        }
-        
-        .project-title {
-            color: var(--neon-blue);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            text-shadow: 0 0 5px rgba(0, 234, 255, 0.5);
-        }
-        
-        .project-description {
-            color: var(--text);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .tech-badge {
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--neon-blue);
-            border: 1px solid var(--neon-blue);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-            text-shadow: 0 0 5px rgba(0, 234, 255, 0.3);
-        }
-        
-        .tech-badge:hover {
-            background: rgba(0, 234, 255, 0.1);
-            color: var(--neon-pink);
-            border-color: var(--neon-pink);
-            transform: translateY(-2px);
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .project-link {
-            display: inline-block;
-            padding: 8px 15px;
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--neon-blue);
-            border: 1px solid var(--neon-blue);
-            border-radius: 5px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            text-shadow: 0 0 5px rgba(0, 234, 255, 0.3);
-        }
-        
-        .project-link:hover {
-            background: rgba(0, 234, 255, 0.1);
-            color: var(--neon-pink);
-            border-color: var(--neon-pink);
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-        
-        .project-link i {
-            margin-right: 5px;
         }
         
         .scanlines {
@@ -226,19 +61,9 @@
             pointer-events: none;
             opacity: 0.15;
         }
-        
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .page-title {
-                font-size: 2.5rem;
-            }
-        }
     </style>
 </head>
-<body>
+<body class="cyberpunk-bg">
     <div class="scanlines"></div>
     
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
@@ -257,991 +82,84 @@
                 <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                 <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
                 <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
-                <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="page-header">
-        <h1 class="page-title">My Projects</h1>
+    <div class="container mt-5 pt-5 projects-container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-5">
+                <h1 class="neon-text glitch projects-header" data-text="MY PROJECTS">MY PROJECTS</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="cyber-project-card">
+                    <h3 class="neon-text-blue">Project 1</h3>
+                    <div class="mb-3">
+                        <span class="cyber-badge">React</span>
+                        <span class="cyber-badge">Node.js</span>
+                    </div>
+                    <p>Description of your first project with futuristic cyberpunk technology integration.</p>
+                    <div class="mt-4">
+                        <a href="#" class="cyber-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="cyber-btn"><i class="fa fa-external-link"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="cyber-project-card">
+                    <h3 class="neon-text-green">Project 2</h3>
+                    <div class="mb-3">
+                        <span class="cyber-badge">Python</span>
+                        <span class="cyber-badge">Flask</span>
+                    </div>
+                    <p>Description of your second project with advanced neural network capabilities.</p>
+                    <div class="mt-4">
+                        <a href="#" class="cyber-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="cyber-btn"><i class="fa fa-external-link"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="cyber-project-card">
+                    <h3 class="neon-text">Project 3</h3>
+                    <div class="mb-3">
+                        <span class="cyber-badge">JavaScript</span>
+                        <span class="cyber-badge">Three.js</span>
+                    </div>
+                    <p>Description of your third project featuring immersive virtual reality experiences.</p>
+                    <div class="mt-4">
+                        <a href="#" class="cyber-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="cyber-btn"><i class="fa fa-external-link"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="projects-container">
-        <div class="projects-grid">
-            <div class="project-card" style="--i:1">
-                <img src="https://via.placeholder.com/350x200" alt="Project 1" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project One</h3>
-                    <p class="project-description">A comprehensive web application built with modern technologies that solves real-world problems.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">MongoDB</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:2">
-                <img src="https://via.placeholder.com/350x200" alt="Project 2" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Two</h3>
-                    <p class="project-description">An innovative mobile application that leverages machine learning to provide personalized experiences.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Flutter</span>
-                        <span class="tech-badge">Firebase</span>
-                        <span class="tech-badge">TensorFlow</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:3">
-                <img src="https://via.placeholder.com/350x200" alt="Project 3" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Three</h3>
-                    <p class="project-description">A cybersecurity tool that helps identify and mitigate potential vulnerabilities in network systems.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">AWS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
-                        <span class="tech-badge">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" style="--i:4">
-                <img src="https://via.placeholder.com/350x200" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Project Four</h3>
-                    <p class="project-description">A data visualization dashboard that transforms complex datasets into intuitive and interactive graphics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">Vue.js</span>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // Add some cyberpunk effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Random glitch effect on hover
+            const cards = document.querySelectorAll('.cyber-project-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (Math.random() > 0.7) {
+                        this.style.transform = `translateY(-5px) translateX(${Math.random() * 4 - 2}px)`;
+                        setTimeout(() => {
+                            this.style.transform = 'translateY(-5px)';
+                        }, 100);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

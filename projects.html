@@ -17,6 +17,12 @@
             font-family: 'Share Tech Mono', monospace;
         }
         
+        .navbar {
+            background-color: rgba(10, 10, 18, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #00eaff;
+        }
+        
         .projects-header {
             position: relative;
             margin-bottom: 3rem;
@@ -24,20 +30,6 @@
             color: #fff;
             text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
         }
-        
-        /* Comment out or remove this entire block to remove the blue underline */
-        /*
-        .projects-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff00ff, #00eaff);
-        }
-        */
         
         .projects-container {
             position: relative;
@@ -158,15 +150,15 @@
 
             <div class="col-md-4 mb-4">
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-placeholder.jpg" alt="Project Image">
+                    <h3>Project 3</h3>
+                    <div class="mb-3">
+                        <span class="project-badge">JavaScript</span>
+                        <span class="project-badge">Three.js</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Project Title</h3>
-                        <p>Project description goes here...</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">View Project</a>
-                        </div>
+                    <p>Description of your third project featuring immersive virtual reality experiences.</p>
+                    <div class="mt-4">
+                        <a href="#" class="project-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="project-btn"><i class="fa fa-external-link"></i> Demo</a>
                     </div>
                 </div>
             </div>
@@ -178,22 +170,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-.project-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.project-image img:hover {
-    transform: scale(1.05);
-}

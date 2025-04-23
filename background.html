@@ -8,149 +8,158 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cyberpunk.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Share Tech Mono', monospace;
-        }
-
         body {
-            background: #0a0a0a;
+            background-color: var(--dark-bg);
             color: #fff;
+            font-family: 'Share Tech Mono', monospace;
             overflow-x: hidden;
         }
-
+        
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(10, 10, 18, 0.8);
             backdrop-filter: blur(10px);
             padding: 1rem;
             z-index: 1000;
+            border-bottom: 1px solid var(--neon-blue);
         }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        
+        .page-header {
+            color: #ffffff;
+            text-align: center;
+            margin: 100px 0 40px;
+            font-size: 2.5rem;
+            text-transform: lowercase;
+            position: relative;
         }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ff00ff;
-        }
-
+        
         .timeline-container {
-            padding-top: 0px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding-top: 20px;
+            position: relative;
+            z-index: 2;
         }
-
+        
         .timeline {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            padding: 2rem;
-            width: 100%;
-            max-width: 1400px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .timeline-card {
-            width: 100%;
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(255, 0, 255, 0.3);
-            border-radius: 15px;
             padding: 2rem;
+        }
+        
+        .timeline-card {
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--neon-blue);
+            border-radius: 8px;
+            padding: 1.5rem;
+            min-width: 300px;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
         }
-
+        
         .timeline-card::before {
             content: '';
             position: absolute;
-            inset: -1px;
-            background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.3), transparent);
-            z-index: -1;
-            animation: borderGlow 2s linear infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink), var(--neon-blue));
+            z-index: 2;
         }
-
+        
         .timeline-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
         }
-
+        
         .date {
-            color: #ff00ff;
+            color: var(--neon-blue);
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 1px solid var(--neon-blue);
         }
-
+        
         .title {
+            color: #fff;
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-
+        
         .subtitle {
-            color: #888;
+            color: var(--neon-pink);
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
-
+        
         .details {
+            padding-left: 1.5rem;
             list-style: none;
         }
-
+        
         .details li {
             margin-bottom: 0.5rem;
             color: #ccc;
+            position: relative;
         }
-
+        
         .details li::before {
             content: '→';
-            color: #ff00ff;
+            color: var(--neon-pink);
             margin-right: 0.5rem;
+            position: absolute;
+            left: -1.5rem;
         }
-
-        @keyframes borderGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(0, 0, 0, 0.02) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 999;
+            pointer-events: none;
+            opacity: 0.15;
         }
-
+        
         @media (max-width: 1200px) {
             .timeline {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
+        
         @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem;
-            }
-
             .timeline {
                 grid-template-columns: 1fr;
             }
-
+            
             .timeline-card {
                 min-width: 250px;
             }
         }
     </style>
 </head>
-<body>
+<body class="cyberpunk-bg">
+    <div class="scanlines"></div>
+    
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
@@ -171,9 +180,12 @@
             </ul>
         </div>
     </nav>
-    <h1 class="page-header">background</h1>
+    
+    <h1 class="page-header neon-text glitch" data-text="background">background</h1>
+    
     <div class="timeline-container">
         <div class="timeline">
+            <!-- Keep the existing timeline cards but with cyberpunk styling -->
             <div class="timeline-card">
                 <div class="date">2019 - 2023</div>
                 <h2 class="title">Education</h2>
@@ -191,53 +203,202 @@
                 <div class="date">2023 - Present</div>
                 <h2 class="title">Education</h2>
                 <h3 class="subtitle">University of South Carolina</h3>
-                <p>CIS & Info Management</p>
-                <p>Fall 2025 Courses</p>
+                <p>Bachelor of Science in Computer Information Systems</p>
                 <ul class="details">
-                    <li>Algorithmic Design II</li>
-                    <li>Business Calculus</li>
-                    <li>Introduction to Computer Security</li>
-                    <li>Introduction to Economics</li>
-                    <li>Principles of Marketing</li>
-                    <li>Computer Information Systems in Business</li>
+                    <li>Minor in Cyber Intelligence</li>
+                    <li>Dean's List</li>
+                    <li>Relevant Coursework</li>
+                    <li>Expected Graduation: 2027</li>
                 </ul>
             </div>
 
             <div class="timeline-card">
                 <div class="date">2023 - Present</div>
-                <h2 class="title">Professional Experience</h2>
+                <h2 class="title">Work Experience</h2>
                 <h3 class="subtitle">Oxford Government Consulting</h3>
                 <p>Cyber Intern</p>
                 <ul class="details">
-                    <li>Network Infrastructure, NIST SP 800-53 and FISMA</li>
-                    <li>Vulnerability Assessments, Potential System Threats.</li>
-                    <li>Implementation And Enforcement of Security Protocols</li>
+                    <li>Assist with Cybersecurity Operations</li>
+                    <li>Conduct Security Assessments</li>
+                    <li>Develop Security Documentation</li>
+                    <li>Support Incident Response</li>
+                </ul>
+            </div>
+
+            <div class="timeline-card">
+                <div class="date">2022 - 2023</div>
+                <h2 class="title">Work Experience</h2>
+                <h3 class="subtitle">Previous Role</h3>
+                <p>Position Title</p>
+                <ul class="details">
+                    <li>Key Responsibility 1</li>
+                    <li>Key Responsibility 2</li>
+                    <li>Key Achievement</li>
+                    <li>Skills Developed</li>
                 </ul>
             </div>
 
             <div class="timeline-card">
                 <div class="date">Future</div>
-                <h2 class="title">Goals</h2>
-                <h3 class="subtitle">Career Aspirations</h3>
+                <h2 class="title">Career Goals</h2>
+                <h3 class="subtitle">Cybersecurity Professional</h3>
+                <p>Strategic Vision</p>
                 <ul class="details">
-                    <li>Advance in Cybersecurity Field</li>
+                    <li>Become a Cybersecurity Expert</li>
+                    <li>Obtain Industry Certifications</li>
                     <li>Contribute to Innovative Security Solutions</li>
                     <li>Lead Technology Initiatives, Shoot For The Stars</li>
                 </ul>
             </div>
         </div>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // Add some cyberpunk effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Random glitch effect on hover
+            const cards = document.querySelectorAll('.timeline-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    // Random chance to trigger glitch effect
+                    if (Math.random() > 0.5) {
+                        this.classList.add('glitch-effect');
+                        setTimeout(() => {
+                            this.classList.remove('glitch-effect');
+                        }, 1000);
+                    }
+                });
+                
+                // Staggered animation on scroll
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('appear');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                observer.observe(card);
+            });
+            
+            // Add neon flicker effect to title
+            const title = document.querySelector('.page-header');
+            setInterval(() => {
+                if (Math.random() > 0.95) {
+                    title.style.opacity = 0.7;
+                    setTimeout(() => {
+                        title.style.opacity = 1;
+                    }, 100);
+                }
+            }, 500);
+        });
+    </script>
+    
+    <style>
+        /* Additional styles for the JavaScript effects */
+        .timeline-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .timeline-card.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glitch-effect {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both;
+        }
+        
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-5px, 5px);
+            }
+            40% {
+                transform: translate(-5px, -5px);
+            }
+            60% {
+                transform: translate(5px, 5px);
+            }
+            80% {
+                transform: translate(5px, -5px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+        
+        .neon-text {
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #0073e6,
+                0 0 20px #0073e6,
+                0 0 25px #0073e6,
+                0 0 30px #0073e6,
+                0 0 35px #0073e6;
+            transition: text-shadow 0.2s ease;
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .glitch::before {
+            color: #0ff;
+            z-index: -1;
+            animation: glitch-effect 3s infinite;
+        }
+        
+        .glitch::after {
+            color: #f0f;
+            z-index: -2;
+            animation: glitch-effect 2s infinite;
+        }
+        
+        @keyframes glitch-effect {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-3px, 3px);
+            }
+            40% {
+                transform: translate(-3px, -3px);
+            }
+            60% {
+                transform: translate(3px, 3px);
+            }
+            80% {
+                transform: translate(3px, -3px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
 </body>
 </html>
-<style>
-    .page-header {
-        color: #ffffff;
-        text-align: center;
-        margin: 100px 0 40px;
-        font-size: 2.5rem;
-        text-transform: lowercase;
-    }
-</style>
+    

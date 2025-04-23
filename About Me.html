@@ -70,20 +70,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewer = document.querySelector('spline-viewer');
-            if (viewer) {
-                document.addEventListener('mousemove', function(e) {
-                    const customEvent = new MouseEvent('mousemove', {
-                        clientX: e.clientX,
-                        clientY: e.clientY,
-                        bubbles: true
-                    });
-                    viewer.dispatchEvent(customEvent);
-                });
-            }
-        });
-    </script>
+    <script src="common-animations.js"></script>
 </body>
 </html>

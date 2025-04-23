@@ -7,160 +7,235 @@
     <link rel="shortcut icon" href="images/logo.jpeg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cyberpunk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: var(--dark-bg);
-            color: #fff;
-            font-family: 'Share Tech Mono', monospace;
-            overflow-x: hidden;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333333;
+            --shadow: rgba(0, 0, 0, 0.1);
         }
         
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 18, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            z-index: 1000;
-            border-bottom: 1px solid var(--neon-blue);
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 15px var(--shadow);
+            padding: 0.8rem 1rem;
+        }
+        
+        .navbar-brand img {
+            border-radius: 50%;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary) !important;
         }
         
         .page-header {
-            color: #ffffff;
             text-align: center;
-            margin: 100px 0 40px;
-            font-size: 2.5rem;
-            text-transform: lowercase;
+            margin: 2rem 0 4rem;
             position: relative;
+        }
+        
+        .page-header h1 {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 1rem auto;
         }
         
         .timeline-container {
-            padding-top: 20px;
-            position: relative;
-            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
         
         .timeline {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .timeline-card {
-            background: rgba(10, 10, 18, 0.7);
-            border: 1px solid var(--neon-blue);
-            border-radius: 8px;
-            padding: 1.5rem;
-            min-width: 300px;
             position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            padding: 2rem 0;
         }
         
-        .timeline-card::before {
+        .timeline::before {
             content: '';
             position: absolute;
+            left: 50%;
             top: 0;
-            left: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--light);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
             width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink), var(--neon-blue));
-            z-index: 2;
         }
         
-        .timeline-card:hover {
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            padding-right: 3rem;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 15px 35px var(--shadow);
         }
         
-        .date {
-            color: var(--neon-blue);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+        }
+        
+        .timeline-date {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: rgba(0, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            background: var(--secondary);
+            color: white;
             border-radius: 20px;
-            border: 1px solid var(--neon-blue);
-        }
-        
-        .title {
-            color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        
-        .subtitle {
-            color: var(--neon-pink);
-            font-size: 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
             margin-bottom: 1rem;
         }
         
-        .details {
-            padding-left: 1.5rem;
-            list-style: none;
-        }
-        
-        .details li {
+        .timeline-title {
+            color: var(--primary);
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: #ccc;
+            font-weight: 600;
+        }
+        
+        .timeline-subtitle {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .timeline-details {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-details {
+            padding-right: 0;
+        }
+        
+        .timeline-details li {
+            margin-bottom: 0.5rem;
             position: relative;
+            padding-left: 1.5rem;
         }
         
-        .details li::before {
-            content: '→';
-            color: var(--neon-pink);
-            margin-right: 0.5rem;
+        .timeline-item:nth-child(even) .timeline-details li {
+            padding-left: 0;
+            padding-right: 1.5rem;
+        }
+        
+        .timeline-details li::before {
+            content: '•';
+            color: var(--secondary);
             position: absolute;
-            left: -1.5rem;
-        }
-        
-        .scanlines {
-            position: fixed;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(255, 255, 255, 0) 50%,
-                rgba(0, 0, 0, 0.02) 50%
-            );
-            background-size: 100% 4px;
-            z-index: 999;
-            pointer-events: none;
-            opacity: 0.15;
+            font-weight: bold;
         }
         
-        @media (max-width: 1200px) {
-            .timeline {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .timeline-item:nth-child(even) .timeline-details li::before {
+            left: auto;
+            right: 0;
         }
         
-        @media (max-width: 768px) {
-            .timeline {
-                grid-template-columns: 1fr;
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 30px;
             }
             
-            .timeline-card {
-                min-width: 250px;
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                padding-left: 1.5rem !important;
+                text-align: left !important;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-right: 0;
+                padding-right: 1.5rem;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-details {
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-details li {
+                padding-left: 1.5rem;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-details li::before {
+                left: 0;
+                right: auto;
             }
         }
     </style>
 </head>
-<body class="cyberpunk-bg">
-    <div class="scanlines"></div>
-    
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
         </a>
@@ -181,74 +256,91 @@
         </div>
     </nav>
     
-    <h1 class="page-header neon-text glitch" data-text="background">background</h1>
+    <div class="page-header">
+        <h1>My Background</h1>
+        <p>Education and Professional Experience</p>
+    </div>
     
     <div class="timeline-container">
         <div class="timeline">
-            <!-- Keep the existing timeline cards but with cyberpunk styling -->
-            <div class="timeline-card">
-                <div class="date">2019 - 2023</div>
-                <h2 class="title">Education</h2>
-                <h3 class="subtitle">Thomas S. Wootton HS</h3>
-                <p>High School Diploma</p>
-                <ul class="details">
-                    <li>National Honors Society</li>
-                    <li>Academic Excellence</li>
-                    <li>Varsity Baseball Captain</li>
-                    <li>Various Clubs</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2019 - 2023</span>
+                    <h2 class="timeline-title">Education</h2>
+                    <h3 class="timeline-subtitle">Thomas S. Wootton HS</h3>
+                    <p>High School Diploma</p>
+                    <ul class="timeline-details">
+                        <li>National Honors Society</li>
+                        <li>Academic Excellence</li>
+                        <li>Varsity Baseball Captain</li>
+                        <li>Various Clubs</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">2023 - Present</div>
-                <h2 class="title">Education</h2>
-                <h3 class="subtitle">University of South Carolina</h3>
-                <p>Bachelor of Science in Computer Information Systems</p>
-                <ul class="details">
-                    <li>Minor in Cyber Intelligence</li>
-                    <li>Dean's List</li>
-                    <li>Relevant Coursework</li>
-                    <li>Expected Graduation: 2027</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - Present</span>
+                    <h2 class="timeline-title">Education</h2>
+                    <h3 class="timeline-subtitle">University of South Carolina</h3>
+                    <p>Bachelor of Science in Computer Information Systems</p>
+                    <ul class="timeline-details">
+                        <li>Minor in Cyber Intelligence</li>
+                        <li>Dean's List</li>
+                        <li>Relevant Coursework</li>
+                        <li>Expected Graduation: 2027</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">2023 - Present</div>
-                <h2 class="title">Work Experience</h2>
-                <h3 class="subtitle">Oxford Government Consulting</h3>
-                <p>Cyber Intern</p>
-                <ul class="details">
-                    <li>Assist with Cybersecurity Operations</li>
-                    <li>Conduct Security Assessments</li>
-                    <li>Develop Security Documentation</li>
-                    <li>Support Incident Response</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - Present</span>
+                    <h2 class="timeline-title">Work Experience</h2>
+                    <h3 class="timeline-subtitle">Oxford Government Consulting</h3>
+                    <p>Cyber Intern</p>
+                    <ul class="timeline-details">
+                        <li>Assist with Cybersecurity Operations</li>
+                        <li>Conduct Security Assessments</li>
+                        <li>Develop Security Documentation</li>
+                        <li>Support Incident Response</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">2022 - 2023</div>
-                <h2 class="title">Work Experience</h2>
-                <h3 class="subtitle">Previous Role</h3>
-                <p>Position Title</p>
-                <ul class="details">
-                    <li>Key Responsibility 1</li>
-                    <li>Key Responsibility 2</li>
-                    <li>Key Achievement</li>
-                    <li>Skills Developed</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2022 - 2023</span>
+                    <h2 class="timeline-title">Work Experience</h2>
+                    <h3 class="timeline-subtitle">Previous Role</h3>
+                    <p>Position Title</p>
+                    <ul class="timeline-details">
+                        <li>Key Responsibility 1</li>
+                        <li>Key Responsibility 2</li>
+                        <li>Key Achievement</li>
+                        <li>Skills Developed</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-card">
-                <div class="date">Future</div>
-                <h2 class="title">Career Goals</h2>
-                <h3 class="subtitle">Cybersecurity Professional</h3>
-                <p>Strategic Vision</p>
-                <ul class="details">
-                    <li>Become a Cybersecurity Expert</li>
-                    <li>Obtain Industry Certifications</li>
-                    <li>Contribute to Innovative Security Solutions</li>
-                    <li>Lead Technology Initiatives, Shoot For The Stars</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Future</span>
+                    <h2 class="timeline-title">Career Goals</h2>
+                    <h3 class="timeline-subtitle">Cybersecurity Professional</h3>
+                    <p>Strategic Vision</p>
+                    <ul class="timeline-details">
+                        <li>Become a Cybersecurity Expert</li>
+                        <li>Obtain Industry Certifications</li>
+                        <li>Contribute to Innovative Security Solutions</li>
+                        <li>Lead Technology Initiatives</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -257,148 +349,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        // Add some cyberpunk effects
+        // Animate timeline items on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            // Random glitch effect on hover
-            const cards = document.querySelectorAll('.timeline-card');
+            const timelineItems = document.querySelectorAll('.timeline-item');
             
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    // Random chance to trigger glitch effect
-                    if (Math.random() > 0.5) {
-                        this.classList.add('glitch-effect');
-                        setTimeout(() => {
-                            this.classList.remove('glitch-effect');
-                        }, 1000);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
                     }
                 });
-                
-                // Staggered animation on scroll
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('appear');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1
-                });
-                
-                observer.observe(card);
+            }, {
+                threshold: 0.2
             });
             
-            // Add neon flicker effect to title
-            const title = document.querySelector('.page-header');
-            setInterval(() => {
-                if (Math.random() > 0.95) {
-                    title.style.opacity = 0.7;
-                    setTimeout(() => {
-                        title.style.opacity = 1;
-                    }, 100);
-                }
-            }, 500);
+            timelineItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
         });
     </script>
-    
-    <style>
-        /* Additional styles for the JavaScript effects */
-        .timeline-card {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .timeline-card.appear {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .glitch-effect {
-            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both;
-        }
-        
-        @keyframes glitch {
-            0% {
-                transform: translate(0);
-            }
-            20% {
-                transform: translate(-5px, 5px);
-            }
-            40% {
-                transform: translate(-5px, -5px);
-            }
-            60% {
-                transform: translate(5px, 5px);
-            }
-            80% {
-                transform: translate(5px, -5px);
-            }
-            100% {
-                transform: translate(0);
-            }
-        }
-        
-        .neon-text {
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px #fff,
-                0 0 15px #0073e6,
-                0 0 20px #0073e6,
-                0 0 25px #0073e6,
-                0 0 30px #0073e6,
-                0 0 35px #0073e6;
-            transition: text-shadow 0.2s ease;
-        }
-        
-        .glitch {
-            position: relative;
-        }
-        
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.8;
-        }
-        
-        .glitch::before {
-            color: #0ff;
-            z-index: -1;
-            animation: glitch-effect 3s infinite;
-        }
-        
-        .glitch::after {
-            color: #f0f;
-            z-index: -2;
-            animation: glitch-effect 2s infinite;
-        }
-        
-        @keyframes glitch-effect {
-            0% {
-                transform: translate(0);
-            }
-            20% {
-                transform: translate(-3px, 3px);
-            }
-            40% {
-                transform: translate(-3px, -3px);
-            }
-            60% {
-                transform: translate(3px, 3px);
-            }
-            80% {
-                transform: translate(3px, -3px);
-            }
-            100% {
-                transform: translate(0);
-            }
-        }
-    </style>
 </body>
 </html>
     

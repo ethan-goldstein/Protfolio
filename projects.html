@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/background.css">
     <style>
         body {
-            background: linear-gradient(135deg, #0d0221 0%, #1a0b2e 50%, #0d0221 100%);
             color: #fff;
             font-family: 'Share Tech Mono', monospace;
         }
@@ -21,6 +20,7 @@
         .projects-header {
             position: relative;
             margin-bottom: 3rem;
+
             padding-bottom: 1rem;
             color: #fff;
             text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
@@ -97,7 +97,16 @@
         }
     </style>
 </head>
-<body>
+<body class="common-background">
+    <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="glow"></div>
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+    </div>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
@@ -121,7 +130,7 @@
 
     <div class="container mt-5 pt-5 projects-container">
         <div class="row justify-content-center">
-            <div class="col-12 text-center mb-5">
+            <div class="col-12 text-center mb-5" style="padding-top: 40px;">
                 <h1 class="projects-header">MY PROJECTS</h1>
                 <p class="text-center text-light">A collection of my recent work and ongoing projects</p>
             </div>
@@ -129,6 +138,9 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project-placeholder.jpg" alt="Project 1">
+                    </div>
                     <h3>Project 1</h3>
                     <div class="mb-3">
                         <span class="project-badge">React</span>
@@ -144,6 +156,9 @@
 
             <div class="col-md-4 mb-4">
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project-placeholder.jpg" alt="Project 2">
+                    </div>
                     <h3>Project 2</h3>
                     <div class="mb-3">
                         <span class="project-badge">Python</span>
@@ -160,14 +175,17 @@
             <div class="col-md-4 mb-4">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-placeholder.jpg" alt="Project Image">
+                        <img src="images/project-placeholder.jpg" alt="Project 3">
                     </div>
-                    <div class="project-content">
-                        <h3>Project Title</h3>
-                        <p>Project description goes here...</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">View Project</a>
-                        </div>
+                    <h3>Project 3</h3>
+                    <div class="mb-3">
+                        <span class="project-badge">JavaScript</span>
+                        <span class="project-badge">Three.js</span>
+                    </div>
+                    <p>Description of your third project with immersive 3D visualization.</p>
+                    <div class="mt-4">
+                        <a href="#" class="project-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="project-btn"><i class="fa fa-external-link"></i> Demo</a>
                     </div>
                 </div>
             </div>
@@ -181,22 +199,3 @@
     <script src="js/background.js"></script>
 </body>
 </html>
-
-.project-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.project-image img:hover {
-    transform: scale(1.05);
-}

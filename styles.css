@@ -38,6 +38,7 @@ body::before {
 .common-background {
     background: linear-gradient(135deg, #0d0221 0%, #1a0b2e 50%, #0d0221 100%);
     position: relative;
+    min-height: 100vh;
 }
 
 .common-background::before {

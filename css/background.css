@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #050505;
+    background-color: #050505 !important;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -99,6 +99,12 @@ body {
     height: 100%;
     z-index: -1;
     pointer-events: none;
+}
+
+.container-fluid {
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
 }
 
 .particle {

@@ -6,24 +6,58 @@
     <title>Background - Ethan Goldstein</title>
     <link rel="shortcut icon" href="images/logo.jpeg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cyberpunk.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #f1f1f1;
-            --shadow: rgba(0, 0, 0, 0.1);
+        body {
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: 'Share Tech Mono', monospace;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background-color: rgba(10, 10, 18, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--neon-blue);
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 2rem 0 4rem;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-weight: 600;
+            color: var(--neon-blue);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.7);
+        }
+        
+        .page-header p {
+            color: var(--neon-pink);
+        }
+        
+        .page-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            margin: 1rem auto;
         }
         
         .timeline-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
         }
         
         .timeline {
@@ -38,8 +72,9 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--light);
+            background: var(--neon-blue);
             transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0, 234, 255, 0.7);
         }
         
         .timeline-item {
@@ -48,90 +83,82 @@
             width: 100%;
         }
         
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
-            padding-left: 3rem;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: auto;
-            padding-right: 3rem;
-            text-align: right;
-        }
-        
         .timeline-content {
             width: 45%;
             background: rgba(30, 27, 44, 0.4);
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 25px var(--shadow);
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0, 234, 255, 0.3);
             backdrop-filter: blur(10px);
-            margin-top: -10px; /* Adjust vertical alignment with dots */
         }
         
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: auto;
             padding-left: 3rem;
-            margin-right: 30px; /* Reduce gap between content and center line */
+            margin-right: 60px;
         }
         
         .timeline-item:nth-child(even) .timeline-content {
             margin-right: auto;
             padding-right: 3rem;
             text-align: right;
-            margin-left: 30px; /* Reduce gap between content and center line */
+            margin-left: 60px;
         }
         
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 234, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 234, 255, 0.5);
+            border-color: var(--neon-blue);
         }
         
         .timeline-dot {
             position: absolute;
             width: 20px;
             height: 20px;
-            background: var(--secondary);
+            background: var(--neon-blue);
             border-radius: 50%;
-            top: 20px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            border: 4px solid rgba(30, 27, 44, 0.4);
-            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+            border: 4px solid rgba(30, 27, 44, 0.8);
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.7);
         }
         
         .timeline-date {
             display: inline-block;
             padding: 0.4rem 1rem;
-            background: var(--secondary);
+            background: var(--neon-blue);
             color: white;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
             margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
         }
         
         .timeline-title {
-            color: var(--text);
+            color: var(--neon-blue);
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 234, 255, 0.5);
         }
         
         .timeline-subtitle {
-            color: var(--accent);
+            color: var(--neon-pink);
             font-size: 1.1rem;
             margin-bottom: 1rem;
             font-weight: 500;
+            text-shadow: 0 0 5px rgba(255, 0, 153, 0.5);
         }
         
         .timeline-details {
             list-style-type: none;
             padding-left: 0;
-            color: var(--text);
+            color: #fff;
         }
         
         .timeline-item:nth-child(even) .timeline-details {
@@ -151,7 +178,7 @@
         
         .timeline-details li::before {
             content: '•';
-            color: var(--secondary);
+            color: var(--neon-blue);
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -162,6 +189,23 @@
             right: 0;
         }
         
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(0, 0, 0, 0.02) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 999;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+        
         @media (max-width: 992px) {
             .timeline::before {
                 left: 30px;
@@ -169,6 +213,7 @@
             
             .timeline-dot {
                 left: 30px;
+                top: 30px;
             }
             
             .timeline-content {
@@ -176,6 +221,7 @@
                 margin-left: 80px !important;
                 padding-left: 1.5rem !important;
                 text-align: left !important;
+                margin-right: 0 !important;
             }
             
             .timeline-item:nth-child(even) .timeline-content {
@@ -199,7 +245,9 @@
         }
     </style>
 </head>
-<body>
+<body class="cyberpunk-bg">
+    <div class="scanlines"></div>
+    
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
@@ -222,40 +270,25 @@
     </nav>
     
     <div class="page-header">
-        <h1>My Background</h1>
+        <h1 class="neon-text glitch" data-text="MY BACKGROUND">MY BACKGROUND</h1>
         <p>Education and Professional Experience</p>
     </div>
     
     <div class="timeline-container">
         <div class="timeline">
+            <!-- Keep your existing timeline items here -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">2019 - 2023</span>
-                    <h2 class="timeline-title">Education</h2>
-                    <h3 class="timeline-subtitle">Thomas S. Wootton HS</h3>
-                    <p>High School Diploma</p>
-                    <ul class="timeline-details">
-                        <li>National Honors Society</li>
-                        <li>Academic Excellence</li>
-                        <li>Varsity Baseball Captain</li>
-                        <li>Various Clubs</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">2023 - Present</span>
+                    <span class="timeline-date">2021 - Present</span>
                     <h2 class="timeline-title">Education</h2>
                     <h3 class="timeline-subtitle">University of South Carolina</h3>
-                    <p>Bachelor of Science in Computer Information Systems</p>
+                    <p>Bachelor of Science in Computer Science</p>
                     <ul class="timeline-details">
-                        <li>Minor in Cyber Intelligence</li>
-                        <li>Dean's List</li>
-                        <li>Relevant Coursework</li>
-                        <li>Expected Graduation: 2027</li>
+                        <li>GPA: 3.8/4.0</li>
+                        <li>Relevant Coursework: Data Structures, Algorithms, Web Development</li>
+                        <li>Minor in Cybersecurity</li>
+                        <li>Expected Graduation: May 2025</li>
                     </ul>
                 </div>
             </div>
@@ -295,46 +328,54 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">Future</span>
-                    <h2 class="timeline-title">Career Goals</h2>
-                    <h3 class="timeline-subtitle">Cybersecurity Professional</h3>
-                    <p>Strategic Vision</p>
+                    <span class="timeline-date">2020 - 2021</span>
+                    <h2 class="timeline-title">Education</h2>
+                    <h3 class="timeline-subtitle">High School</h3>
+                    <p>High School Diploma</p>
                     <ul class="timeline-details">
-                        <li>Become a Cybersecurity Expert</li>
-                        <li>Obtain Industry Certifications</li>
-                        <li>Contribute to Innovative Security Solutions</li>
-                        <li>Lead Technology Initiatives</li>
+                        <li>GPA: 4.0/4.0</li>
+                        <li>Advanced Placement Courses</li>
+                        <li>Computer Science Club President</li>
+                        <li>Robotics Team Member</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2019 - 2020</span>
+                    <h2 class="timeline-title">Volunteer Experience</h2>
+                    <h3 class="timeline-subtitle">Community Tech Support</h3>
+                    <p>Volunteer Technical Assistant</p>
+                    <ul class="timeline-details">
+                        <li>Provided technical support to community members</li>
+                        <li>Organized computer literacy workshops</li>
+                        <li>Assisted with hardware repairs and software installations</li>
+                        <li>Developed educational materials for seniors</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        // Animate timeline items on scroll
+        // Add some cyberpunk effects
         document.addEventListener('DOMContentLoaded', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
+            // Random glitch effect on hover
+            const timelineItems = document.querySelectorAll('.timeline-content');
+            timelineItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    if (Math.random() > 0.7) {
+                        this.style.transform = `translateY(-5px) translateX(${Math.random() * 4 - 2}px)`;
+                        setTimeout(() => {
+                            this.style.transform = 'translateY(-5px)';
+                        }, 100);
                     }
                 });
-            }, {
-                threshold: 0.2
-            });
-            
-            timelineItems.forEach(item => {
-                item.style.opacity = 0;
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(item);
             });
         });
     </script>

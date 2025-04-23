@@ -783,7 +783,7 @@ canvas {
     text-align: center;
     color: #00ff88;
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 

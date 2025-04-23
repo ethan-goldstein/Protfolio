@@ -34,6 +34,26 @@ body::before {
     z-index: -1;
 }
 
+/* Common background for all pages except home */
+.common-background {
+    background: linear-gradient(135deg, #0d0221 0%, #1a0b2e 50%, #0d0221 100%);
+    position: relative;
+}
+
+.common-background::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(33, 16, 74, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33, 16, 74, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+
 canvas {
     position: fixed;
     top: 0;

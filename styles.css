@@ -779,14 +779,6 @@ canvas {
     border-radius: 8px;
 }
 
-.skills-container {
-    padding: 120px 20px 40px;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
-    position: relative;
-    overflow: hidden;
-}
-
 .skills-title {
     text-align: center;
     color: #00ff88;

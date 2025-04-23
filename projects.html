@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cyberpunk.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: var(--dark-bg);
+            background: linear-gradient(135deg, #0d0221 0%, #1a0b2e 50%, #0d0221 100%);
             color: #fff;
             font-family: 'Share Tech Mono', monospace;
         }
@@ -20,13 +20,15 @@
         .navbar {
             background-color: rgba(10, 10, 18, 0.8) !important;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--neon-blue);
+            border-bottom: 1px solid #00eaff;
         }
         
         .projects-header {
             position: relative;
             margin-bottom: 3rem;
             padding-bottom: 1rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
         }
         
         .projects-header::after {
@@ -37,18 +39,67 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            background: linear-gradient(90deg, #ff00ff, #00eaff);
         }
         
         .projects-container {
             position: relative;
             z-index: 2;
+            padding-bottom: 50px;
+        }
+        
+        .project-card {
+            background: rgba(13, 2, 33, 0.7);
+            border: 1px solid #00eaff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+        }
+        
+        .project-card h3 {
+            color: #00eaff;
+            margin-bottom: 15px;
+        }
+        
+        .project-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.3);
+            color: #00eaff;
+            border: 1px solid #00eaff;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .project-btn {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            border: 1px solid #00eaff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .project-btn:hover {
+            background: rgba(0, 234, 255, 0.2);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
         }
     </style>
 </head>
-<body class="cyberpunk-bg">
-    <div class="scanlines"></div>
-    
+<body>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
@@ -73,51 +124,52 @@
     <div class="container mt-5 pt-5 projects-container">
         <div class="row justify-content-center">
             <div class="col-12 text-center mb-5">
-                <h1 class="neon-text glitch projects-header" data-text="MY PROJECTS">MY PROJECTS</h1>
+                <h1 class="projects-header">MY PROJECTS</h1>
+                <p class="text-center text-light">A collection of my recent work and ongoing projects</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="cyber-project-card">
-                    <h3 class="neon-text-blue">Project 1</h3>
+                <div class="project-card">
+                    <h3>Project 1</h3>
                     <div class="mb-3">
-                        <span class="cyber-badge">React</span>
-                        <span class="cyber-badge">Node.js</span>
+                        <span class="project-badge">React</span>
+                        <span class="project-badge">Node.js</span>
                     </div>
                     <p>Description of your first project with futuristic cyberpunk technology integration.</p>
                     <div class="mt-4">
-                        <a href="#" class="cyber-btn"><i class="fa fa-github"></i> Code</a>
-                        <a href="#" class="cyber-btn"><i class="fa fa-external-link"></i> Demo</a>
+                        <a href="#" class="project-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="project-btn"><i class="fa fa-external-link"></i> Demo</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="cyber-project-card">
-                    <h3 class="neon-text-green">Project 2</h3>
+                <div class="project-card">
+                    <h3>Project 2</h3>
                     <div class="mb-3">
-                        <span class="cyber-badge">Python</span>
-                        <span class="cyber-badge">Flask</span>
+                        <span class="project-badge">Python</span>
+                        <span class="project-badge">Flask</span>
                     </div>
                     <p>Description of your second project with advanced neural network capabilities.</p>
                     <div class="mt-4">
-                        <a href="#" class="cyber-btn"><i class="fa fa-github"></i> Code</a>
-                        <a href="#" class="cyber-btn"><i class="fa fa-external-link"></i> Demo</a>
+                        <a href="#" class="project-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="project-btn"><i class="fa fa-external-link"></i> Demo</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="cyber-project-card">
-                    <h3 class="neon-text">Project 3</h3>
+                <div class="project-card">
+                    <h3>Project 3</h3>
                     <div class="mb-3">
-                        <span class="cyber-badge">JavaScript</span>
-                        <span class="cyber-badge">Three.js</span>
+                        <span class="project-badge">JavaScript</span>
+                        <span class="project-badge">Three.js</span>
                     </div>
                     <p>Description of your third project featuring immersive virtual reality experiences.</p>
                     <div class="mt-4">
-                        <a href="#" class="cyber-btn"><i class="fa fa-github"></i> Code</a>
-                        <a href="#" class="cyber-btn"><i class="fa fa-external-link"></i> Demo</a>
+                        <a href="#" class="project-btn"><i class="fa fa-github"></i> Code</a>
+                        <a href="#" class="project-btn"><i class="fa fa-external-link"></i> Demo</a>
                     </div>
                 </div>
             </div>
@@ -127,22 +179,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        // Add some cyberpunk effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Random glitch effect on hover
-            const cards = document.querySelectorAll('.cyber-project-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    if (Math.random() > 0.7) {
-                        this.style.transform = `translateY(-5px) translateX(${Math.random() * 4 - 2}px)`;
-                        setTimeout(() => {
-                            this.style.transform = 'translateY(-5px)';
-                        }, 100);
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,14 +1,43 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* CSCE 190 Page Styles */
+:root {
+    --primary: #0a0a0a;
+    --secondary: #00eaff;
+    --accent: #ff00ff;
+    --dark-bg: #0d0221;
+    --card-bg: rgba(17, 24, 39, 0.8);
+    --text: #f1f1f1;
+    --neon-blue: #00eaff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #9333ea;
+}
+
+.csce190-body {
+    background: linear-gradient(135deg, #0d0221 0%, #1a0b2e 50%, #0d0221 100%);
     font-family: 'Share Tech Mono', monospace;
+    color: var(--text);
+    padding-top: 80px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.csce190-body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(33, 16, 74, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33, 16, 74, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
 }
 
 .csce190-container {
-    min-height: 100vh;
-    background: linear-gradient(45deg, #1a1a2e 0%, #16213e 100%);
-    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
     position: relative;
 }
 
@@ -17,38 +46,72 @@
     position: absolute;
     top: 0;
     left: 50%;
+    transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: rgba(147, 51, 234, 0.3);
-    transform: translateX(-50%);
+    background: linear-gradient(to bottom, 
+        rgba(0, 234, 255, 0.1), 
+        rgba(0, 234, 255, 0.5), 
+        rgba(255, 0, 255, 0.5), 
+        rgba(255, 0, 255, 0.1));
+    z-index: 0;
+}
+
+.csce190-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .csce190-title {
-    text-align: center;
-    color: #9333ea;
+    font-family: 'Orbitron', sans-serif;
     font-size: 3.5rem;
-    margin-bottom: 4rem;
-    text-shadow: 0 0 30px rgba(147, 51, 234, 0.6);
-    position: relative;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+        0 0 5px rgba(0, 234, 255, 0.5),
+        0 0 10px rgba(0, 234, 255, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
-.cards-grid {
-    max-width: 1200px;
-    margin: 0 auto;
+.csce190-subtitle {
+    font-size: 1.2rem;
+    color: var(--text);
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.project-timeline {
     position: relative;
+    z-index: 1;
 }
 
 .project-card {
-    width: calc(50% - 30px);
-    margin: 30px 0;
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 2rem;
-    border: 1px solid rgba(147, 51, 234, 0.2);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    width: calc(50% - 30px);
+    margin-bottom: 50px;
+    background: rgba(13, 2, 33, 0.7);
+    border: 1px solid;
+    border-image: linear-gradient(to right, var(--neon-blue), var(--neon-purple)) 1;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 
+        0 0 10px rgba(0, 234, 255, 0.3),
+        0 0 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 0 15px rgba(0, 234, 255, 0.4),
+        0 0 30px rgba(0, 0, 0, 0.6);
 }
 
 .project-card:nth-child(odd) {
@@ -67,9 +130,10 @@
     top: 50%;
     width: 20px;
     height: 20px;
-    background: #9333ea;
+    background: var(--neon-purple);
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 10px var(--neon-purple);
+    z-index: 1;
 }
 
 .project-card:nth-child(odd)::before {
@@ -82,81 +146,130 @@
     transform: translate(-50%, -50%);
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(147, 51, 234, 0.4);
-    box-shadow: 0 15px 45px rgba(147, 51, 234, 0.2);
-}
-
-.phase-label {
-    color: #9333ea;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(147, 51, 234, 0.1);
-    border-radius: 20px;
-}
-
-.project-title {
-    color: #fff;
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.project-title::after {
-    content: '';
+.project-date {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: #9333ea;
-    box-shadow: 0 0 15px rgba(147, 51, 234, 0.6);
+    top: -15px;
+    background: var(--dark-bg);
+    color: var(--neon-blue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--neon-blue);
+}
+
+.project-card:nth-child(odd) .project-date {
+    right: 20px;
+}
+
+.project-card:nth-child(even) .project-date {
+    left: 20px;
+}
+
+.project-icon {
+    position: absolute;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    background: var(--dark-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--neon-purple);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+}
+
+.project-card:nth-child(odd) .project-icon {
+    left: 20px;
+}
+
+.project-card:nth-child(even) .project-icon {
+    right: 20px;
+}
+
+.project-icon i {
+    color: var(--neon-purple);
+    font-size: 1.2rem;
 }
 
 .project-content {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.project-image {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    transition: transform 0.4s ease;
-    border: 2px solid rgba(147, 51, 234, 0.2);
+.project-content h3 {
+    color: var(--neon-blue);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
 }
 
-.project-card:hover .project-image {
-    transform: scale(1.03);
-    border-color: rgba(147, 51, 234, 0.4);
+.project-content p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .project-link {
     display: inline-block;
-    color: #9333ea;
+    color: var(--text);
     text-decoration: none;
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
-    border: 2px solid #9333ea;
+    border: 2px solid var(--neon-purple);
     border-radius: 25px;
     transition: all 0.3s ease;
     background: rgba(147, 51, 234, 0.1);
 }
 
 .project-link:hover {
-    background: #9333ea;
-    color: #fff;
+    background: var(--neon-purple);
+    color: var(--text);
     box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+}
+
+.project-summary {
+    clear: both;
+    background: rgba(13, 2, 33, 0.7);
+    border: 1px solid var(--neon-blue);
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.project-summary h2 {
+    color: var(--neon-blue);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.project-summary p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px rgba(0, 234, 255, 0.5),
+            0 0 10px rgba(0, 234, 255, 0.3);
+    }
+    to {
+        text-shadow: 
+            0 0 10px rgba(0, 234, 255, 0.7),
+            0 0 20px rgba(0, 234, 255, 0.5),
+            0 0 30px rgba(0, 234, 255, 0.3);
+    }
 }
 
 @media (max-width: 768px) {
@@ -189,5 +302,15 @@
         right: auto;
         left: -40px;
         transform: translate(-50%, -50%);
+    }
+    
+    .project-date {
+        left: 20px !important;
+        right: auto !important;
+    }
+    
+    .project-icon {
+        left: 20px !important;
+        right: auto !important;
     }
 }

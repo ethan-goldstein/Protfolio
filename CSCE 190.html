@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSCE 190: Ethan Goldstein</title>
     <link rel="shortcut icon" href="images/logo.jpeg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="csce190-cards.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="common-background">
+<body class="csce190-body">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="images/logo.jpeg" width="30" height="30" alt="Logo">
@@ -23,82 +25,99 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
+                <li class="nav-item"><a class="nav-link active" href="CSCE 190.html">CSCE 190</a></li>
+                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
+                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="timeline-container">
-        <h1 class="timeline-title">CSCE 190 Journey</h1>
-        <div class="timeline">
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="timeline-date">Phase 1</div>
+    <div class="csce190-container">
+        <div class="csce190-header">
+            <h1 class="csce190-title">CSCE 190 Project</h1>
+            <p class="csce190-subtitle">Problem-Based Tutoring Application</p>
+        </div>
+
+        <div class="project-timeline">
+            <div class="project-card" data-aos="fade-right">
+                <div class="project-date">Phase 1</div>
+                <div class="project-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="project-content">
                     <h3>Problem Statement</h3>
-                    <div class="timeline-card">
-                        <a href="files/statement.pdf" class="timeline-link">
-                            <div class="card-content">
-                                <p>So many students have specific questions based on their content, 
-                                but not every professor can answer specific questions.</p>
-                            </div>
-                        </a>
-                    </div>
+                    <p>Students struggle to find tutors who can help with specific problems rather than general subjects.</p>
+                    <a href="files/problem-statement.pdf" class="project-link" target="_blank">View PDF <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-date">Phase 2</div>
-                    <h3>Sketches</h3>
-                    <div class="timeline-card">
-                        <a href="files/Sketches_DOC.pdf" class="timeline-link">
-                            <img src="images/Sketches_IMG.png" alt="Sketches">
-                            <div class="card-content">
-                                <p>These sketches provide detail-oriented personas, based off three different potential app users. 
-                                Each sketch is a different perspective of a customer using the app</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="timeline-date">Phase 3</div>
+            <div class="project-card" data-aos="fade-left">
+                <div class="project-date">Phase 2</div>
+                <div class="project-icon"><i class="fas fa-users"></i></div>
+                <div class="project-content">
                     <h3>Affinity Diagram</h3>
-                    <div class="timeline-card">
-                        <a href="files/Affinity_DOC.pdf" class="timeline-link">
-                            <img src="images/Affinity_IMG.png" alt="Affinity Diagram">
-                            <div class="card-content">
-                                <p>People may have questions about an app because of its functionality, user interface, performance, 
-                                or compatibility with their devices. It is important to provide clear, accessible support to address these concerns effectively.</p>
-                            </div>
-                        </a>
-                    </div>
+                    <p>Collaborative brainstorming to identify key features and user needs for our tutoring platform.</p>
+                    <a href="files/affinity-diagram.pdf" class="project-link" target="_blank">View PDF <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-date">Final Phase</div>
+            <div class="project-card" data-aos="fade-right">
+                <div class="project-date">Phase 3</div>
+                <div class="project-icon"><i class="fas fa-user-circle"></i></div>
+                <div class="project-content">
+                    <h3>Personas</h3>
+                    <p>Fictional characters representing our target users and their specific needs and pain points.</p>
+                    <a href="files/personas.pdf" class="project-link" target="_blank">View PDF <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-left">
+                <div class="project-date">Phase 4</div>
+                <div class="project-icon"><i class="fas fa-sitemap"></i></div>
+                <div class="project-content">
+                    <h3>Storyboards</h3>
+                    <p>Visual narratives showing how users would interact with our tutoring solution in real-world scenarios.</p>
+                    <a href="files/storyboards.pdf" class="project-link" target="_blank">View PDF <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-right">
+                <div class="project-date">Phase 5</div>
+                <div class="project-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <div class="project-content">
+                    <h3>Sketches</h3>
+                    <p>Initial interface designs and layout concepts for the tutoring application.</p>
+                    <a href="files/sketches.pdf" class="project-link" target="_blank">View PDF <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-left">
+                <div class="project-date">Phase 6</div>
+                <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="project-content">
                     <h3>Prototype</h3>
-                    <div class="timeline-card">
-                        <a href="https://www.youtube.com/watch?v=cjhXU-svV4w" class="timeline-link">
-                            <div class="card-content">
-                                <p>A prototype tutoring app that connects students with tutors based on specific problems, not just broad subjects.</p>
-                            </div>
-                        </a>
-                    </div>
+                    <p>A prototype tutoring app that connects students with tutors based on specific problems, not just broad subjects.</p>
+                    <a href="files/prototype.pdf" class="project-link" target="_blank">View PDF <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="project-summary">
+            <h2>Project Overview</h2>
+            <p>This CSCE 190 project addresses the challenge students face when seeking help with specific academic problems. Our solution is a tutoring platform that matches students with tutors based on the exact problems they need help with, rather than just broad subject areas.</p>
+            <p>Through user research, prototyping, and iterative design, we've created a concept that streamlines the process of finding targeted academic assistance.</p>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="common-animations.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html>

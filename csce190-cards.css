@@ -253,11 +253,11 @@
     color: var(--dark-bg);
 }
 
-.project-card:nth-child(odd) .project-icon {
+.project-card:nth-child(even) .project-icon {
     left: 20px;
 }
 
-.project-card:nth-child(even) .project-icon {
+.project-card:nth-child(odd) .project-icon {
     right: 20px;
 }
 

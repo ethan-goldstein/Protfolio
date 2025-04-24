@@ -58,7 +58,6 @@ body {
 }
 
 .card > .row {
-    color: white;
     display: flex;
     flex-wrap: nowrap;
     margin-bottom: 20px;
@@ -102,8 +101,13 @@ body {
     line-height: 1.4;
 }
 
-.description p {
+.card > .row > .description h4 {
     color: #b0b0ba;
+    margin-bottom: 8px;
+}
+
+.card > .row > .description p {
+    color: #ffffff;
     padding-top: 5px;
 }
 

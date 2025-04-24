@@ -1,15 +1,6 @@
 // Common animations for all pages
 document.addEventListener('DOMContentLoaded', function() {
-    // Navbar animation
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        navbar.style.transform = 'translateY(-100%)';
-        navbar.style.transition = 'transform 0.5s ease';
-        
-        setTimeout(() => {
-            navbar.style.transform = 'translateY(0)';
-        }, 300);
-    }
+    // Navbar animation is now handled by CSS
     
     // Add glow effect to links on hover
     const navLinks = document.querySelectorAll('.nav-link');

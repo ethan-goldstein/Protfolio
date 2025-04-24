@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet">
     <style>
         /* Add additional padding to shift content down by 50px */
         .skills-container {
-            padding-top: 100px;
+            padding-top: 80px;
         }
         
         .skills-title {
             font-family: 'Audiowide', cursive;
             font-size: 3rem;
             color: #0ae561;
-            text-shadow: 0 0 10px #0ae561, 0 0 20px #0ae561;
-            text-transform: uppercase;
+
             letter-spacing: 3px;
+            margin: 1.5rem 0 3rem 0;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@
         <div class="gradient-sphere sphere-1"></div>
         <div class="gradient-sphere sphere-2"></div>
         <div class="gradient-sphere sphere-3"></div>
-        <div class="glow"></div>
+        <div class="row skills-animate" style="animation-delay: 0.2s;"></div>
         <div class="grid-overlay"></div>
         <div class="noise-overlay"></div>
         <div class="particles-container" id="particles-container"></div>
@@ -47,18 +47,23 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
-                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+                <li class="nav-item active"><a class="nav-link" href="Skills.html">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="skills-container">
-        <h1 class="skills-title">Technical Arsenal</h1>
-        <div class="skills-grid">
+    <div class="container mt-5 pt-5">
+        <h1 class="skills-title skills-animate">Technical Arsenal</h1>
+        <div class="skills-grid skills-animate" style="animation-delay: 0.2s;">
             <div class="skill-card" data-skill="90">
-                <div class="skill-icon"><i class="fa fa-code"></i></div>
+                <div class="skill-icon"><i class="fab fa-java"></i></div>
                 <h3>Java</h3>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div class="skill-card" data-skill="85">
+                <div class="skill-icon"><i class="fab fa-python"></i></div>
+                <h3>Python</h3>
                 <div class="skill-bar"><div class="skill-progress"></div></div>
             </div>
             <div class="skill-card" data-skill="85">

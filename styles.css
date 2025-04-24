@@ -28,6 +28,10 @@ html, body {
     width: 100%;
 }
 
+.nav-right {
+    margin-left: auto;
+}
+
 #homeContainer {
     position: relative;
     z-index: 1;
@@ -1364,6 +1368,31 @@ h1, h2, h3 {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* About Me text styles */
+.cyber-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f1f1f1;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* Contact button styles */
+.cyber-text a {
+    color: #f1f1f1 !important;
+    text-decoration: none !important;
+}
+
+.cyber-text a:hover,
+.cyber-text a:active,
+.cyber-text a:focus,
+.cyber-text a:visited {
+    color: #f1f1f1 !important;
+    text-decoration: none !important;
 }
 
 /* Projects animations */

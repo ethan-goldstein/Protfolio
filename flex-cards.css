@@ -15,8 +15,9 @@ body {
     font-size: 2rem;
     margin: 2rem 0 1rem;
     padding-top: 60px;
-    text-transform: lowercase;
+
     font-family: 'Share Tech Mono', monospace;
+    text-transform: capitalize;
 }
 
 .wrapper {
@@ -104,10 +105,6 @@ body {
 .description p {
     color: #b0b0ba;
     padding-top: 5px;
-}
-
-.description h4 {
-
 }
 
 input {

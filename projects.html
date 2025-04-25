@@ -15,14 +15,17 @@
         body {
             color: #fff;
             font-family: 'Share Tech Mono', monospace;
+            overflow-x: hidden;
         }
         
-        .projects-header {
-            position: relative;
+        .section-title {
+            color: #fff;
+            font-size: 2.8rem;
             margin-bottom: 2rem;
             padding-bottom: 0.5rem;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            position: relative;
         }
         
         .projects-container {
@@ -31,29 +34,125 @@
             padding-bottom: 50px;
         }
         
-        .project-card {
-            background: rgba(13, 2, 33, 0.7);
-            border: 1px solid #00eaff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
+        /* Holographic projects display */
+        .holographic-container {
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            perspective: 1000px;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+        .project-panel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 80px;
+            transform-style: preserve-3d;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 234, 255, 0.2);
+            overflow: hidden;
+            border-radius: 5px;
         }
         
-        .project-card h3 {
+        .project-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 234, 255, 0.05), transparent);
+            pointer-events: none;
+        }
+        
+        .project-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+            transform: skewX(-15deg);
+            animation: shine 8s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes shine {
+            0% { left: -150%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .project-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .project-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.2) saturate(1.5);
+        }
+        
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(13, 2, 33, 0.9), transparent);
+            z-index: 1;
+        }
+        
+        .project-details {
+            width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
             color: #00eaff;
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .project-title::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #00eaff, transparent);
         }
         
         .project-badge {
             display: inline-block;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
             color: #00eaff;
             border: 1px solid #00eaff;
             padding: 3px 10px;
@@ -68,53 +167,95 @@
 
         .project-badge:hover {
             background-color: rgba(0, 234, 255, 0.2);
-            box-shadow: 
-                0 0 10px #00eaff,
-                0 0 20px #00eaff,
-                inset 0 0 8px #00eaff;
+            box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, inset 0 0 8px #00eaff;
             transform: translateY(-1px);
             color: #fff;
             text-shadow: 0 0 5px #00eaff;
         }
-
-        .project-badge::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                transparent 0%,
-                rgba(0, 234, 255, 0.1) 45%,
-                rgba(0, 234, 255, 0.3) 50%,
-                rgba(0, 234, 255, 0.1) 55%,
-                transparent 100%);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-            z-index: -1;
-        }
-
-        .project-badge:hover::before {
-            transform: translateX(100%);
+        
+        .project-description {
+            margin: 20px 0;
+            line-height: 1.6;
+            position: relative;
         }
         
         .project-btn {
             display: inline-block;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
             color: #fff;
             border: 1px solid #00eaff;
-            padding: 5px 15px;
+            padding: 8px 20px;
             border-radius: 5px;
-            margin-right: 10px;
+            margin-right: 15px;
             transition: all 0.3s ease;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .project-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
         }
         
         .project-btn:hover {
-            background: rgba(0, 234, 255, 0.2);
             color: #fff;
-            box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+            text-shadow: 0 0 5px #00eaff;
+        }
+        
+        .project-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Scanner line effect */
+        .scanner-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00eaff, transparent);
+            animation: scan 4s ease-in-out forwards;
+            box-shadow: 0 0 8px #00eaff;
+            z-index: 2;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; opacity: 1; }
+            75% { top: 100%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .project-image {
+                clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+                width: 100%;
+                height: 30%;
+            }
+            
+            .project-details {
+                width: 100%;
+                margin-top: 30%;
+            }
+            
+            .project-panel {
+                height: 600px;
+            }
         }
     </style>
 </head>
@@ -152,63 +293,78 @@
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5 projects-container">
+    <div class="container-fluid mt-5 pt-5 projects-container">
         <div class="row justify-content-center">
-            <div class="col-12 text-center mb-4" style="padding-top: 20px;">
-                <h1 class="projects-header interests-animate" style="font-size: 2.8rem;">My Projects</h1>
+            <div class="col-12 text-center mb-2" style="padding-top: 25px;">
+                <h1 class="section-title interests-animate">My Projects</h1>
             </div>
         </div>
-        <div class="row interests-animate" style="animation-delay: 0.2s;">
-            <div class="col-md-4 mb-4">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-placeholder.jpg" alt="Project 1">
-                    </div>
-                    <h3>Project 1</h3>
-                    <div class="mb-3">
-                        <span class="project-badge">React</span>
-                        <span class="project-badge">Node.js</span>
-                    </div>
-                    <p>Description of your first project with futuristic cyberpunk technology integration.</p>
-                    <div class="mt-4">
-                        <a href="#" class="project-btn"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+        
+        <div class="holographic-container interests-animate" style="animation-delay: 0.2s;">
+            <!-- Project 1 -->
+            <div class="project-panel scanner-container">
+                <div class="scanner-line"></div>
+                <div class="project-image">
+                    <img src="images/project-placeholder.jpg" alt="Personal Portfolio">
+                </div>
+                <div class="project-content">
+                    <div class="project-details">
+                        <h2 class="project-title">Personal Portfolio</h2>
+                        <div class="mb-3">
+                            <span class="project-badge">HTML</span>
+                            <span class="project-badge">CSS</span>
+                            <span class="project-badge">JavaScript</span>
+                        </div>
+                        <p class="project-description">Ethan Goldstein's personal portfolio is a fully responsive website built with HTML, CSS, 
+                            and JavaScript, featuring a clean, modern user interface with unique layouts and simple navigation. 
+                            It includes well-structured content, interactive components, and GitHub integration, 
+                            all designed to explore his projects, experience, and ongoing growth.</p>
+                        <div class="project-actions">
+                            <a href="#" class="project-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-placeholder.jpg" alt="Project 2">
-                    </div>
-                    <h3>Project 2</h3>
-                    <div class="mb-3">
-                        <span class="project-badge">Python</span>
-                        <span class="project-badge">Flask</span>
-                    </div>
-                    <p>Description of your second project with advanced neural network capabilities.</p>
-                    <div class="mt-4">
-                        <a href="#" class="project-btn"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+            
+            <!-- Project 2 -->
+            <div class="project-panel scanner-container">
+                <div class="scanner-line"></div>
+                <div class="project-image">
+                    <img src="images/project-placeholder.jpg" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <div class="project-details">
+                        <h2 class="project-title">Project 2</h2>
+                        <div class="mb-3">
+                            <span class="project-badge">??</span>
+                        </div>
+                        <p class="project-description">Coming Soon...</p>
+                        <div class="project-actions">
+                            <a href="#" class="project-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-placeholder.jpg" alt="Project 3">
-                    </div>
-                    <h3>Project 3</h3>
-                    <div class="mb-3">
-                        <span class="project-badge">JavaScript</span>
-                        <span class="project-badge">Three.js</span>
-                    </div>
-                    <p>Description of your third project with immersive 3D visualization.</p>
-                    <div class="mt-4">
-                        <a href="#" class="project-btn"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+            
+            <!-- Project 3 -->
+            <div class="project-panel scanner-container">
+                <div class="scanner-line"></div>
+                <div class="project-image">
+                    <img src="images/project-placeholder.jpg" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <div class="project-details">
+                        <h2 class="project-title">Project 3</h2>
+                        <div class="mb-3">
+                            <span class="project-badge">??</span>
+                        </div>
+                        <p class="project-description">Coming Soon...</p>
+                        <div class="project-actions">
+                            <a href="#" class="project-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -202,18 +202,30 @@ html, body {
     margin: 0;
 }
 
-#socials li a {
+#socials li {
+    margin: 0 10px;
+}
+
+.social-link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60px;
     height: 60px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent;
     border-radius: 50%;
-    font-size: 24px;
     transition: all 0.3s ease;
     position: relative;
     z-index: 3;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.social-link i {
+    font-size: 28px;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
     .cyber-card {
@@ -758,28 +770,66 @@ html, body {
     color: #f1f1f1;
 }
 
-.fa-facebook:hover {
+/* Facebook */
+.social-link.facebook {
+    border-color: rgba(24, 119, 242, 0.2);
+}
+.social-link.facebook:hover {
+    border-color: #1877F2;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
     transform: translateY(-5px);
-    color: #4267B2;
-    box-shadow: 0 0 15px rgba(66, 103, 178, 0.8);
+    background-color: rgba(24, 119, 242, 0.1);
+}
+.social-link.facebook:hover i {
+    color: #1877F2;
 }
 
-.fa-linkedin:hover {
+/* LinkedIn */
+.social-link.linkedin {
+    border-color: rgba(10, 102, 194, 0.2);
+}
+.social-link.linkedin:hover {
+    border-color: #0A66C2;
+    box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
     transform: translateY(-5px);
-    color: #0077B5;
-    box-shadow: 0 0 15px rgba(0, 119, 181, 0.8);
+    background-color: rgba(10, 102, 194, 0.1);
+}
+.social-link.linkedin:hover i {
+    color: #0A66C2;
 }
 
-.fa-instagram:hover {
+/* Instagram */
+.social-link.instagram {
+    border-color: rgba(228, 64, 95, 0.2);
+}
+.social-link.instagram:hover {
+    border-color: #E4405F;
+    box-shadow: 0 5px 15px rgba(228, 64, 95, 0.4);
     transform: translateY(-5px);
-    color: #E1306C;
-    box-shadow: 0 0 15px rgba(225, 48, 108, 0.8);
+    background-color: rgba(228, 64, 95, 0.1);
+}
+.social-link.instagram:hover i {
+    color: #E4405F;
+}
+
+/* GitHub */
+.social-link.github {
+    border-color: rgba(33, 31, 31, 0.2);
+}
+.social-link.github:hover {
+    border-color: #211f1f;
+    box-shadow: 0 5px 15px rgba(33, 31, 31, 0.4);
+    transform: translateY(-5px);
+    background-color: rgba(33, 31, 31, 0.1);
+}
+.social-link.github:hover i {
+    color: #211f1f;
 }
 
 .fa-github:hover {
     transform: translateY(-5px);
-    color: #f1f1f1;
-    box-shadow: 0 0 15px rgba(241, 241, 241, 0.5);
+    color: #211f1f;
+    box-shadow: 0 0 15px rgba(33, 31, 31, 0.5);
 }
 
 #newAboutMe {

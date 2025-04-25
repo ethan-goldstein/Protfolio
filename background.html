@@ -13,16 +13,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/background.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Share Tech Mono', monospace;
-        }
-        
         body {
             color: #ededed;
             padding-top: 80px;
+            font-family: 'Share Tech Mono', monospace;
         }
         
         .navbar {
@@ -31,113 +25,127 @@
         
         .page-header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
+            margin-bottom: 30px;
         }
         
         .page-header h1 {
-            color: rgb(255, 255, 255);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            display: none;
         }
         
-        .timeline {
+        /* Background container */
+        .background-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px 60px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        
+        /* Card row layout */
+        .card-row {
             display: flex;
+            flex-wrap: nowrap;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 0 9%;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            margin-top: 10px;
         }
         
-        .timeline .timeline-row {
+        .bg-card {
+            background: rgba(13, 2, 33, 0.7);
+            border: 1px solid #00eaff;
+            border-radius: 10px;
+            padding: 25px;
+            min-width: 300px;
+            max-width: 300px;
+            flex: 0 0 auto;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .bg-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+        }
+        
+        .card-header {
+            border-bottom: 1px solid rgba(0, 234, 255, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        
+        .card-period {
+            color: #00eaff;
+            font-size: 1rem;
             display: flex;
-            column-gap: 64px;
-            flex-wrap: wrap;
+            align-items: center;
+            text-shadow: none;
         }
         
-        .timeline-row .timeline-column {
-            flex: 1 1 320px;
-        }
-        
-        .timeline-column .title {
-            position: relative;
-            display: inline-block;
-            font-size: 28px;
-            margin: 32px 0 16px 30px;
-        }
-        
-        .timeline-column .timeline-box {
-            position: relative;
-            border-left: 2px solid #0ef;
-        }
-        
-        .timeline-box .timeline-content {
-            position: relative;
-            padding-left: 27px;
-        }
-        
-        .timeline-box .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -10.5px;
-            width: 20px;
-            height: 20px;
-            background: #0ef;
-            border-radius: 50%;
-        }
-        
-        .timeline-content .content {
-            padding: 24px;
-            border: 2px solid #0ef;
-            border-radius: 8px;
-            margin-bottom: 32px;
-        }
-        
-        .timeline-content .content .year {
-            font-size: 16px;
-            color: #0ef;
-        }
-        
-        .timeline-content .content .year i {
+        .card-period i {
             margin-right: 8px;
         }
         
-        .timeline-content .content h3 {
-            font-size: 19px;
-            margin: 8px 0;
+        .card-content {
+            color: #fff;
         }
         
-        .timeline-content .content p {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
+        .card-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        
+        .card-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .card-list li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #00eaff;
+        }
+        
+        .card-text {
+            font-size: 1rem;
             line-height: 1.5;
         }
         
-        .animate {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 105%;
-            height: 100%;
-            background: #1f242d;
-            animation: show-right 1s ease forwards;
-            animation-delay: calc(.5s * var(--i));
-        }
-        
-        @keyframes show-right {
-            100% {
-                width: 0;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .timeline .timeline-row {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .timeline-row .timeline-column {
-                flex: 1 1 100%;
+            .card-row {
+                justify-content: flex-start;
+                padding-left: 10px;
             }
         }
     </style>
@@ -176,77 +184,67 @@
         </div>
     </nav>
     
-    <div class="page-header">
-        <h1 class="interests-animate" style="font-size: 2.8rem;">My Background</h1>
-    </div>
+    <!-- Page header removed to avoid duplication -->
     
-    <section class="timeline interests-animate" style="animation-delay: 0.2s;">
-        <div class="timeline-row">
-            <div class="timeline-column">
-                <h2 class="title">Education<span class="animate" style="--i:1;"></span></h2>
-                
-                <div class="timeline-box">
-                    <div class="timeline-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2019 - 2023</div>
-                            <h3>Thomas S. Wootton HS</h3>
-                            <p>High School Diploma with honors. Participated in various extracurricular activities and maintained excellent academic standing throughout my high school career.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2023 - Present</div>
-                            <h3>University of South Carolina</h3>
-                            <p>Currently pursuing a Bachelor's degree in Computer Information Systems with a minor in Cyber Intelligence. Actively involved in various tech clubs and research projects.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2023 - 2024</div>
-                            <h3>Relevant Coursework</h3>
-                            <p>Completed courses in Data Structures, Algorithms, Database Management, Network Security, and Web Development. Maintained a strong GPA while balancing academic and extracurricular commitments.</p>
-                        </div>
-                    </div>
-                    
-                    <span class="animate" style="--i:2;"></span>
-                </div>
+    <div class="container mt-3 pt-3 background-container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-2" style="padding-top: 0;">
+                <h1 class="section-title interests-animate">My Background</h1>
             </div>
-            
-            <div class="timeline-column">
-                <h2 class="title">Experience<span class="animate" style="--i:4;"></span></h2>
+        </div>
+        <div class="section interests-animate" style="animation-delay: 0.2s;">
+            <div class="card-row">
+                <div class="bg-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Thomas S. Wootton High School</h3>
+                        <div class="card-period">
+                            <i class='bx bxs-calendar'></i>2019 - 2023
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="card-list">
+                            <li>National Honors Society</li>
+                            <li>Various Clubs</li>
+                            <li>Varsity Baseball Captain</li>
+                            <li>Academic Excellence</li>
+                        </ul>
+                    </div>
+                </div>
                 
-                <div class="timeline-box">
-                    <div class="timeline-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2022 - 2023</div>
-                            <h3>IT Support Intern</h3>
-                            <p>Assisted with technical support for a mid-sized company. Resolved hardware and software issues, managed user accounts, and contributed to the implementation of new IT systems.</p>
+                <div class="bg-card">
+                    <div class="card-header">
+                        <h3 class="card-title">University of South Carolina</h3>
+                        <div class="card-period">
+                            <i class='bx bxs-calendar'></i>2023 - Present
                         </div>
                     </div>
-                    
-                    <div class="timeline-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2023 - 2024</div>
-                            <h3>Web Development Project</h3>
-                            <p>Developed and maintained websites for local businesses. Implemented responsive designs, integrated content management systems, and optimized site performance for better user experience.</p>
+                    <div class="card-content">
+                        <p class="card-text">Fall 2025 Courses:</p>
+                        <ul class="card-list">
+                            <li>Algorithmic Design II</li>
+                            <li>Introduction to Computer Security</li>
+                            <li>Business Calculus</li>
+                            <li>CIS in Business</li>
+                            <li>Introduction to Economics</li>
+                            <li>Principles of Marketing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Data Entry Operator</h3>
+                        <div class="card-period">
+                            <i class='bx bxs-calendar'></i>2025 - Present
                         </div>
                     </div>
-                    
-                    <div class="timeline-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i>2024 - Present</div>
-                            <h3>Research Assistant</h3>
-                            <p>Working with faculty on cybersecurity research projects. Analyzing data, developing security protocols, and contributing to academic papers in the field of information security.</p>
-                        </div>
+                    <div class="card-content">
+                        <p class="card-text">Supported federal data processes, ensuring accuracy and security. Followed government standards in project management and technology consulting to assist in delivering reliable solutions.</p>
                     </div>
-                    
-                    <span class="animate" style="--i:5;"></span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

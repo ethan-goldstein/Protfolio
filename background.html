@@ -88,9 +88,19 @@
         }
         
         .card-header {
-            border-bottom: 1px solid rgba(0, 234, 255, 0.3);
             padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 234, 255, 0.3);
             margin-bottom: 15px;
+        }
+        
+        .card-category {
+            font-size: 0.9rem;
+            color: #00eaff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 234, 255, 0.3);
         }
         
         .card-title {
@@ -270,6 +280,7 @@
             <div class="card-row">
                 <div class="bg-card">
                     <div class="card-header">
+                        <div class="card-category">Education</div>
                         <h3 class="card-title">Thomas S. Wootton High School</h3>
                         <div class="card-period">
                             <i class='bx bxs-calendar'></i>2019 - 2023
@@ -288,6 +299,7 @@
                 
                 <div class="bg-card">
                     <div class="card-header">
+                        <div class="card-category">Education</div>
                         <h3 class="card-title">University of South Carolina</h3>
                         <div class="card-period">
                             <i class='bx bxs-calendar'></i>2023 - Present
@@ -309,17 +321,23 @@
                 
                 <div class="bg-card">
                     <div class="card-header">
-                        <h3 class="card-title">Data Entry Operator</h3>
+                        <div class="card-category">Experience</div>
+                        <h3 class="card-title">Data Entry Operator I (Intern)</h3>
                         <div class="card-period">
                             <i class='bx bxs-calendar'></i>2025 - Present
                         </div>
                     </div>
                     <div class="card-content scanner-container">
                         <div class="scanner-line"></div>
-                        <p class="card-text typing-text" data-text="Supported federal data processes, ensuring accuracy and security. Followed government standards in project management and technology consulting to assist in delivering reliable solutions."
-                        >Support federal data processes, ensuring accuracy and security. 
-                        Followed government standards in project management and technology consulting to 
-                        assist in delivering reliable solutions.</p>
+                        <ul class="card-list">
+                            <li><p class="typing-text" data-text="Tysons Corner, VA">Tysons Corner, VA</p></li>
+                            <li><p class="typing-text" data-text="Public Trust Clearance">Public Trust Clearance</p></li>
+                            <li><p class="typing-text" data-text="Support federal data processes, ensuring accuracy 
+                                and security. Followed government standards in project management and technology 
+                                consulting to assist in delivering reliable solutions.">Support federal data 
+                                processes, ensuring accuracy and security. Followed government standards in project 
+                                management and technology consulting to assist in delivering reliable solutions.</p></li>
+                        </ul>
                     </div>
                 </div>
             </div>

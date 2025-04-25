@@ -113,14 +113,16 @@
             margin-right: 8px;
         }
         
+        /* Card content */
         .card-content {
             color: #fff;
+            position: relative;
+            overflow: hidden;
         }
         
         .card-list {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 0;
         }
         
         .card-list li {
@@ -135,6 +137,78 @@
             position: absolute;
             left: 0;
             color: #00eaff;
+        }
+        
+        /* Glitch and Scanner effects */
+        .typing-text {
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 234, 255, 0.5);
+        }
+        
+        .typing-text::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #00eaff;
+            overflow: hidden;
+            animation: glitch-anim 2s linear forwards;
+            animation-iteration-count: 2;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip-path: inset(40% 0 61% 0);
+                transform: translate(-2px, 2px);
+            }
+            20% {
+                clip-path: inset(92% 0 1% 0);
+                transform: translate(1px, -3px);
+            }
+            40% {
+                clip-path: inset(43% 0 1% 0);
+                transform: translate(3px, 1px);
+            }
+            60% {
+                clip-path: inset(25% 0 58% 0);
+                transform: translate(-5px, -2px);
+            }
+            80% {
+                clip-path: inset(54% 0 7% 0);
+                transform: translate(2px, -4px);
+            }
+            100% {
+                clip-path: inset(58% 0 43% 0);
+                transform: translate(-2px, 3px);
+            }
+        }
+        
+        /* Scanner line effect */
+        .scanner-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00eaff, transparent);
+            animation: scan 4s ease-in-out forwards;
+            box-shadow: 0 0 8px #00eaff;
+            z-index: 2;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; opacity: 1; }
+            75% { top: 100%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
         }
         
         .card-text {
@@ -201,12 +275,13 @@
                             <i class='bx bxs-calendar'></i>2019 - 2023
                         </div>
                     </div>
-                    <div class="card-content">
+                    <div class="card-content scanner-container">
+                        <div class="scanner-line"></div>
                         <ul class="card-list">
-                            <li>National Honors Society</li>
-                            <li>Various Clubs</li>
-                            <li>Varsity Baseball Captain</li>
-                            <li>Academic Excellence</li>
+                            <li><p class="typing-text" data-text="National Honors Society">National Honors Society</p></li>
+                            <li><p class="typing-text" data-text="Various Clubs">Various Clubs</p></li>
+                            <li><p class="typing-text" data-text="Varsity Baseball Captain">Varsity Baseball Captain</p></li>
+                            <li><p class="typing-text" data-text="Academic Excellence">Academic Excellence</p></li>
                         </ul>
                     </div>
                 </div>
@@ -218,15 +293,16 @@
                             <i class='bx bxs-calendar'></i>2023 - Present
                         </div>
                     </div>
-                    <div class="card-content">
-                        <p class="card-text">Fall 2025 Courses:</p>
+                    <div class="card-content scanner-container">
+                        <div class="scanner-line"></div>
+                        <p class="card-text typing-text" data-text="Fall 2025 Courses:">Fall 2025 Courses:</p>
                         <ul class="card-list">
-                            <li>Algorithmic Design II</li>
-                            <li>Introduction to Computer Security</li>
-                            <li>Business Calculus</li>
-                            <li>CIS in Business</li>
-                            <li>Introduction to Economics</li>
-                            <li>Principles of Marketing</li>
+                            <li><p class="typing-text" data-text="Algorithmic Design II">Algorithmic Design II</p></li>
+                            <li><p class="typing-text" data-text="Introduction to Computer Security">Introduction to Computer Security</p></li>
+                            <li><p class="typing-text" data-text="Business Calculus">Business Calculus</p></li>
+                            <li><p class="typing-text" data-text="CIS in Business">CIS in Business</p></li>
+                            <li><p class="typing-text" data-text="Introduction to Economics">Introduction to Economics</p></li>
+                            <li><p class="typing-text" data-text="Principles of Marketing">Principles of Marketing</p></li>
                         </ul>
                     </div>
                 </div>
@@ -238,8 +314,9 @@
                             <i class='bx bxs-calendar'></i>2025 - Present
                         </div>
                     </div>
-                    <div class="card-content">
-                        <p class="card-text">Supported federal data processes, ensuring accuracy and security. Followed government standards in project management and technology consulting to assist in delivering reliable solutions.</p>
+                    <div class="card-content scanner-container">
+                        <div class="scanner-line"></div>
+                        <p class="card-text typing-text" data-text="Supported federal data processes, ensuring accuracy and security. Followed government standards in project management and technology consulting to assist in delivering reliable solutions.">Supported federal data processes, ensuring accuracy and security. Followed government standards in project management and technology consulting to assist in delivering reliable solutions.</p>
                     </div>
                 </div>
             </div>

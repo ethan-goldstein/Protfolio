@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Find the particles container
     const particlesContainer = document.getElementById('particles-container');
     if (!particlesContainer) {
-        console.error('Particles container not found!');
         return;
     }
 

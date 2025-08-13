@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Ethan Goldstein</title>
+    <link rel="shortcut icon" href="images/new.logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+
+
+        .click-shield {
+            pointer-events: none;
+        }
+        @media (hover: hover) {
+            .nav-button:hover ~ #spline-container {
+                pointer-events: none;
+            }
+        }
+        .nav-button {
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        /* Magenta glowing effect for About Me page buttons */
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff00ff, #ff00ff, #ff00ff, #ff00ff, #ff00ff, #ff00ff, #ff00ff);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: magentaGlow 4s infinite, moveGlow 3s infinite alternate;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+    
+        @keyframes magentaGlow {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+    
+        @keyframes moveGlow {
+            0% { filter: blur(5px); transform: translateX(-5px) translateY(-2px); }
+            50% { filter: blur(7px); transform: translateX(0) translateY(0); }
+            100% { filter: blur(5px); transform: translateX(5px) translateY(2px); }
+        }
+    
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+    
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+        .about-header {
+            text-align: center;
+            padding: 2rem 0;
+            color: #00eaff;
+            font-family: 'Audiowide', cursive;
+            font-size: 3rem;
+            text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body class="common-background">
+
+    <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="glow"></div>
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/new.logo.png" width="30" height="30" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href="About Me.html">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
+            </ul>
+            <ul class="navbar-nav nav-right">
+                <li class="nav-item"><a class="nav-link" href="mailto:ethancgoldstein@gmail.com"><i class="far fa-envelope" style="margin-right: 8px;"></i>Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js" crossorigin="anonymous"></script>
+    <div class="container-fluid" style="padding-top: 80px;">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-4">
+                <h1 class="about-animate" style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; letter-spacing: 2px; font-weight: 600; color: #fff; text-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3), 0 0 30px rgba(255, 0, 255, 0.2);">About Me</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" style="margin-bottom: 3rem; position: relative; z-index: 20;">
+            <div class="col-auto">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="resume.html" class="nav-button"><button class="glow-on-hover" type="button">Resume</button></a>
+                    <a href="interests.html" class="nav-button"><button class="glow-on-hover" type="button">Interests</button></a>
+                    <a href="background.html" class="nav-button"><button class="glow-on-hover" type="button">Background</button></a>
+                    <a href="projects.html" class="nav-button"><button class="glow-on-hover" type="button">Projects</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6" style="z-index: 2; position: relative; transform: translateY(3vh);">
+                <div class="cyber-card" style="width: 100%; margin-bottom: 2rem;">
+                    <div class="cyber-card-content">
+                        <p class="cyber-text" style="font-family: 'Roboto', sans-serif !important; font-size: 1.1rem !important; line-height: 1.8 !important; font-weight: 300 !important; letter-spacing: 0.3px !important; text-align: center;">
+                            Hi, I'm Ethan Goldstein, a Computer Information Systems major with a minor in Business Information Management 
+                            at the University of South Carolina. I'm originally from Washington, DC, and currently work as a Data Entry Operator 
+                            at Oxford Government Consulting in Tysons Corner, VA. There, I support federal data operations and help manage secure 
+                            information systems. I have a strong passion for cybersecurity and enjoy solving complex problems through technical skills 
+                            and strategic thinking. My goal is to build a career that protects digital systems and drives innovation in the cyber industry.                        </p>
+                        <div class="text-center mt-4">
+                            <a href="mailto:ethancgoldstein@gmail.com">
+                                <i class="far fa-envelope" style="margin-right: 8px;"></i>
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="position: relative; min-height: 600px;">
+                <div id="spline-container" style="position: fixed; top: 50%; right: 0; width: 45vw; height: 100vh; transform: translateY(-50%); pointer-events: auto;">
+                    <div class="click-shield" style="position: absolute; top: 0; left: 0; right: 0; height: 150px; z-index: 15;"></div>
+                    <spline-viewer url="https://prod.spline.design/W2UwY1EGzKr83hXC/scene.splinecode" style="width: 100%; height: 100%;" loading="lazy"></spline-viewer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="common-animations.js"></script>
+    <script src="js/background.js"></script>
+    <script src="cursor-particles.js"></script>
+</body>
+</html>

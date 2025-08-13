@@ -1,0 +1,318 @@
+/* CSCE 190 Page Styles */
+:root {
+    --primary: #0a0a0a;
+    --secondary: #00eaff;
+    --accent: #ff00ff;
+    --dark-bg: #0d0221;
+    --card-bg: rgba(17, 24, 39, 0.8);
+    --text: #f1f1f1;
+    --neon-blue: #00eaff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #9333ea;
+}
+
+.csce190-body {
+    background: linear-gradient(135deg, #0d0221 0%, #1a0b2e 50%, #0d0221 100%);
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--text);
+    padding-top: 80px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.csce190-body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(33, 16, 74, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33, 16, 74, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+
+.csce190-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+    position: relative;
+}
+
+.project-card {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.project-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+    transition: height 1s ease;
+    z-index: 0;
+}
+
+.timeline-line.visible {
+    height: 100%;
+}
+
+
+
+
+
+
+
+.csce190-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.csce190-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+        0 0 5px rgba(0, 234, 255, 0.5),
+        0 0 10px rgba(0, 234, 255, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.csce190-subtitle {
+    font-size: 1.2rem;
+    color: var(--text);
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.project-card {
+    position: relative;
+    width: calc(50% - 50px);
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, rgba(13, 2, 33, 0.95), rgba(25, 4, 63, 0.95));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    padding: 35px 35px 50px;
+    transition: all 0.4s ease;
+}
+
+.project-card:nth-child(even) {
+    float: left;
+    clear: both;
+}
+
+.project-card:nth-child(odd) {
+    float: right;
+    clear: both;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, rgba(20, 3, 50, 0.95), rgba(35, 6, 88, 0.95));
+}
+
+.project-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--neon-blue);
+    color: var(--dark-bg);
+    padding: 6px 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%);
+}
+
+.project-icon i {
+    font-size: 1.4rem;
+    color: var(--dark-bg);
+}
+
+.project-content {
+    padding: 20px 0;
+    min-height: 180px;
+}
+
+.project-content h3 {
+    color: var(--neon-blue);
+    font-size: 1.6rem;
+    margin: 25px 0 20px;
+    font-family: 'Orbitron', sans-serif;
+
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.project-content p {
+    color: rgba(241, 241, 241, 0.9);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 12px 30px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+    background: transparent;
+    position: relative;
+
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--neon-blue);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
+.project-link:hover::before {
+    opacity: 1;
+}
+
+.project-summary {
+    clear: both;
+    background: rgba(13, 2, 33, 0.7);
+    border: 1px solid var(--neon-blue);
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.project-summary h2 {
+    color: var(--neon-blue);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.project-summary p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px rgba(0, 234, 255, 0.5),
+            0 0 10px rgba(0, 234, 255, 0.3);
+    }
+    to {
+        text-shadow: 
+            0 0 10px rgba(0, 234, 255, 0.7),
+            0 0 20px rgba(0, 234, 255, 0.5),
+            0 0 30px rgba(0, 234, 255, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    .csce190-container::before {
+        left: 20px;
+    }
+
+    .csce190-title {
+        font-size: 2.5rem;
+    }
+
+    .project-card {
+        width: calc(100% - 50px);
+        float: right;
+        margin-left: 50px;
+    }
+
+    .project-card::before {
+        left: -40px;
+        transform: translate(-50%, -50%);
+    }
+
+    .project-card:nth-child(odd) {
+        margin-left: auto;
+    }
+
+    .project-card:nth-child(even) {
+        margin-right: auto;
+    }
+
+    .project-date {
+        left: 20px !important;
+        right: auto !important;
+    }
+    
+    .project-icon {
+        left: 20px !important;
+        right: auto !important;
+    }
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}

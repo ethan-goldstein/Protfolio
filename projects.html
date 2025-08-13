@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Ethan Goldstein</title>
+    <link rel="shortcut icon" href="images/new.logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/background.css">
+    <style>
+        body {
+            color: #fff;
+            font-family: 'Share Tech Mono', monospace;
+            overflow-x: hidden;
+        }
+        
+        .section-title {
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        
+        .projects-container {
+            position: relative;
+            z-index: 2;
+            padding-bottom: 50px;
+        }
+        
+        /* Holographic projects display */
+        .holographic-container {
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            perspective: 1000px;
+        }
+        
+        .project-panel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 80px;
+            transform-style: preserve-3d;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 234, 255, 0.2);
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .project-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 234, 255, 0.05), transparent);
+            pointer-events: none;
+        }
+        
+        .project-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+            transform: skewX(-15deg);
+            animation: shine 8s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes shine {
+            0% { left: -150%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .project-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .project-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .portfolio-image {
+            filter: none !important;
+        }
+        
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(13, 2, 33, 0.9), transparent);
+            z-index: 1;
+        }
+        
+        .project-image.no-overlay::before {
+            background: none;
+        }
+        
+        .project-details {
+            width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            color: #00eaff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .project-title::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #00eaff, transparent);
+        }
+        
+        .project-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.5);
+            color: #00eaff;
+            border: 1px solid #00eaff;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-badge:hover {
+            background-color: rgba(0, 234, 255, 0.2);
+            box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, inset 0 0 8px #00eaff;
+            transform: translateY(-1px);
+            color: #fff;
+            text-shadow: 0 0 5px #00eaff;
+        }
+        
+        .project-description {
+            margin: 20px 0;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .project-btn {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: 1px solid #00eaff;
+            padding: 8px 20px;
+            border-radius: 5px;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .project-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .project-btn:hover {
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+            text-shadow: 0 0 5px #00eaff;
+        }
+        
+        .project-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Scanner line effect */
+        .scanner-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00eaff, transparent);
+            animation: scan 4s ease-in-out forwards;
+            box-shadow: 0 0 8px #00eaff;
+            z-index: 2;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; opacity: 1; }
+            75% { top: 100%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .project-image {
+                clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+                width: 100%;
+                height: 30%;
+            }
+            
+            .project-details {
+                width: 100%;
+                margin-top: 30%;
+            }
+            
+            .project-panel {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body class="common-background">
+    <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="glow"></div>
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/new.logo.png" width="30" height="30" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
+                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
+                <li class="nav-item"><a class="nav-link" href="background.html">Background</a></li>
+                <li class="nav-item active"><a class="nav-link" href="projects.html">Projects</a></li>
+            </ul>
+            <ul class="navbar-nav nav-right">
+                <li class="nav-item"><a class="nav-link" href="mailto:ethancgoldstein@gmail.com"><i class="far fa-envelope" style="margin-right: 8px;"></i>Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5 pt-5 projects-container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-2" style="padding-top: 25px;">
+                <h1 class="section-title interests-animate">My Projects</h1>
+            </div>
+        </div>
+        
+        <div class="holographic-container interests-animate" style="animation-delay: 0.2s;">
+            <!-- Project 1 -->
+            <div class="project-panel scanner-container">
+                <div class="scanner-line"></div>
+                <div class="project-image no-overlay">
+                    <img src="images/Portfolio.png" alt="Personal Portfolio" class="portfolio-image">
+                </div>
+                <div class="project-content">
+                    <div class="project-details">
+                        <h2 class="project-title">Personal Portfolio</h2>
+                        <div class="mb-3">
+                            <span class="project-badge">HTML</span>
+                            <span class="project-badge">CSS</span>
+                            <span class="project-badge">JavaScript</span>
+                            <span class="project-badge">Spline</span>
+                        </div>
+                        <p class="project-description">Ethan Goldstein's personal portfolio is a fully responsive website built with HTML, CSS, 
+                            and JavaScript, featuring a clean, modern user interface with unique layouts and simple navigation. 
+                            It includes well-structured content, interactive components, and GitHub integration, 
+                            all designed to explore his projects, experience, and ongoing growth.</p>
+                        <div class="project-actions">
+                            <a href="https://github.com/ethan-goldstein/ethan-goldstein.github.io" class="project-btn" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://ethangoldstein.dev/index.html" class="project-btn" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-panel scanner-container">
+                <div class="scanner-line"></div>
+                <div class="project-image no-overlay">
+                    <img src="images/CoachAI.png" alt="Coach AI" class="portfolio-image">
+                </div>
+                <div class="project-content">
+                    <div class="project-details">
+                        <h2 class="project-title">Coach AI</h2>
+                        <div class="mb-3">
+                            <span class="project-badge">HTML</span>
+                            <span class="project-badge">Blender</span>
+                            <span class="project-badge">CSS</span>
+                            <span class="project-badge">JavaScript</span>
+                        </div>
+                        <p class="project-description">CoachAI is an interactive AI platform built with HTML, CSS, and JavaScript, 
+                            featuring three distinct virtual coaches with personalized skills. It uses backend development and API 
+                            integration to enable realistic, real-time conversations for tailored advice, motivation, and training.</p>
+                        <div class="project-actions">
+                            <a href="https://github.com/ethan-goldstein/CoachAI" class="project-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://ethan-goldstein.github.io/CoachAI/index.html" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-panel scanner-container">
+                <div class="scanner-line"></div>
+                <div class="project-image no-overlay">
+                    <img src="images/Audi.png" alt="Audi" class="portfolio-image">
+                </div>
+                <div class="project-content">
+                    <div class="project-details">
+                        <h2 class="project-title">Audi</h2>
+                        <div class="mb-3">
+                            <span class="project-badge">HTML</span>
+                            <span class="project-badge">CSS</span>
+                            <span class="project-badge">JavaScript</span>
+                            <span class="project-badge">Spline</span>
+                            <span class="project-badge">SCSS</span>
+                        </div>
+                        <p class="project-description">Audi is a creatively remade shopping platform built with HTML, CSS, and JavaScript, 
+                            featuring a unique, modern interface inspired by Audi’s design language. It integrates an interactive shopping 
+                            cart that dynamically updates total prices as cars are added or removed, and is complemented by a custom 3D-animated 
+                            commercial fully created and edited in Blender for a polished, immersive experience. The future is here.</p>
+                        <div class="project-actions">
+                            <a href="https://github.com/ethan-goldstein/Audi" class="project-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://ethan-goldstein.github.io/Audi/index.html" class="project-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="projects.js"></script>
+    <script src="js/background.js"></script>
+    <script src="cursor-particles.js"></script>
+</body>
+</html>

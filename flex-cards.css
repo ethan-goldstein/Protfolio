@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #eeeeea;
+}
+
+.interests-header {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    padding-top: 60px;
+
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: capitalize;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.container {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    padding-top: 10px;
+}
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    min-height: 400px;
+}
+
+.card > .row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-right: 15px;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+    height: auto;
+    width: min(520px, calc(90vw - 80px));
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.card > .row > .description h4 {
+    color: #b0b0ba;
+    margin-bottom: 8px;
+}
+
+.card > .row > .description p {
+    color: #ffffff;
+    padding-top: 5px;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: min(800px, 90vw);
+    height: min(600px, 90vh);
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('images/me_vfx.png');
+}
+.card[for="c2"] {
+    background-image: url('images/gymphoto.jpg');
+}
+.card[for="c3"] {
+    background-image: url('images/movies.git.jpg');
+}
+.card[for="c4"] {
+    background-image: url('images/BCITY.png');
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        min-height: 300px;
+    }
+    
+    input:checked + label {
+        width: 90vw;
+        height: 90vh;
+    }
+}

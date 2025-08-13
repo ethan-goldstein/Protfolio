@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background - Ethan Goldstein</title>
+    <link rel="shortcut icon" href="images/new.logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/background.css">
+    <style>
+        body {
+            color: #ededed;
+            padding-top: 80px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .navbar {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .page-header h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            display: none;
+        }
+        
+        /* Background container */
+        .background-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px 60px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        
+        /* Card row layout */
+        .card-row {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            margin-top: 10px;
+        }
+        
+        .bg-card {
+            background: rgba(13, 2, 33, 0.7);
+            border: 1px solid #00eaff;
+            border-radius: 10px;
+            padding: 25px;
+            min-width: 300px;
+            max-width: 300px;
+            flex: 0 0 auto;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .bg-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+        }
+        
+        .card-header {
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 234, 255, 0.3);
+            margin-bottom: 15px;
+        }
+        
+        .card-category {
+            font-size: 0.9rem;
+            color: #00eaff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 234, 255, 0.3);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        
+        .card-period {
+            color: #00eaff;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            text-shadow: none;
+        }
+        
+        .card-period i {
+            margin-right: 8px;
+        }
+        
+        /* Card content */
+        .card-content {
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .card-list li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #00eaff;
+        }
+        
+        /* Glitch and Scanner effects */
+        .typing-text {
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 234, 255, 0.5);
+        }
+        
+        .typing-text::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #00eaff;
+            overflow: hidden;
+            animation: glitch-anim 2s linear forwards;
+            animation-iteration-count: 2;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip-path: inset(40% 0 61% 0);
+                transform: translate(-2px, 2px);
+            }
+            20% {
+                clip-path: inset(92% 0 1% 0);
+                transform: translate(1px, -3px);
+            }
+            40% {
+                clip-path: inset(43% 0 1% 0);
+                transform: translate(3px, 1px);
+            }
+            60% {
+                clip-path: inset(25% 0 58% 0);
+                transform: translate(-5px, -2px);
+            }
+            80% {
+                clip-path: inset(54% 0 7% 0);
+                transform: translate(2px, -4px);
+            }
+            100% {
+                clip-path: inset(58% 0 43% 0);
+                transform: translate(-2px, 3px);
+            }
+        }
+        
+        /* Scanner line effect */
+        .scanner-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00eaff, transparent);
+            animation: scan 4s ease-in-out forwards;
+            box-shadow: 0 0 8px #00eaff;
+            z-index: 2;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; opacity: 1; }
+            75% { top: 100%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        .card-text {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .card-row {
+                justify-content: flex-start;
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="common-background">
+    <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="glow"></div>
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/new.logo.png" width="30" height="30" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
+                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
+                <li class="nav-item active"><a class="nav-link" href="background.html">Background</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            </ul>
+            <ul class="navbar-nav nav-right">
+                <li class="nav-item"><a class="nav-link" href="mailto:ethancgoldstein@gmail.com"><i class="far fa-envelope" style="margin-right: 8px;"></i>Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Page header removed to avoid duplication -->
+    
+    <div class="container mt-3 pt-3 background-container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-2" style="padding-top: 0;">
+                <h1 class="section-title interests-animate">My Background</h1>
+            </div>
+        </div>
+        <div class="section interests-animate" style="animation-delay: 0.2s;">
+            <div class="card-row">
+                <div class="bg-card">
+                    <div class="card-header">
+                        <div class="card-category">Education</div>
+                        <h3 class="card-title">Thomas S. Wootton High School</h3>
+                        <div class="card-period">
+                            <i class='bx bxs-calendar'></i>2019 - 2023
+                        </div>
+                    </div>
+                    <div class="card-content scanner-container">
+                        <div class="scanner-line"></div>
+                        <ul class="card-list">
+                            <li><p class="typing-text" data-text="National Honors Society">National Honors Society</p></li>
+                            <li><p class="typing-text" data-text="Various Clubs">Various Clubs</p></li>
+                            <li><p class="typing-text" data-text="Varsity Baseball Captain">Varsity Baseball Captain</p></li>
+                            <li><p class="typing-text" data-text="Academic Excellence">Academic Excellence</p></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-card">
+                    <div class="card-header">
+                        <div class="card-category">Education</div>
+                        <h3 class="card-title">University of South Carolina</h3>
+                        <div class="card-period">
+                            <i class='bx bxs-calendar'></i>2023 - Present
+                        </div>
+                    </div>
+                    <div class="card-content scanner-container">
+                        <div class="scanner-line"></div>
+                        <p class="card-text typing-text" data-text="Fall 2025 Courses:">Fall 2025 Courses:</p>
+                        <ul class="card-list">
+                            <li><p class="typing-text" data-text="Algorithmic Design II">Algorithmic Design II</p></li>
+                            <li><p class="typing-text" data-text="Introduction to Computer Security">Introduction to Computer Security</p></li>
+                            <li><p class="typing-text" data-text="Business Calculus">Business Calculus</p></li>
+                            <li><p class="typing-text" data-text="CIS in Business">CIS in Business</p></li>
+                            <li><p class="typing-text" data-text="Introduction to Economics">Introduction to Economics</p></li>
+                            <li><p class="typing-text" data-text="Principles of Marketing">Principles of Marketing</p></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-card">
+                    <div class="card-header">
+                        <div class="card-category">Experience</div>
+                        <h3 class="card-title">Data Entry Operator I (Intern)</h3>
+                        <div class="card-period">
+                            <i class='bx bxs-calendar'></i>2025 - Present
+                        </div>
+                    </div>
+                    <div class="card-content scanner-container">
+                        <div class="scanner-line"></div>
+                        <ul class="card-list">
+                            <li><p class="typing-text" data-text="Tysons Corner, VA">Tysons Corner, VA</p></li>
+                            <li><p class="typing-text" data-text="Public Trust Clearance">Public Trust Clearance</p></li>
+                            <li><p class="typing-text" data-text="Support federal data processes, ensuring accuracy 
+                                and security. Followed government standards in project management and technology 
+                                consulting to assist in delivering reliable solutions.">Support federal data 
+                                processes, ensuring accuracy and security. Followed government standards in project 
+                                management and technology consulting to assist in delivering reliable solutions.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="common-animations.js"></script>
+    <script src="js/background.js"></script>
+    <script src="cursor-particles.js"></script>
+</body>
+</html>
+    

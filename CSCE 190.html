@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCE 190 - Ethan Goldstein</title>
+    <link rel="shortcut icon" href="images/new.logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="csce190-cards.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="common-background">
+
+    <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="glow"></div>
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/new.logo.png" width="30" height="30" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="About Me.html">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="Skills.html">Skills</a></li>
+                <li class="nav-item active"><a class="nav-link" href="CSCE 190.html">CSCE 190</a></li>
+            </ul>
+            <ul class="navbar-nav nav-right">
+                <li class="nav-item"><a class="nav-link" href="mailto:ethancgoldstein@gmail.com"><i class="far fa-envelope" style="margin-right: 8px;"></i>Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="csce190-container slide-in-left">
+        <div class="csce190-header">
+            <h1 class="csce190-title">CSCE 190 Journey</h1>
+            <p class="csce190-subtitle">Class Assignments</p>
+            <p class="csce190-subtitle">Problem-Based Tutoring Application</p>
+        </div>
+
+        <div class="project-timeline">
+            <div class="timeline-line"></div>
+            <div class="project-card" style="--card-index: 1;">
+                <div class="project-date">Phase 1</div>
+
+                <div class="project-content">
+                    <h3>Problem Statement</h3>
+                    <p>Students struggle to find tutors who can help with specific problems rather than general subjects.</p>
+                    <a href="files/Problem-statement.png" class="project-link" target="_blank">View Statement <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" style="--card-index: 2;">
+                <div class="project-date">Phase 2</div>
+
+                <div class="project-content">
+                    <h3>Affinity Diagram</h3>
+                    <p>Collaborative brainstorming to identify key features and user needs for our tutoring platform.</p>
+                    <a href="files/AffinityDiagram.png" class="project-link" target="_blank">View Diagram <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" style="--card-index: 3;">
+                <div class="project-date">Phase 3</div>
+
+                <div class="project-content">
+                    <h3>Persona</h3>
+                    <p>Fictional characters representing our target users and their specific needs and pain points.</p>
+                    <a href="files/PERSONA.png" class="project-link" target="_blank">View Persona <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" style="--card-index: 4;">
+                <div class="project-date">Phase 4</div>
+
+                <div class="project-content">
+                    <h3>Storyboard</h3>
+                    <p>Visual narratives showing how users would interact with our tutoring solution in real-world scenarios.</p>
+                    <a href="files/Storyboard.png" class="project-link" target="_blank">View Storyboard <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" style="--card-index: 5;">
+                <div class="project-date">Phase 5</div>
+
+                <div class="project-content">
+                    <h3>Sketch</h3>
+                    <p>Initial interface designs and layout concepts for the tutoring application.</p>
+                    <a href="files/Sketch.png" class="project-link" target="_blank">View Sketch <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" style="--card-index: 6;">
+                <div class="project-date">Phase 6</div>
+
+                <div class="project-content">
+                    <h3>Prototype</h3>
+                    <p>A prototype tutoring app that connects students with tutors based on specific problems, not just broad subjects.</p>
+                    <a href="https://youtu.be/cjhXU-svV4w" class="project-link" target="_blank">View Paper Prototype <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        <div class="project-summary">
+            <h2>Project Overview</h2>
+            <p>This CSCE 190 project addresses the challenge students face when seeking help with specific academic problems. Our solution is a tutoring platform that matches students with tutors based on the exact problems they need help with, rather than just broad subject areas.</p>
+            <p>Through user research, prototyping, and iterative design, we've created a concept that streamlines the process of finding targeted academic assistance.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="cursor-particles.js"></script>
+</body>
+</html>
